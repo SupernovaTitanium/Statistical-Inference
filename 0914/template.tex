@@ -1,0 +1,104 @@
+\def\draft{0}
+\documentclass[11pt]{article}
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color}
+\input{macros}
+\pagestyle{plain}
+
+\newcommand{\scribe}{Chi-Ning Chou}
+\newcommand{\lecnum}{1}
+\newcommand{\lecdate}{September 14, 2015}
+
+%\parskip=1.5mm
+%\parindent=0mm
+
+\begin{document}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+
+\paragraph{Questions}
+\begin{enumerate}
+	\item What's the difference between {\bf probability} and {\bf statistics}?
+	\item What's the difference between them and {\bf math}?
+\end{enumerate}
+{\bf Prof. Chaing:}
+Mathematics is in a  {\color{red} deterministic}  environment. With math, we can describe a dynamic system in a deterministic way. Probability involves in a probabilistic system, where the events follow certain distribution and act in like flipping a coin. As to statistics, what we face is not beautiful mathematical objects. Instead, we have to deal with {\color{red} data}. We assume there is a distribution or general function behind the data. This function might be deterministic or probabilistic. What a statistician aim to do is to find out (formally speaking, estimate) such underlying distribution.
+
+\section{Probabilities, Random variables, Distribution}
+\subsection{Set Theory}
+In the world of probability and statistics, we use {\bf set} to intuitively model the object we concerned. As a result, we need to define some basic elements and operations. Furthermore, we will derive some basic properties.
+\paragraph{Sample space}
+Here we use $\Omega$ to represent sample space, which is composed of all the possible {\bf outcomes}. The element in sample space is often denote as $\omega$.
+\paragraph{Event}
+What we really care about is the subset of sample space, which is intuitively being an event. With this notion, we can interact with various outcomes and play with events that share the common outcomes etc.
+\paragraph{Set operations} Here, we use $A,B,\{A_n\}$ to denote events and a sequence of events.
+\begin{itemize}
+	\item Union: $A\cup B := \{w:w\in A\ or\ w\in B \}$
+	\item Intersection: $A\cap B := \{w:w\in A\ and\ w\in B \}$
+	Here, we can drop out the geometric notion of intersection and think of it as {\bf the outcomes that the two events share}.
+	\item Complementation: $A^C:=\{w:w\in\Omega\ and\ w\notin A \}$
+	The outcomes that haven't happened?
+	\item Set difference: $B\backslash A:= B\cap A^C$
+\end{itemize}
+
+\paragraph{limsup}
+Intuitively, it's analogous to the smallest upper bound for an infinite sequence.
+$$\lim\sup A_n := \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty} A_k$$
+If we let $B_n:=\bigcup_{k=n}^{\infty} A_k$, we can see that $B_1\supseteq B_2\supseteq...$. Formally, we also have
+$$\lim\sup A_n = \{w:w\in A_n, for\ infinitely\ many\ n \}$$
+Intuitively, $B_k$ is the outcomes that share by all the events with index greater than $k$.
+Or, for any element $\omega$ and barrier $m$, $\exists n\geq m$ such that $\omega\in A_n$.
+
+\paragraph{liminf}
+It's the analogy to the largest lower bound for an infinite sequence.
+$$\lim\inf A_n:= \bigcup_{n=1}^{\infty}\bigcap_{k=n}^{\infty} A_k$$
+If we let $C_n:= \bigcap_{k=n}^{\infty} A_k$, we can see that $C_1\subseteq C_2\subseteq...$. Formally, we also have
+$$\lim\inf A_n=\{w:w\in A_n\ for\ all\ but\ finite\ many\ n \}$$
+Or, for any element $\omega$ in $\lim\sup A_n$, $\exists m$ such that $\forall n\geq m$, $\omega\in A_n$. That is, after some barrier, $\omega$ will appear in all $A_n$ afterwards.
+
+\paragraph{Limit of sequence of events}
+We say a sequence of events $\{A_n\}$ converges to event $A$ if 
+$$\limsup A_n=\liminf A_n = A$$
+
+\begin{property}
+	Let $A,B,C$ be events in sample space $\Omega$, then the following results hold:
+	\begin{enumerate}
+		\item Community: $A\cap B=B\cap  A$, $A\cup B=B\cup A$
+		\item Associativity: $A\cap(B\cap C) = (A\cap B)\cap C$, $A\cup(B\cup C)=(A\cup B)\cup C$
+		\item Distributed law: $A\cap(B\cup C) = (A\cap B)\cup(A\cap C)$, $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+		\item De Morgan's law: $(A\cap B)^C = A^C\cup B^C$, $(A\cup B)^C = A^C\cap B^C$
+	\end{enumerate}
+\end{property}
+
+\section{Small talk}
+{\bf Prof. Chiang:} Can you give an example about statistics?\\
+{\bf Me:} SVM\\
+{\bf Prof. Chiang:} What is SVM?\\
+{\bf Me:} blablabla...\\
+{\bf Prof. Chiang:} For me, SVM and others techniques are just a chance mechanism. They provides a model or platform for us to analysis the data in some way. But deep in to the heart of data analysis, what we deal with is a general function $G(y,x_1,...,x_k)$. And all techniques are to model the $G$ with certain assumption and structures.
+
+
+\newpage
+%%% Reference%%%
+\bibliographystyle{alpha}
+\bibliography{mybib}
+
+
+\end{document}
+
+
+
+
