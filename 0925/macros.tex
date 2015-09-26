@@ -1,0 +1,80 @@
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Property}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{openprob}[theorem]{Open Problem}
+\newtheorem{remk}[theorem]{Remark}
+\newtheorem{exmp}[theorem]{Example}
+\newtheorem{apdxlemma}{Lemma}
+
+\newenvironment{example}{\begin{exmp}
+\begin{normalfont}}{\end{normalfont}
+\end{exmp}}
+
+\newenvironment{remark}{\begin{remk}
+\begin{normalfont}}{\end{normalfont}
+\end{remk}}
+\newtheorem{sublemma}[theorem]{Sublemma}
+
+
+%%%%%%%%%%%%%%%%%%%% proof environments
+
+\def\FullBox{\hbox{\vrule width 8pt height 8pt depth 0pt}}
+
+\def\qed{\ifmmode\qquad\FullBox\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil\FullBox
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\def\qedsketch{\ifmmode\Box\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil$\Box$
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\newenvironment{proof}{\begin{trivlist} \item {\bf Proof:~~}}
+  {\qed\end{trivlist}}
+
+\newenvironment{proofsketch}{\begin{trivlist} \item {\bf
+Proof Sketch:~~}}
+  {\qedsketch\end{trivlist}}
+
+\newenvironment{proofof}[1]{\begin{trivlist} \item {\bf Proof
+#1:~~}}
+  {\qed\end{trivlist}}
+
+\newenvironment{claimproof}{\begin{quotation} \noindent
+{\bf Proof of claim:~~}}{\qedsketch\end{quotation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% text macros
+\newcommand{\etal}{{\it et~al.\ }}
+\newcommand{\ie} {{\it i.e.,\ }}
+\newcommand{\eg} {{\it e.g.,\ }}
+\newcommand{\cf}{{\it cf.,\ }}
+
+%%%%%%%%%%%%%%%%%%%%%%% general useful macros
+\newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
+\newcommand{\R}{{\mathbb R}} % real numbers
+\newcommand{\N}{{\mathbb{N}}} % natural numbers
+\newcommand{\Z}{{\mathbb Z}} % integers
+\newcommand{\F}{{\mathbb F}} % a field
+\newcommand{\Q}{{\mathbb Q}} % the rationals
+\newcommand{\poly}{{\mathrm{poly}}}
+\newcommand{\polylog}{{\mathrm{polylog}}}
+\newcommand{\loglog}{{\mathop{\mathrm{loglog}}}}
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\suchthat}{{\;\; : \;\;}}
+\newcommand{\pr}[1]{\Pr\left[#1\right]}
+\newcommand{\deffont}{\em}
+\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny R}}{\gets}}}
+\newcommand{\Exp}{\mathop{\mathrm E}\displaylimits} % expectation
+\newcommand{\Var}{\mathop{\mathrm Var}\displaylimits} % variance
+\newcommand{\xor}{\oplus}
+\newcommand{\GF}{\mathrm{GF}}
+\newcommand{\eps}{\varepsilon}
+
+%%%%%%%%%%%%%%%%%%% macros particular to this course
+
