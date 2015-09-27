@@ -5,10 +5,9 @@
 \usepackage{IEEEtrantools}
 \input{macros}
 \pagestyle{plain}
-
-\newcommand{\scribe}{Chi-Ning Chou}
-\newcommand{\lecnum}{3}
-\newcommand{\lecdate}{September 21, 2015}
+\newcommand{\scribe}{Wei-Chang Lee}
+\newcommand{\lecnum}{4}
+\newcommand{\lecdate}{September 27, 2015}
 
 %\parskip=1.5mm
 %\parindent=0mm
@@ -29,113 +28,44 @@
 		\end{bfseries}
 	\end{center}
 	
-Today we're going to talk about some properties of probability function and some useful theorems such as Boole's inequality, Bonferroni's inequality, the first Borel-Cantelli lemma. In the next lecture, we will talk about Counting Theory, and today Prof.Chiang also demonstrate some intuitions about counting theory.
-
-\section{Basic Properties of Probability Function and Their Intuitions}
-\begin{theorem}[properties of probability function]
-	Suppose $(\Omega,\mathcal{A},P)$ is a probability space where $P$ satisfies the axioms of probability function. Then,
-	\begin{enumerate}
-		\item (minimizer) $P(\emptyset) = 0$
-		\item (finite partition) $P(A) = 1-P(A^C), \forall A\in\mathcal{A}$
-		\item (upper bound) $P(A)\leq1, \forall A\in\mathcal{A}$
-		\item (conditioned on finite partition) $P(B\backslash A) = P(B\cap A^C) = P(B) - P(B\cap A)$
-		\item (union) $P(A\cup B) = P(A) + P(B) - P(A\cup B)$
-		\item (sub-event) $P(A)\leq P(B),\forall A,B\in\mathcal{A},A\subseteq B$
-		\item (conditioned on countably partition) $P(B) = \sum_{i=1}^{\infty} P(B\cap A_i)$, where $\{A_i\}$ is a partition of $\Omega$ and $A_i\in\mathcal{A},\forall i$.
-		\item (Boole's inequality) $P(\bigcup_{i=1}^{\infty}A_i)\leq\sum_{i=1}^{\infty}P(A_i)$. Note that here $\{A_i\}$ is arbitrary sequence of events.
-	\end{enumerate}
-\end{theorem}
-
-The following gives some intuitions behind each result:
+Today we're going to talk about method of counting to be able to study probability assignments on finite space, we will then give definition about conditional probability on discrete case and intuition about continuous case. After knowing how to calculate conditional probabilities, we can then use Bayes' theorem to connect experimental study to observation study which is called the odds ratio. At the end of the class, Prof.Chiang introduce the concept "independence" and how to interpret it beyond geometric views in a more statistical way.
+\section{Counting Methods}
+  There are two kinds of interpretation of probability measure. 
 \begin{enumerate}
-	\item To prove empty set is a minimizer, we can simply choose a sequence of event as $A_1=\Omega,A_i=\emptyset,\forall i=2,3,...$. Then the results is obvious as we apply countably mutual exclusive additive axiom.
-	\item By choosing $A_1=A,A_2=A^C,A_i=\emptyset,\forall i=3,4,...$, countably mutual exclusive additive axiom shows the results.
-	\item With 2. and the lower bound axiom.
-	\item Consider $B=B\cap\Omega=B\cap(A\cup A^C)$, by distributive law, $B=(B\cap A)\cup(B\cap A^C)$ where the two terms are mutually exclusive. Thus, we an apply the mutually exclusive additive axiom.
-	\item By think of $A\cup B$ as $A\cup(B\cap A^C)$ such that the two terms are mutually exclusive. Then consider $B = (B\cap A)\cup(B\cap A^C)$ where the two terms are also mutually exclusive. Apply the mutually exclusive additive axiom, we have $P(A\cup B) = P(A) + P(B\cap A^C) = P(A) + (P(B) - P(B\cap A)) = P(A) + P(B) - P(A\cap B)$.
-	\item Simply consider $B=A\cup(B\cap A^C)$.
-	\item The same as 4. by consider $B=\bigcup_{i=1}^{\infty} (B\cap A_i)$ where all the terms are mutually exclusive.
-	\item Set $A_1^* = A_1, A_2^* = A_2\backslash A_1, A_3^*=A_3\backslash(A_1\cup A_2),...,A_j^*=A_j\backslash(\bigcup_{i=1}^{j-1}A_i)$ such that $\{A_j^*\}$ is mutually exclusive and $\bigcup_{i=1}^{\infty}A_i=\bigcup_{j=1}^{\infty} A_j^*$, which means that $P(\bigcup_{i=1}^{\infty}A_i) = P(\bigcup_{j=1}^{\infty} A_j^*)$. With an observation on $P(A_j^*) = P(A_j\backslash(\bigcup_{i=1}^{j-1}A_i))\leq P(A_j)$, we have $P(\bigcup_{i=1}^{\infty}A_i)\leq\sum_{i=1}^{\infty}P(A_i)$.
+\item[1]
+  The first kind of view is based on the "frequency of occurrence". They do random experiments many times to study  how many times event which is interested in would take place. Then, they assign the limit ratio  as the probability of certain events. The intuition of this interpretation is that we believe the underlying parameter is invariant so after many repeated experiment the random effect can be cancelled out and the real instinct reveal. 
+\item[2]
+  The second kind of view is just based on the "subjective belief of interpreter" in the chance of an event occurring.  We can just give probability under our faith before any experiment has been done and then do experiment to study whether our prior assumption fit the data or not and then modify it. This procedure can be done by Bayes' theorem. 
 \end{enumerate}
-
-\begin{intuition}[properties of probability function]
-	The key point here is to make the sets become {\bf mutually exclusive} so that we can apply the mutually exclusive additive axiom. On the contrary, it also shows that the mutually exclusive additive axiom is so strong that what we think is reasonable in intuition can be described by it!
-\end{intuition}
-
-
-\section{Useful Inequalities, and the First Borel-Cantelli Lemma}
-In the previous section, Boole's inequality provides an loose upper bound for the probability of the {\bf union} of a sequence of events. Now, we can draw a similar lower bound for the probability of the {\bf intersection} of a sequence of events.
-\subsection{Bonferroni's inequality}
-\begin{theorem}[Bonferroni's inequality]
-	\mbox{}
-	
-	Let $A_1,A_2,...$ be a sequence of events, then
-	$$P(\bigcap_{i=1}^{n} A_i) \geq \sum_{i=1}^{n}P(A_i)-(n-1)$$
+\paragraph{}
+  The counting problem is sometimes sophisticated and along with many restrictions. The way to solve such problem is to break them into series of simple tasks and apply rules to combine it back. 
+\begin{theorem}[Fundamental Theorem of Counting]
+	Suppose a job consists of k separate tasks, the $i$th of which can be done in $n_i$ ways, then entire job can be done in $\prod_{i=1}^k n_i$ ways.
 \end{theorem}
-\begin{proof}
-	$$P(\bigcap_{i=1}^{n} A_i) = 1-P(\bigcup_{i=1}^{n}A_i^C) \geq 1-\sum_{i=1}^{n}P(A_i^C) = 1-\sum_{i=1}^{n}(1-P(A_i)) = \sum_{i=1}^{n}P(A_i)-(n-1)$$
-\end{proof}
-
-Just as Boole's inequality, Bonferroni's inequality provides a loose lower bound. What does Bonferroni's inequality brings to us? There's an application in {\bf pairwise comparison}: Suppose we are going to estimate three parameters $\theta_1,\theta_2,\theta_3$ which are highly correlated. How can we lower bound the probability of the event: $(\theta_1-\theta_2)\in A_{12},(\theta_1-\theta_3)\in A_{13},(\theta_2-\theta_3)\in A_{23}$? Note that this probability is used for constructing confidence interval.
-
-Now, consider that we have already lower bound the significant level of each parameter, say
-\begin{align*}
-&P(\theta_1-\theta_2\in A_{12})\geq 1-\alpha_1\\
-&P(\theta_1-\theta_3\in A_{13})\geq 1-\alpha_2\\
-&P(\theta_2-\theta_3\in A_{23})\geq 1-\alpha_3\\
-\end{align*}
-By Bonferroni's inequality, we have
-\begin{align*}
-&P((\theta_1-\theta_2)\in A_{12},(\theta_1-\theta_3)\in A_{13},(\theta_2-\theta_3)\in A_{23})\\
-\geq\ &P(\theta_1-\theta_2\in A_{12}) + P(\theta_1-\theta_3\in A_{13}) + P(\theta_2-\theta_3\in A_{23}) - 2\\
-\geq\ &(1-\alpha_1) + (1-\alpha_2) + (1-\alpha_3) - 2\\
-=\ &1 - (\alpha_1+\alpha_2+\alpha_3)
-\end{align*}
-
-\begin{intuition}[Boole's and Bonferroni's inequalities]
-	The important concept here is that both Boole's and Bonferroni's inequalities are relatively {\bf loose}. As a result, they can only provide good estimate as the probability of the individual events are {\bf small}. Take a look at the above example, we can see that normally the significant level $\alpha_i$ is relatively small. And that's why here Bonferroni's inequality has some usage.
+\begin{intuition}[Classification of counting methods]
+	The proof of Fundamental Theorem of Counting is quite trivial. Sometimes it is better to think of task as partition criteria such as love or hate, different gender or income level then we just construct a sample space $\Omega=\Omega_1\times\Omega_2...\Omega_k$ which is the cartesian product of k criteria we interested in then we can apply the theorem to calculate there are how many possible outcomes.\\
+In reality, we may face situation such as replacement and unordered. Replacement means that $n_i=n_{i+1}$ and unordered means that we can perform k separate tasks arbitrary without certain order. In such case we have to carefully apply or modify the fundamental counting theorem. 	
 \end{intuition}
-
-\subsection{The first Borel-Cantelli lemma}
-Before we give the statement of the first Borel-Cantelli lemma, let's consider the following motivation:
-Imagine after defining the axiom of probability and deduce some nice properties and now you're going to define the concept of {\bf conditional probability} $P(A|B)$. However, an issue coming out:
-$$\mbox{What if P(B)=0?}$$
-This makes sense as now we consider the sample space with countably many outcomes. The probability of a single outcome is measure 0 ($P(\mbox{outcome}) = 0$). As a result, the conditional probability taught in elementary probability $P(A|B) = \frac{P(A\cap B)}{P(B)}$ is not well-defined!
-
-A simple idea is to relax $B$ or construct a sequence of event $B_1,B_2...$ such that $\lim_{n\rightarrow\infty}B_n = B$ and define the conditional probability as $P(A|B) := \lim_{n\rightarrow\infty}\frac{P(A\cap B_n)}{P(B_n)}$, which is much more making sense. But here comes a question:
-$$\mbox{Is the probability of a convergent sequence of events also converge?}$$
-
-\begin{theorem}[The first Borel-Cantelli lemma]
-	\mbox{}
-	
-	Let $\{A_i\}$ be a sequence of events such that $\sum_{i=1}^{\infty}P(A_i)<\infty$, then
-	$$P(A_{n.i.o}) = 0$$
-	, where $A_{n.i.o} = \limsup_{n\rightarrow\infty}A_n$
-\end{theorem}
+Consider number of possible arrangements of size r drawing from n different subjects. We can divide the case into four categories.
+\begin{enumerate}
+	\item Without replacement and ordered: $n*(n-1)*(n-2)...(n-r+1)=\prod_{i=1}^r(n-i+1)=\frac{n!}{(n-r)!}$
+	\item With replacement and ordered:$n*n*n...n=\prod_{i=1}^r n=n^r$
+	\item Without replacement and unordered: $\frac{\prod_{i=1}^r(n-i+1)}{r!}=\frac{n!}{(n-r)!(r!)}=\binom{n}{r}$ 
+	\item With replacement and unordered: $\binom{n+r-1}{r}$
+\end{enumerate}
 \begin{proof}
-	By the definition of limsup, we have $\bigcup_{i=n}^{\infty} A_i\rightarrow \limsup_{n\rightarrow\infty}A_n$ monotonously. Now, we proof the lemma with two steps:
-	\begin{enumerate}
-		\item (Continuity axiom) $P(A_{n.i.o}) = \lim_{n\rightarrow \infty}P(\bigcup_{i=n}^{\infty}A_i)$
-		\item (Boole's inequality)  $P(\bigcup_{i=n}^{\infty}A_i)\leq\sum_{i=n}^{\infty}P(A_i)$
-	\end{enumerate}
-	Since $\sum_{i=1}^{\infty}P(A_i)<\infty$, we now that $\lim_{n\rightarrow\infty}\sum_{i=n}^{\infty}P(A_i)=0$. Thus, $P(A_{n.i.o})=0$.
+Case 1 and case 2 is quite simple just applying the Fundamental Theorem of Counting. For case 3, r different objects can be permuted in $r*(r-1)*(r-2)...1=r!$ ways but they represent the same arrangement in unordered situation. So we have case 3 equals case 1 divided by r!. Case 4 is the most difficult, we may simply view it as case 2 divided by r! but it will underestimate the possible arrangements since r objects with some of them are of same kind do not construct r! different permutations. A clever way to solve case 4 is to think of r as numbers of coins and place it arbitrary but all into n different box. A coin in $i$th box means in our ultimate arrangements we have one $i$th objects. Consider a small case as n=3 and r=3. Then the following figure is the realization of picking two $2$th object and one $3$th object. And all possible realization cab be expressed as all possible arrangements of 2 $|$ and 3 $O$ which is $\binom{3-1+3}{3}$. 
+$$\underline{\quad}^1 |\underline{OO}^2 |\underline{O}^3$$ So for case 4, the answer is $\binom{n-1+r}{r}$.
 \end{proof}
-
-Note that there's no independence involves here, which is different from the second Borel-Cantelli's lemma that we'll introduce later.
-
-\section{Intuitions About Counting Theory}
-$$\mbox{\it Why do we need counting techniques?}$$
-\subsection{Sampling}
-What kind of sampling mechanisms do we have? That is, how do we design the mechanism for us to draw samples from a large population? Do we sample periodically? Or, sample from the subset that we believe is more important? Or, we cluster the sample space into a smaller subspace and sample in them respectively?
-
-The chance mechanism we choose will affect the underlying possibility for us to get a certain outcome. That is, the way we analyze or the model we choose will differ as the sampling techniques are distinct. And how do we react to different mechanism is to utilize the tools in counting theory.
-
-\subsection{Bootstrap}
-In high-dimensional statistics, the number of parameters are so large that sometimes even the number of samples is less than that of parameters! However, we believe the underlying structure might not be so much. Namely, there might exist some sparse or low rank structure behind the scheme.
-
-But, how can we find out such implicit properties with only a few samples and a great amount of candidate parameters? There's a method called {\bf bootstrap}, which reuses the same samples and generate e a subset of new samples from it. With some counting argument, we can see that this will not affect the performance and can increase the number of samples to search for special structure in a high-dimensional setting.
-
-To fulfill such methods, we need to have some tools to analyze the process of reusing samples. And counting theory can provide a great help. For now, this applications give us a sense of motivation to study counting theory.
+\paragraph{}
+The counting techniques are useful when the sample space is finite and every possible outcomes in S are equally likely. The probability of certain event can be calculated by the number of outcomes in that event times the probability of each outcome from the countably addictive axiom.
+\begin{theorem}[Enumerating outcomes]
+Let $\Omega=\{w1,w2...wn\}$ with $P(\{w_i\})=\frac{1}{n}$ $\forall i$ then $P(A)=\sum_{\{w_i\}\in A}P(\{w_i\})=\sum_{\{w_i\}\in A}\frac{1}{n}=\frac{\sharp(A)}{\sharp(\Omega)}$ $\forall A$.
+\end{theorem}
+\begin{remark}
+This is also the classical definition of probability from Pierre-Simon Laplace.
+\end{remark} 
+\section{Conditional probability}
 
 \end{document}
 
