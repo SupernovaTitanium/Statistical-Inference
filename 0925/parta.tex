@@ -60,13 +60,37 @@ $$\underline{\quad}^1 |\underline{OO}^2 |\underline{O}^3$$ So for case 4, the an
 \paragraph{}
 The counting techniques are useful when the sample space is finite and every possible outcomes in S are equally likely. The probability of certain event can be calculated by the number of outcomes in that event times the probability of each outcome from the countably addictive axiom.
 \begin{theorem}[Enumerating outcomes]
-Let $\Omega=\{w1,w2...wn\}$ with $P(\{w_i\})=\frac{1}{n}$ $\forall i$ then $P(A)=\sum_{\{w_i\}\in A}P(\{w_i\})=\sum_{\{w_i\}\in A}\frac{1}{n}=\frac{\sharp(A)}{\sharp(\Omega)}$ $\forall A$.
+Let $\Omega=\{w_1,w_2...w_n\}$ with $P(\{w_i\})=\frac{1}{n}$ $\forall i$ then $P(A)=\sum_{\{w_i\}\in A}P(\{w_i\})=\sum_{\{w_i\}\in A}\frac{1}{n}=\frac{\sharp(A)}{\sharp(\Omega)}$ $\forall A$.
 \end{theorem}
 \begin{remark}
 This is also the classical definition of probability from Pierre-Simon Laplace.
 \end{remark} 
 \section{Conditional probability}
-
+In reality, we may need to study something like if she is a girl, what is the probability that she wants to get married. Studying these kinds of probabilities under certain situation or restrictions of sample space needs the definition of conditional probability.
+\begin{theorem}
+Let P(.) be a probability measure on $\sigma$-algebra $F$, A and B be events in $F$ and P(B)$>$0 then, $P(.|B)$, the conditional probability of A given B is denoted by  
+$$P(A|B)=\frac{P(A\cap B)}{P(B)}$$
+\end{theorem}
+First we need to verify $P(.|B)$ is a probability measure.
+\begin{enumerate}
+\item[1] $P(A|B)\geq 0$  $\forall A\in F$ : Since $P(B)>0$ and $P(A\cap B)\geq 0$ because P(.) is a probability measure, then the ratio  $\frac{P(A\cap B)}{P(B)}\geq 0$ $\forall A\in F$.
+\item[2] $P(\Omega|B)=1$ : $\frac{P(\Omega\cap B)}{P(B)}=\frac{P(B)}{P(B)}=1$.
+\item[3] $A_1,A_2...A_n...\in F$, $A_i\cap A_j=\phi$ then $P(\cup_{i=1}^\infty A_i|B)=\sum_{i=1}^{\infty}P(A_i|B)$ : First notice that $A_1\cap B,A_2\cap B...A_n\cap B...$ are all disjoint then $P(\cup_{i=1}^\infty A_i|B)=\frac{P(\cup_{i=1}^\infty A_i\cap B)}{P(B)}=\frac{P(\cup_{i=1}^\infty (A_i\cap B))}{P(B)}=\frac{\sum_{i=1}^{\infty}P(A_i\cap B)}{P(B)}=\sum_{i=1}^{\infty}P(A_i|B)$.
+\end{enumerate}
+$P(.|B)$ is indeed a probability measure, but what is its statistical meaning?
+\begin{example} 
+Consider a case that we need to study how accurate our new AIDS test is, then the sample space is partitioned by two criteria. The test result is positive/negative and the subject has AIDS or not. We have  $\Omega:\{(Test,Disease):T\in\{+,-\},D\in\{+,-\}\}=\Omega_T\times\Omega_D$, then
+\begin{align*} 
+P(D_+|T_+)=\frac{P(D_+\cap T_+)}{P(T_+)}=\frac{P(\{(D_+,T_-),(D_+,T_+)\}\cap\{(D_+,T_+),(D_-,T_+)\})}{P(\{(D_+,T_+),(D_-,T_+)\})}
+\end{align*} 
+So the conditional probability is actually the study of how sub-sample space $\Omega_T,\Omega_D$ will affect each other on $\Omega$ i.e. what is the relation between each partition criteria, we may not simply think conditional probability in geometric view.   
+\end{example}
+\begin{intuition}[Conditional Probability]
+Generally speaking, $P(B)>0$ cannot always be satisfied since we may be interested in continuous data such as heights and weights. We face division by zero when study problem like given father is 1.75 tall what is the probability the son is 1.80 tall. We have $P(\text{father is 1.75})=0$ and above definition does not work any more. A natural way to save it is to think of B as a small neighbourhood $(B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2})$ so we have $$P(A|B)=\frac{\lim_{\bigtriangleup\rightarrow 0} P(A\cap (B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2}) )/\bigtriangleup}{\lim_{\bigtriangleup\rightarrow 0}P(B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2})/\bigtriangleup}$$  
+Noting that both the numerator and denominator are of change rate form so $P(A|B)$ can be think of as the intensity of the ratio of change rate.\\
+In the previous test-disease example, we can not do medical behavior  relying on uncertified test for moral issue. We may only do the reverse direction test. Do the test to patients who have the disease and what is the test result respond to it. So we have only $P(T_+|D_+)$ and also the prevalence of the disease $P(D_+)$. How can we know  $P(D_+|T_+)$? This is where we need the Bayes' theorem.  
+\end{intuition}
+\section{Bayes' Theorem}
 \end{document}
 
 

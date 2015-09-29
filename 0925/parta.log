@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  27 SEP 2015 17:44
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  29 SEP 2015 15:14
 entering extended mode
 **parta.tex
 (parta.tex
@@ -493,24 +493,24 @@ Requested font "cmssbx10" at 12.0pt
 [1
 
 ]
-Overfull \hbox (5.71138pt too wide) in paragraph at lines 63--64
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 63--64
 []\OT1/cmr/m/it/10.95 Let $\OT1/cmr/m/n/10.95 
- = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 w\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/
-10.95 ; w\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 :::wn\OMS/cmsy/m/n/10.95 g$ \O
-T1/cmr/m/it/10.95 with $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/
-10.95 f\OML/cmm/m/it/10.95 w[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ) = []$ $
-\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 i$ \OT1/cmr/m/it/10.95 then $\OML/cmm/
-m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) =
+ = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 w[]; w[]:::w[]\OMS/cmsy/m/n/10.95 g
+$ \OT1/cmr/m/it/10.95 with $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OMS/cmsy/
+m/n/10.95 f\OML/cmm/m/it/10.95 w[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ) = [
+]$ $\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 i$ \OT1/cmr/m/it/10.95 then $\OML/
+cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) =
+
  []
 
-[2] (parta.aux) ) 
+[2] [3] (parta.aux) ) 
 Here is how much of TeX's memory you used:
- 11444 strings out of 428755
- 220355 string characters out of 3164220
- 272836 words of memory out of 3000000
- 14600 multiletter control sequences out of 15000+200000
+ 11445 strings out of 428755
+ 220374 string characters out of 3164220
+ 274836 words of memory out of 3000000
+ 14601 multiletter control sequences out of 15000+200000
  10760 words of font info for 40 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 56i,7n,73p,984b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,8n,73p,984b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on parta.pdf (2 pages).
+Output written on parta.pdf (3 pages).
