@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  27 SEP 2015 00:27
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  29 SEP 2015 15:14
 entering extended mode
-**template.tex
-(template.tex
+**parta.tex
+(parta.tex
 LaTeX2e <2015/01/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -436,19 +436,19 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \c@theorem=\count122
 \c@apdxlemma=\count123
 )
-(template.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+(parta.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
  ABD: EveryShipout initializing macros
 Requested font "cmbx10" at 10.95pt
 Requested font "cmr8" at 8.0pt
@@ -462,7 +462,7 @@ Requested font "cmsy6" at 6.0pt
 Requested font "cmex10" at 10.95pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    Try loading font information for U+msa on input line 20.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -470,7 +470,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 Requested font "msam10" at 10.95pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -480,35 +480,37 @@ Requested font "msbm10" at 8.0pt
 Requested font "msbm7" at 6.0pt
 Requested font "cmbx12" at 12.0pt
 
-Overfull \hbox (22.89732pt too wide) in paragraph at lines 21--30
+Overfull \hbox (22.89732pt too wide) in paragraph at lines 20--29
  [] 
  []
 
 Requested font "cmr12" at 14.4pt
 Requested font "cmbx12" at 14.4pt
 Requested font "cmti10" at 10.95pt
-
-Overfull \hbox (5.4423pt too wide) in paragraph at lines 36--37
-[]\OT1/cmr/m/it/10.95 Suppose $\OT1/cmr/m/n/10.95 (
-\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 A\OML/cmm/m/it/10.95 ; P\OT1/cmr/m/n/
-10.95 )$ \OT1/cmr/m/it/10.95 is a prob-a-bil-ity space where
- []
-
-[1
-
-]
 Requested font "cmss10" at 10.95pt
 Requested font "cmss12" at 12.0pt
 Requested font "cmssbx10" at 12.0pt
-Requested font "cmr12" at 12.0pt
- [2] [3] [4] (template.aux) ) 
-Here is how much of TeX's memory you used:
- 11448 strings out of 428755
- 220490 string characters out of 3164220
- 275834 words of memory out of 3000000
- 14604 multiletter control sequences out of 15000+200000
- 11058 words of font info for 41 fonts, out of 3000000 for 9000
- 1096 hyphenation exceptions out of 8191
- 56i,8n,73p,826b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+[1
 
-Output written on template.pdf (4 pages).
+]
+Overfull \hbox (2.46245pt too wide) in paragraph at lines 63--64
+[]\OT1/cmr/m/it/10.95 Let $\OT1/cmr/m/n/10.95 
+ = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 w[]; w[]:::w[]\OMS/cmsy/m/n/10.95 g
+$ \OT1/cmr/m/it/10.95 with $\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OMS/cmsy/
+m/n/10.95 f\OML/cmm/m/it/10.95 w[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ) = [
+]$ $\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 i$ \OT1/cmr/m/it/10.95 then $\OML/
+cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) =
+
+ []
+
+[2] [3] (parta.aux) ) 
+Here is how much of TeX's memory you used:
+ 11445 strings out of 428755
+ 220374 string characters out of 3164220
+ 274836 words of memory out of 3000000
+ 14601 multiletter control sequences out of 15000+200000
+ 10760 words of font info for 40 fonts, out of 3000000 for 9000
+ 1096 hyphenation exceptions out of 8191
+ 56i,8n,73p,984b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on parta.pdf (3 pages).

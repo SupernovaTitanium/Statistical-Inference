@@ -1,3 +1,5 @@
+\usepackage{tcolorbox}
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{definition}[theorem]{Definition}
@@ -20,6 +22,8 @@
 \begin{normalfont}}{\end{normalfont}
 \end{remk}}
 \newtheorem{sublemma}[theorem]{Sublemma}
+
+\newenvironment{intuition}[1][]{\begin{tcolorbox}[title=Intuition ~(#1),fonttitle=\sffamily\large\bfseries]}{\end{tcolorbox}}
 
 
 %%%%%%%%%%%%%%%%%%%% proof environments
