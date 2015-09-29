@@ -5,7 +5,7 @@
 \usepackage{IEEEtrantools}
 \input{macros}
 \pagestyle{plain}
-\newcommand{\scribe}{Wei-Chang Lee}
+\newcommand{\scribe}{Wei-Chang Lee, Chi-Ning Chou}
 \newcommand{\lecnum}{4}
 \newcommand{\lecdate}{September 27, 2015}
 
@@ -90,7 +90,40 @@ Generally speaking, $P(B)>0$ cannot always be satisfied since we may be interest
 Noting that both the numerator and denominator are of change rate form so $P(A|B)$ can be think of as the intensity of the ratio of change rate.\\
 In the previous test-disease example, we can not do medical behavior  relying on uncertified test for moral issue. We may only do the reverse direction test. Do the test to patients who have the disease and what is the test result respond to it. So we have only $P(T_+|D_+)$ and also the prevalence of the disease $P(D_+)$. How can we know  $P(D_+|T_+)$? This is where we need the Bayes' theorem.  
 \end{intuition}
-\section{Bayes' Theorem}
+
+
+\section{Bayes Rule}
+Imagine a situation that there are two sample spaces $\Omega_1 = \{D_1,...,D_p\},\Omega_2 = \{O_1,...,O_q\}$ that augments a larger sample space $\Omega=\Omega_1\times\Omega_2$. What kind of inferences can we draw from the knowledge of outcome $O$? If I know the conditional probability $P(O|D)$ what can do to inference $P(D|O)$?
+
+Intuitively, there are four categories of probabilities here:
+\begin{itemize}
+	\item $P(D)$: probability of getting disease.
+	\item $P(O)$: probability of yielding some symptoms (outcomes).
+	\item $P(D|O)$: probability of getting disease conditioned on having some symptoms.
+	\item $P(O|D)$: probability of having some symptoms conditioned on getting a disease.
+\end{itemize}
+The four categories are connected together with the following Bayes rule:
+$$P(D = d|O = o) = \frac{P(O=o|D=d)}{\sum_{d\in D}P(D=d)P(O=o|D=d)}$$
+The important philosophy here is that, in real life, we won't have all the four categories of probability in hand. That is, we have to draw inference on the probability we care from the probability we known. For example, a doctor want to know the probability of a patient getting disease $d$ conditioned on he has symptom $o$. If the doctor knows the probability of getting a disease ($P(D)$), and the probability of a outcome to happen conditioned on having disease or not ($P(O|D)$). Then, by applying Bayes rule, he can calculate the conditioned probability $P(D|O)$, which is what he concerns.
+
+Here I a little abuse the notation of $D$, actually, the event in $D$ must be a {\bf partition}. For example $D=\{\mbox{disease},\mbox{no disease}\}$.
+
+Now, we formally state the Bayes rule as follow:
+\begin{theorem}[Bayes rule]
+	Let $A_1,...,A_n$ be a partition over $\mathcal{A}$ and $B\in\mathcal{A}$, then
+	$$P(A_i|B) = \frac{P(B|A_i)}{\sum_j P(A_j)P(B|A_j)}$$
+\end{theorem}
+
+\begin{intuition}[Bayes rule]
+	Bayes rule help us update the probability over a {\bf partition} on event space. It utilize what we have:
+	\begin{itemize}
+		\item The probability of population on the partition.
+		\item The conditioned probability of the observed event conditioned on each event in the partition. 
+	\end{itemize}
+	Then calculate the conditioned probability we want to inference: The probability of each event in the partition to happen conditioned on an observation.
+\end{intuition}
+
+
 \end{document}
 
 
