@@ -33,7 +33,7 @@ Today we're going to talk about method of counting to be able to study probabili
   There are two kinds of interpretation of probability measure. 
 \begin{enumerate}
 \item[1]
-  The first kind of view is based on the "frequency of occurrence". They do random experiments many times to study  how many times event which is interested in would take place. Then, they assign the limit ratio  as the probability of certain events. The intuition of this interpretation is that we believe the underlying parameter is invariant so after many repeated experiment the random effect can be cancelled out and the real instinct reveal. 
+  The first kind of view is based on the "frequency of occurrence". They do random experiments many times to study  how many times event which is interested in would take place. Then, they assign the limit ratio  as the probability of certain events. The intuition of this interpretation is that we believe the underlying parameter is invariant so after many repeated experiment the random effect can be cancelled out and the real instinct reveals. 
 \item[2]
   The second kind of view is just based on the "subjective belief of interpreter" in the chance of an event occurring.  We can just give probability under our faith before any experiment has been done and then do experiment to study whether our prior assumption fit the data or not and then modify it. This procedure can be done by Bayes' theorem. 
 \end{enumerate}
@@ -89,11 +89,46 @@ So the conditional probability is actually the study of how sub-sample space $\O
 \end{example}
 \begin{intuition}[Conditional Probability]
 Generally speaking, $P(B)>0$ cannot always be satisfied since we may be interested in continuous data such as heights and weights. We face division by zero when study problem like given father is 1.75 tall what is the probability the son is 1.80 tall. We have $P(\text{father is 1.75})=0$ and above definition does not work any more. A natural way to save it is to think of B as a small neighbourhood $(B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2})$ so we have $$P(A|B)=\frac{\lim_{\bigtriangleup\rightarrow 0} P(A\cap (B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2}) )/\bigtriangleup}{\lim_{\bigtriangleup\rightarrow 0}P(B-\frac{\bigtriangleup}{2},B+\frac{\bigtriangleup}{2})/\bigtriangleup}$$  
-Noting that both the numerator and denominator are of change rate form so $P(A|B)$ can be think of as the intensity of the ratio of change rate.\\
-In the previous test-disease example, we can not do medical behavior  relying on uncertified test for moral issue. We may only do the reverse direction test. Do the test to patients who have the disease and what is the test result respond to it. So we have only $P(T_+|D_+)$ and also the prevalence of the disease $P(D_+)$. How can we know  $P(D_+|T_+)$? This is where we need the Bayes' theorem.  
+Noting that both the numerator and denominator are of change rate form so $P(A|B)$ can be thought of as the intensity of the ratio of change rate.\\
+In the previous test-disease example, we can not do medical behavior  relying on uncertified test for moral issue. We may only do the reverse direction test. Do the test to patients who have the disease and what is the test result respond to it. So we have only $P(T_+|D_+)$ and also the prevalence rate of the disease $P(D_+)$. How can we know  $P(D_+|T_+)$? This is where we need the Bayes' theorem.  
 \end{intuition}
-
-
+\begin{example}[Casella 1.3.4]
+Three prisoners A,B and C are on death row. The governor decides to pardon one of the three prisoners randomly. He informs the warden of his choice but ask warden to keep it secret. A tries to get the warden to tell him who had been pardoned. The warden refuses so A asks another way. A asks which of B and C will be executed. And the following table is warden's possible react.  
+\end{example} 
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+Pardoned & Warden tells & Probability \\ \hline
+A        & B dies       & r           \\
+         & C dies       & 1-r         \\\hline
+B        & C dies       & 1           \\\hline
+C        & B dies       & 1          
+\end{tabular}
+\end{table}
+The warden tells A that B would be executed, does it reveal any message to A?
+\begin{solve}
+Let W denote the event that warden says B will die then A can update his probability given W.
+\begin{align*}
+P(\text{A pardoned }|W)&=\frac{P(A\cap W)}{P(W)}\\
+&=\frac{P(\text{A pardoned B dies})}{P(\text{A pardoned B dies})+P(\text{C pardoned B dies})+P(\text{B pardoned B dies})}\\
+&=\frac{\frac{1}{3}\cdot r}{\frac{1}{3}\cdot r+\frac{1}{3}+0}=\frac{r}{r+1}
+\end{align*}
+The answer would rely on warden's behavioral pattern.
+\begin{table}[h]
+\centering
+\begin{tabular}{l|ll}
+\hline
+                & $P(A|W)$      & Message   \\ \hline
+$r=1$           & $\frac{1}{2}$ & good news \\ 
+$r=\frac{1}{2}$ & $\frac{1}{3}$ & no news   \\ 
+$r=0$           & $0$           & bad news  \\ 
+\end{tabular}
+\end{table}
+\begin{intuition}[Three Prisoners]
+When r tends to 1, the probability A would be pardoned reaches $\frac{1}{2}$. This is because when A had been pardoned, the warden would always say B and event W becomes a more good predictor of A pandered and vice versa. When $r=\frac{1}{2}$, the warden has the same chance to tell B or C dies when A had been pardoned so W can not be used to trace back A pardoned. Sometimes people may think $P(A|W)=\frac{1}{2}$ because one of A and C would be saved. But it is $P(A|B^C)$ actually. \\
+Consider $P(C|W)$ it is actually $1-P(A|W)$. So when $r=\frac{1}{2}$, $P(C|W)=\frac{2}{3}$. Though warden reveals no message to A but it is actually a good news for C. It is like the situation we switch door in the Monty Hall problem. Conditional probability can be really tricky.
+\end{intuition}
+\end{solve}
 \section{Bayes Rule}
 Imagine a situation that there are two sample spaces $\Omega_1 = \{D_1,...,D_p\},\Omega_2 = \{O_1,...,O_q\}$ that augments a larger sample space $\Omega=\Omega_1\times\Omega_2$. What kind of inferences can we draw from the knowledge of outcome $O$? If I know the conditional probability $P(O|D)$ what can do to inference $P(D|O)$?
 

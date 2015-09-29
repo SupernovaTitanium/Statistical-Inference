@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  27 SEP 2015 00:25
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  29 SEP 2015 22:48
 entering extended mode
 **macros.tex
 (macros.tex
@@ -17,7 +17,9 @@ l.1 \usepackage{
 between \documentclass and \begin{document}.
 
 \c@theorem=\count80
-\c@apdxlemma=\count81
+\c@remk=\count81
+\c@exmp=\count82
+\c@apdxlemma=\count83
 )
 ! Emergency stop.
 <*> macros.tex
@@ -26,10 +28,10 @@ between \documentclass and \begin{document}.
 
  
 Here is how much of TeX's memory you used:
- 95 strings out of 428755
- 745 string characters out of 3164220
+ 103 strings out of 428755
+ 796 string characters out of 3164220
  52045 words of memory out of 3000000
- 3525 multiletter control sequences out of 15000+200000
+ 3533 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
  9i,0n,13p,151b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
