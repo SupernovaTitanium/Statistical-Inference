@@ -3,6 +3,7 @@
 \usepackage{amsfonts, fullpage, rotating, amssymb}
 \usepackage{color,amsmath}
 \usepackage{IEEEtrantools}
+\usepackage{multirow}
 \input{macros}
 \pagestyle{plain}
 \newcommand{\scribe}{Wei-Chang Lee, Chi-Ning Chou}
@@ -129,7 +130,10 @@ When r tends to 1, the probability A would be pardoned reaches $\frac{1}{2}$. Th
 Consider $P(C|W)$ it is actually $1-P(A|W)$. So when $r=\frac{1}{2}$, $P(C|W)=\frac{2}{3}$. Though warden reveals no message to A but it is actually a good news for C. It is like the situation we switch door in the Monty Hall problem. Conditional probability can be really tricky.
 \end{intuition}
 \end{solve}
+
+
 \section{Bayes Rule}
+\subsection{Bayes rule}
 Imagine a situation that there are two sample spaces $\Omega_1 = \{D_1,...,D_p\},\Omega_2 = \{O_1,...,O_q\}$ that augments a larger sample space $\Omega=\Omega_1\times\Omega_2$. What kind of inferences can we draw from the knowledge of outcome $O$? If I know the conditional probability $P(O|D)$ what can do to inference $P(D|O)$?
 
 Intuitively, there are four categories of probabilities here:
@@ -160,6 +164,92 @@ Now, we formally state the Bayes rule as follow:
 	Then calculate the conditioned probability we want to inference: The probability of each event in the partition to happen conditioned on an observation.
 \end{intuition}
 
+\subsection{Relative risk and Odd ratio}
+Both relative risk and odd ratio are important statistical concept in epidemiology/experimental study. In this context, we care the following scenario: There's a disease and a treatment, we want to know how well the treatment is but in the meantime hoping the treatment has less side-effect. We can summarize the above scenario in Table~\ref{table:epidemiology}. Here, $D$ refers to the event that the patient has the disease and $E$ is the event that the patient is under treatment (or formally, being exposed to the treatment). In the context of experimental study, see Table~\ref{table:experimentalstudy}, $E$ can be regarded as the experimental group and $E^C$ can be seen as the control group. Here $D$ and $D^C$ can be simply considered as the presence and absence of an event.
+
+\begin{table}[h]	
+	
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\begin{tabular}{|l|l|c|c|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{Risk}} & \multicolumn{2}{c|}{Treatment}                                    \\ \cline{3-4} 
+			\multicolumn{2}{|c|}{}                      & \multicolumn{1}{l|}{Exposed} & \multicolumn{1}{l|}{Not exposed} \\ \hline
+			\multirow{2}{*}{Disease}      & Diseased     & $P(D|E)$                      & $P(D|E^C)$                        \\ \cline{2-4} 
+			& Healthy      & $P(D^C|E)$                    & $P(D^C|E^C)$                      \\ \hline
+		\end{tabular}
+		\caption{Epodemiology scenario.}
+		\label{table:epidemiology}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\begin{tabular}{|l|l|c|c|}
+			\hline
+			\multicolumn{2}{|c|}{\multirow{2}{*}{Risk}} & \multicolumn{2}{c|}{Experiment}                                    \\ \cline{3-4} 
+			\multicolumn{2}{|c|}{}                      & \multicolumn{1}{l|}{Experiment} & \multicolumn{1}{l|}{Control} \\ \hline
+			\multirow{2}{*}{Outcome}      & Presence     & $P(D|E)$                      & $P(D|E^C)$                        \\ \cline{2-4} 
+			& Absence      & $P(D^C|E)$                    & $P(D^C|E^C)$                      \\ \hline
+		\end{tabular}
+		\caption{Experimental study.}
+		\label{table:experimentalstudy}
+	\end{minipage}
+\end{table}
+
+
+With this scenario, we an immediately some intuitive term to help us making inference. The first one is {\bf relative risk (RR)}. Relative risk is the probability ratio of an event to happen under certain exposure or not. In this context, it's simply $\frac{P(D|E)}{P(D|E^C)}$. 
+\begin{definition}[relative risk]
+	Relative risk (RR) is the probability ratio of an event to happen under an exposure or not. That is
+	$$\mbox{RR}:=\frac{P_{event\ when\ exposed}}{P_{event\ when\ not\ exposed}}$$
+\end{definition}
+Note that RR can help us inference on the effectiveness of the treatment on the disease. See Table~\ref{table:relativerisk} for more details on RR.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		& \multicolumn{1}{c|}{Epidemiology}               & \multicolumn{1}{c|}{Experimental study}                                                     \\ \hline
+		RR$>$1 & \parbox{6.5cm}{Thetreatment is worse than having no treatment.} & \parbox{6.5cm}{The event is more likely to happen in the {\bf experimental} group.} \\ \hline
+		RR$<$1 & The treatment is effective.                     & \parbox{6cm}{The event is more likely to happen in the {\bf control} group}       \\ \hline
+	\end{tabular}
+	\caption{Relative risk.}
+	\label{table:relativerisk}
+\end{table}
+
+Now, we can use relative risk to describe the effectiveness of a treatment/experiment on a certain disease/event, we might wander: how about the relation between two diseases/events under the same treatment/experiment? And this is actually the definition of odd ratio.
+\begin{definition}[odd ratio]
+	The odd ratio (OD) is the ratio of the relative risk of two events. That is, the odd ratio of event $A$ and $B$ w.r.t a treatment $E$ is
+	\begin{align*}
+	OD:&=\frac{RR_A}{RR_B}\\
+	&=\frac{P(A|E)/P(A|E^C)}{P(B|E)/P(B|E^C)}
+	\end{align*}
+\end{definition}
+The simplest odd ratio is to consider a event and its complement, say $D$ and $D^C$, then the odd ratio will become 
+\begin{align*}
+\frac{P(D|E)/P(D|E^C)}{P(D^C|E)/P(D^C|E^C)} &= \frac{P(D\cap E)/P(D\cap E^C)}{P(D^C\cap E)/P(D^C\cap E^C)}\\
+&=\frac{P(D\cap E)/P(D^C\cap E^C)}{P(D^C\cap E)/P(D\cap E^C)}
+\end{align*}
+
+With this transformation, we can use the four intersection probability to calculate the odd ratio instead of the four conditional probability. In some circumstances, this will be more convenient and intuitive.
+
+\section{Independence}
+The initial idea (and the most intuitive concept) of independence is that two event $A$ and $B$ is said to be independent if the probability of $A$ to happen will not change after we have the knowledge of $B$, and vice versa. Thus, formally we can write
+$$P(A) = P(A|B) = \frac{P(A\cap B)}{P(B)}$$
+$$P(B) = P(B|A) = \frac{P(A\cap B)}{P(A)}$$
+And we can see that actually as $A$ and $B$ are independent, $P(A\cap B) = P(A)P(B)$, while the converse is also correct. As a result, this has become the definition of independence.
+\begin{definition}[independence]
+	We say two event $A$ and $B$ are independent if $P(A\cap B) = P(A)P(B)$.
+\end{definition}
+
+However, note that there are more than one concept about independence in mathematics. For instance, in linear algebra, there's so called linear independence. And even in probability theory, as we consider more than one event, say a group of events, the idea of independence varies. Actually, there are two kinds of independence for more than two events: {\bf pairwise independence} and {\bf mutually independence}.
+
+\begin{definition}[pairwise independence]
+	We say a finite set of events $\{A_i\}$ is pairwise independent if $\forall A_i\neq A_j$, $P(A_i\cap A_j) = P(A_i)P(A_j)$.
+\end{definition}
+\begin{definition}[mutually independence]
+	We say a finite set of events $\{A_i\}$ is mutually independent if for any subset of $\{A_i\}$, say $\{A_j'\}$, $P(\bigcap_{j}A_j')=\prod_{j}P(A_j')$.
+\end{definition}
+
+Note that mutually independence is {\bf strictly stronger} than pairwise independence. That is, the former implies the latter while the converse is not necessarily true.
 
 \end{document}
 
