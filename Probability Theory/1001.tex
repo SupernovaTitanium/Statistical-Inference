@@ -1,34 +1,29 @@
-\def\draft{0}
-\documentclass[11pt]{article}
-\usepackage{amsfonts, fullpage, rotating, amssymb}
-\usepackage{color,amsmath}
-\usepackage{IEEEtrantools}
-\input{macros}
-\pagestyle{plain}
-
-\newcommand{\scribe}{Chi-Ning Chou}
-\newcommand{\lecnum}{6}
-\newcommand{\lecdate}{October 1, 2015}
-
-%\parskip=1.5mm
-%\parindent=0mm
-
+\documentclass[Probability_Theory.tex]{subfiles}
 \begin{document}
-	
 	\begin{center}
 		\renewcommand{\arraystretch}{2}
 		\begin{bfseries}
 			\begin{tabular}{|c|}
 				\hline
 				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
-				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\hspace{15em} {\large Lecture Notes 5} \hspace{15em}\ \\
 				\lecdate \hfill Scribe: \scribe\\
 				\hline
 			\end{tabular}
 			\renewcommand{\arraystretch}{1}
 		\end{bfseries}
 	\end{center}
-	
+
+After explaining the concept of independence, today we can finally introduce the Second Borel-Cantelli Lemma. A lemma that can lately be used to prove one of the most important result in probability theory, the strong law of large numbers. Also, we talk about another fundamental concept in probability, random variable, which let us change our views from set to the real field.   
+
+\section{The Second Borel-Cantelli Lemma}
+Also called the reverse Borel-Cantelli Lemma.
+\begin{theorem}
+Let $A_1,A_2,A_3...A_n...\in \mathcal{A}$ be mutually independent. If $\sum_{i=1}^{\infty}P(A_i)=\infty$, then	$$P(A_{n.i.o}) = 1$$
+	, where $A_{n.i.o} = \limsup_{n\rightarrow\infty}A_n.$
+\end{theorem}
+\begin{proof}
+\end{proof}
 \section{Random Variables}
 \begin{definition}[image of set function]
 	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function. Then the preimage of $S\subset\R$ over $X$ is
@@ -118,3 +113,7 @@ With these two results, we can see that the image of $X$ contains $\mathcal{B}$.
 \section{Proof of the necessary and sufficient condition of cumulative function}\label{sec:proofcfnscondition}
 
 \end{document}
+
+
+
+
