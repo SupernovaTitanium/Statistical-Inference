@@ -1,0 +1,120 @@
+\def\draft{0}
+\documentclass[11pt]{article}
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color,amsmath}
+\usepackage{IEEEtrantools}
+\input{macros}
+\pagestyle{plain}
+
+\newcommand{\scribe}{Chi-Ning Chou}
+\newcommand{\lecnum}{6}
+\newcommand{\lecdate}{October 1, 2015}
+
+%\parskip=1.5mm
+%\parindent=0mm
+
+\begin{document}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+\section{Random Variables}
+\begin{definition}[image of set function]
+	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function. Then the preimage of $S\subset\R$ over $X$ is
+	$$X^{-1}:=\{w\in\Omega:X(w)\in S \}$$
+\end{definition}
+
+\begin{property}[Properties of set function]\label{propertyofsetfuncs}
+	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function, then the following properties hold. (Note that here $X$ is not necessary a random variable)
+	\begin{enumerate}
+		\item (Close under complementation): $X^{-1}(S^C) = (X^{-1}(S))^C$
+		\item (Close under union): $X^{-1}(\bigcup_{\alpha\in\Gamma}S_{\alpha}) = \bigcup_{\alpha\in\Gamma}X^{-1}(S_i)$, where $\{S_{\alpha}\}_{\alpha\in\Gamma}$
+		\item (Close under intersection): $X^{-1}(\bigcap_{\alpha\in\Gamma}S_{\alpha}) = \bigcap_{\alpha\in\Gamma}X^{-1}(S_i)$, where $\{S_{\alpha}\}_{\alpha\in\Gamma}$
+	\end{enumerate}
+\end{property}
+
+By definition, a random variable should satisfy the condition that the preimage of every Borel set should in the event space $\mathcal{A}$. However, it's difficult to check since it's hard to enumerate all Borel set and claim the results. Thus, we would like to find a relaxed but necessary condition for a set function to be a random variable. And the following theorem does so.
+
+\begin{theorem}[necessary and sufficient condition for random variable]\label{rvnscondition}
+	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function, then
+	$$X\mbox{ is a random variable}\Leftrightarrow \forall x\in\R,\ \{w:X(w)\leq x\}\in\mathcal{A}$$
+\end{theorem}
+The proof is left in Appendix~\ref{sec:proofrvnscondition}
+
+\section{From Set Function to Value Function}
+Note that random variable is a function that helps us map the event set $\mathcal{A}$ onto the Borel set. The importance here is that know we can do the equivalent operation on {\bf real number} instead of arbitrary $\sigma$-algebra. This not only provides us a general and uniform way to play but also gives us the opportunity to operate on an {\bf ordered} set.
+
+Soon, we might wonder can we play with an even more general function: value function instead of just a set function onto real number? And by the construction of random variable, there are two direct value functions that play an important role in probability theory.
+\begin{theorem}[value functions]
+	Let $X$ be a random variable w.r.t. $(\Omega,\mathcal{A},P)$, then we can define
+	\begin{itemize}
+		\item The measure function of $X$ is $\mu_X:\mathcal{B}\rightarrow\mathbf{R}^+$ such that $$\forall B\in\mathcal{B},\ \mu_X(B):=P\{w:X(w)\in B\}$$
+		\item The cumulative distribution of $X$ is $F_X:\mathbf{R}\rightarrow\mathbf{R}^+$ such that $$\forall x\in\mathbf{R},\ F_X(x):=P\{w:X(w)\leq x \}$$
+	\end{itemize}
+\end{theorem}
+
+Here, we also have a necessary and sufficient condition for cumulative function. Intuitively, when a function $F$ satisfies the following conditions, then there's a random variable with its unique cumulative distribution being $F$.
+
+\begin{theorem}[necessary and sufficient condition of cumulative distribution]
+	$F$ is a cumulative distribution iff
+	\begin{itemize}
+		\item (upper and lower bound) $\lim_{x\rightarrow\infty}F(x)=0,\ \lim_{x\rightarrow\infty}F(x) = 1$
+		\item (non-decreasing) $\forall x\leq y$, $F(x)\leq F(y)$
+		\item (right continuous) $\lim_{x\rightarrow x_0^+} = F(x_0)$
+	\end{itemize}
+\end{theorem}
+The proof is left in Appendix~\ref{sec:proofcfnscondition}.
+
+
+\begin{intuition}[set function and value function]
+	Careful with the difference of 
+	\begin{itemize}
+		\item ({\bf random variable}): $X:\Omega\rightarrow S\subset\R$
+		\item ({\bf measure function}): $\mu_X:\mathcal{B}\rightarrow\R^+$
+		\item ({\bf cumulative distribution}): $F_X:\R\rightarrow\R^+$
+	\end{itemize}
+\end{intuition}
+
+
+\appendix
+\section{Proof of the necessary and sufficient condition of random variable}\label{sec:proofrvnscondition}
+Recall that Theorem~\ref{rvnscondition} provides a necessary and sufficient condition for a set function to be a random variable. Here, we prove the correctness of the theorem.
+
+($\Rightarrow$) First, we can see that $\{w:X(w)\leq x\} = X^{-1}[(-\infty,x)]$. Thus, it's sufficient to show that $(-\infty,x)$ is in Borel set $\forall x$. And this is simple since $(-\infty,x) = \bigcup_{n\in\mathbb{N}}[-n,x]\in\mathcal{B}$.
+
+($\Leftarrow$) This direction can be proved in two steps:
+\begin{enumerate}
+	\item Show that $\forall a<b,\ X^{-1}([a,b])\in\mathcal{A}$.
+	\item Show that $\xi = \{S:\exists w\in\Omega,\ X(w)=S \}$ is a $\sigma$-algebra.
+\end{enumerate}
+With these two results, we can see that the image of $X$ contains $\mathcal{B}$. Thus, $X$ is a random variable. The following show the correctness of these two:
+\begin{enumerate}
+	\item $\forall a<b$, consider
+	\begin{align*}
+	X^{-1}([a,b]) &= X^{-1}((-\infty,b]\backslash(-\infty,a]) = X^{-1}((-\infty,b]\cap(-\infty,a])^C)\\
+	&= X^{-1}((-\infty,b]) \cap X^{-1}((-\infty,a])^C)\\
+	&=  X^{-1}((-\infty,b]) \cap X^{-1}((-\infty,a]))^C\in\mathcal{A}
+	\end{align*}
+	\item Check the three axioms of $\sigma$-algebra:
+	\begin{enumerate}
+		\item Clearly, $\emptyset\in\xi$.
+		\item $\forall S\in\xi$, $X^{-1}(X^C) = X^{-1}(S)^C\in\mathcal{A}$ by Property~\ref{propertyofsetfuncs}. Thus $S^C\in\xi$.
+		\item $\forall \{S_{\alpha}\}_{\alpha\in\Gamma}\in\xi$, $X^{-1}(\bigcup_{\alpha\in\Gamma}S_{\alpha}) = \bigcup_{\alpha\in\Gamma}X^{-1}(S_{\alpha})\in\mathcal{A}$. Thus $\bigcup_{\alpha\in\Gamma}S_{\alpha}\in\xi$.
+	\end{enumerate}
+\end{enumerate}
+
+
+\section{Proof of the necessary and sufficient condition of cumulative function}\label{sec:proofcfnscondition}
+
+\end{document}
