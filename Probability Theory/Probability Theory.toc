@@ -31,7 +31,7 @@
 \contentsline {section}{\numberline {3.3}Intuitions About Counting Theory}{13}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Sampling}{13}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Bootstrap}{13}{subsection.3.3.2}
-\contentsline {chapter}{\numberline {4}0924}{14}{chapter.4}
+\contentsline {chapter}{\numberline {4}0927}{14}{chapter.4}
 \contentsline {section}{\numberline {4.1}Counting Methods}{14}{section.4.1}
 \contentsline {paragraph}{}{14}{section*.11}
 \contentsline {paragraph}{}{15}{section*.12}
