@@ -89,7 +89,6 @@ Now how can we verify any real-valued function X on $\Omega$ is indeed a random 
 	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function. Then the preimage of $S\subset\R$ over $X$ is
 	$$X^{-1}:=\{w\in\Omega:X(w)\in S \}$$
 \end{definition}
-
 \begin{property}[Properties of set function]\label{propertyofsetfuncs}
 	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function, then the following properties hold. (Note that here $X$ is not necessary a random variable)
 	\begin{enumerate}
@@ -172,6 +171,31 @@ With these two results, we can see that the image of $X$ contains $\mathcal{B}$.
 
 \section{Proof of the necessary and sufficient condition of cumulative function}\label{sec:proofcfnscondition}
 
+Take $\Omega=(0,1)$, $\mathcal{A}=\mathcal{B}(0,1)$ and P be Lebesgue measure.
+\begin{remark}
+If $B=(a,b)\text{ or }[a,b] \text{ then } Leb(B)=b-a$, i.e. the measure of an interval is its length.
+\end{remark}
+For $w\in(0,1)$ define $$X(w)=sup\{y:F(y)<w\}$$
+We need to show that X is a random variable and the distribution function $F_x=F$.
+We must first verify X(w) is well-defined:
+\begin{enumerate}
+\item since $w>0$ and $\lim_{x\rightarrow -\infty}F(x)=0$, so $\{y:F(y)<w\}\neq\phi$.
+\item since $w<1$ and $\lim_{x\rightarrow \infty}F(x)=1$, so $\{y:F(y)<w\}$ bounded above.
+\end{enumerate}
+So $X(w)=sup\{y:F(y)<w\}$ exists in $\mathcal{R} \ \forall w\in(0,1)$, X(w) is well defined.We further claim that:
+$$\{w:X(w)\leq c\}=\{w:w\leq F(c)\}=(0,F(c)]$$ 
+Then X is a random variable since $$\{w:X(w)\leq c\}=(0,F(c)]\in \mathcal{B}(0,1) \text{\textcolor{red}{? need to be verified not almost certain}} $$
+And $$F_x(c)=P(X^{-1}(\infty,c))=Leb(\{w:X(w)\leq c\})=Leb((0,F(c)])=F(c)$$
+So we can define a random variable X on $(\Omega,\mathcal{B}(0,1),Leb)$ which its distribution function is just given cumulative function. We complete the proof by showing:
+$$\{w:X(w)\leq c\}\subset\{w:w\leq F(c)\},\{w:X(w)\leq c\}\supset\{w:w\leq F(c)\}$$
+First observe that $$F(X(w)+\delta)\geq w,\ \forall \delta>0$$ Since if $F(X(w)+\delta)<w$ it implies a contradiction: $$X(w)+\delta\in\{y:F(y)<w\}\leq X(w)$$ And $$\lim_{\delta\rightarrow 0}F(X(w)+\delta)\xlongequal{\text{right-continuous}}F(X(w))\geq w$$  
+\begin{enumerate}
+\item $\subset$ case: $X(w)\leq c\implies F(c)\geq F(X(w))\geq w $ (non-decreasing) so, 
+ $$\{w:X(w)\leq c\}\subset\{w:w\leq F(c)\}$$
+\item $\supset$ case: $F(a)\geq w\implies$c is an upper bound of $\{y:F(y)<w\}, c\geq\sup\{y:F(y)<w\}=X(w)$
+ $$\{w:X(w)\leq c\}\supset\{w:w\leq F(c)\}$$
+
+\end{enumerate}
 \end{document}
 
 
