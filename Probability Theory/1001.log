@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  2 OCT 2015 23:20
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  3 OCT 2015 17:25
 entering extended mode
 **1001.tex
 (1001.tex
@@ -663,38 +663,39 @@ Requested font "cmti10" at 10.95pt
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+Requested font "cmss10" at 10.95pt
+Requested font "cmss12" at 12.0pt
+Requested font "cmssbx10" at 12.0pt
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 94.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
-
-Overfull \hbox (1.46455pt too wide) in paragraph at lines 65--66
+ [3]
+Overfull \hbox (1.46455pt too wide) in paragraph at lines 102--103
 []$\OML/cmm/m/it/10.95 F$ \OT1/cmr/m/it/10.95 is a cu-mu-
  []
 
-Requested font "cmss10" at 10.95pt
-Requested font "cmss12" at 12.0pt
-Requested font "cmssbx10" at 12.0pt
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
-[2] [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+[4] [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (1001.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 152.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 152.
  ) 
 Here is how much of TeX's memory you used:
- 18901 strings out of 428755
- 324910 string characters out of 3164220
- 389104 words of memory out of 3000000
- 21989 multiletter control sequences out of 15000+200000
+ 18902 strings out of 428755
+ 324923 string characters out of 3164220
+ 390104 words of memory out of 3000000
+ 21990 multiletter control sequences out of 15000+200000
  11741 words of font info for 43 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 65i,8n,75p,483b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,8n,75p,531b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 1001.pdf (3 pages).
+Output written on 1001.pdf (5 pages).

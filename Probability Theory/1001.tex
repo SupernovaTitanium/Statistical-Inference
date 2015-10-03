@@ -20,10 +20,47 @@ After explaining the concept of independence, today we can finally introduce the
 Also called the reverse Borel-Cantelli Lemma.
 \begin{theorem}
 Let $A_1,A_2,A_3...A_n...\in \mathcal{A}$ be mutually independent. If $\sum_{i=1}^{\infty}P(A_i)=\infty$, then	$$P(A_{n.i.o}) = 1$$
-	, where $A_{n.i.o} = \limsup_{n\rightarrow\infty}A_n.$
+	, where $A_{n.i.o.} = \limsup_{n\rightarrow\infty}A_n.$
 \end{theorem}
 \begin{proof}
+First Notice that since $\{A_n\}$ are independent, so $P(\bigcap_{k=n}^{n+j}A_k^c)=\prod_{k=n}^{n+j}(1-P(A_k))$ and $1-x\leq e^{-x}$ $\forall x\geq 0$ then $$P(\bigcap_{k=n}^{n+j}A_k^c)\leq e^{-\sum_{k=n}^{n+j}P(A_k)} \ \forall n$$
+And $\sum_{i=1}^{\infty}P(A_i)=\infty$, one has 
+$$\lim_{j\rightarrow\infty}P(\bigcap_{k=n}^{n+j}A_k^c)\leq \lim_{j\rightarrow\infty}e^{-\sum_{k=n}^{n+j}P(A_k)}=0$$ From Boole's inequality, it follows that $$P(\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k^c)\leq \sum_{n=1}^\infty P(\bigcap_{k=n}^\infty A_k^c)=0$$Then by De Morgan's rule we have,
+$$P(\limsup_{n\rightarrow\infty}A_n)=P(\bigcap_{n=1}^\infty\bigcup_{k=n}^\infty A_k)=1-P(\bigcup_{n=1}^\infty\bigcap_{k=n}^\infty A_k^c)=1$$
 \end{proof}
+So when $\{A_n\}$ are mutually independent, combining both Borel-Cantelli lemma, we have a zero-one law: Borel's zero-one law
+$$P(A_{n.i.o.})\text{ is either 0 or 1 with respect to} \sum_{i=1}^{\infty}P(A_i) \text{ converged or not}. 
+$$
+This give us a peek of Kolmogorov's zero-one law.
+\begin{theorem}
+Suppose a probability space $(\Omega,\mathcal{A},P)$and $A_n$ be a sequence of mutually independent $\sigma$-algebras contained in $\mathcal{A}$  then the tail events $F\in \bigcap_{n=1}^{\infty}G_n$ where $G_n=\sigma(\bigcup_{k=n}^\infty A_k)$ is either zero or one i.e. $P(F)=1$ or $P(F)=0$.
+\end{theorem}
+\begin{remark}
+A naive way to understand the theorem is to consider if you have a sequence of independent random variables and an event that is invariant if you ignore finitely many of the variables, then the probability of that event is either 0 or 1 .
+\end{remark}
+\begin{remark}
+Independent assumption is really important in the Borel's zero one law. If a event E with $0<P(E)<1$ and let a sequence of events $\{A_n\}$ where each $A_i=E$ then it is clear  $\{A_n\}$ are not independent at all and $P(A_{n.i.o.})=P(E)$ which violates the zero one law.
+\end{remark}
+\begin{intuition}[Borel Cantelli Lemma]
+The Borel Cantelli Lemma enable us to construct probability in infinite many time/games from probability in sequence of events. If we toss a coin or play a independent game infinite many times, and let $A_n$ be events in $n$th toss/round. We can first study a pattern of coin or strategy in games has how much chance to win in one toss/round then use Borel Cantelli Lemma to extend it to infinite case that certain patterns will definitely happen or our strategy can finally win. An intersting example is given as below.
+\end{intuition}
+\begin{example}[Infinite Monkey Theorem]
+Suppose a monkey has a typewriter, he types any alphabet at random. If he never stops typing, then he can almost surely type any Shakespeare's sonnet.
+\end{example}
+\begin{solve}
+Consider the alphabets sequence the monkey types, we can divide this infinitely long string to infinitely many chunks, each chunk has length k where k equals to the number of alphabets in given Shakespeare's sonnet. Let $\{E_n\}$ denotes the monkey successfully types the sonnet in the $n$th chunk, then we have 
+$$P(E_n)=\frac{1}{26^k}>0 \text{ so }\sum_{n=1}^\infty P(E_n)=\infty$$
+And chunks are independent from one another. Using the Second Borel Cantelli Lemma, we get
+$$P(E_{n.i.o.})=1$$ 
+There are infinite many chunks, the monkey almost surely types Shakespeare's sonnet.
+\end{solve}
+\begin{remark}
+In reality, the monkey can not fulfil this since not only did he has certain behavior pattern but also reality is a very big finite number. If the universe is filled with monkeys and they keep typing, the chance to type Hamlet is less than $\frac{1}{10^{183800}}$. The gap between infinite and finite is bigger than every big finite number we can guess.  
+\end{remark}
+\begin{example}[Strong Law of large number]We neglect the proof but argue how it can be used in proving it.We want to show that $$P(\lim_{n\rightarrow\infty}\frac{S_n}{n}=\mu)=P(\Omega_0)=1$$ 
+Where $S_n=X_1+X_2...+X_n$ and $E(X_i)=\mu$ then it is equivalent to there exist $\Omega_0\in \mathcal{A}$ for every $w\in \Omega_0$ it holds that $$\lim_{n\rightarrow\infty}|\frac{S_n}{n}-\mu|=0$$ 
+It suffices to show for any $\epsilon>0$, $|\frac{S_n}{n}-\mu|>\epsilon$ can occur only a finite number of times. And it can be down by Borel-Cantelli Lemma.
+\end{example}
 \section{Random Variables}
 \begin{definition}[image of set function]
 	Let $X:\Omega\rightarrow\mathcal{X}\subset\R$ be a set function. Then the preimage of $S\subset\R$ over $X$ is
