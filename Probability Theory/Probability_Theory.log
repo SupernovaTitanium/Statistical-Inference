@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  2 OCT 2015 23:20
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  3 OCT 2015 17:27
 entering extended mode
 **Probability_Theory.tex
 (Probability_Theory.tex
@@ -795,17 +795,21 @@ Overfull \hbox (22.89732pt too wide) in paragraph at lines 6--15
 
 [24
 
-]
+] [25] [26]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
- [25]) [26]
+ [27]) [28]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
  (Probability_Theory.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 33.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 33.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 33.
  ) 
 Here is how much of TeX's memory you used:
@@ -817,4 +821,4 @@ Here is how much of TeX's memory you used:
  1096 hyphenation exceptions out of 8191
  56i,13n,73p,1012b,560s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Probability_Theory.pdf (27 pages).
+Output written on Probability_Theory.pdf (29 pages).
