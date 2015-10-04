@@ -43,6 +43,7 @@
 \contentsline {chapter}{\numberline {5}}{24}{chapter.5}
 \contentsline {section}{\numberline {5.1}The Second Borel-Cantelli Lemma}{24}{section.5.1}
 \contentsline {section}{\numberline {5.2}Random Variables}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}From Set Function to Value Function}{27}{section.5.3}
-\contentsline {section}{\numberline {.1}Proof of the necessary and sufficient condition of random variable}{28}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}Proof of the necessary and sufficient condition of cumulative function}{28}{section.Alph0.2}
+\contentsline {section}{\numberline {5.3}From Set Function to Value Function}{28}{section.5.3}
+\contentsline {section}{\numberline {.1}Proof of the necessary and sufficient condition of random variable}{29}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Proof of the necessary and sufficient condition of cumulative function}{29}{section.Alph0.2}
+\contentsline {paragraph}{\color {red} Chi-Ning's version}{30}{section*.13}

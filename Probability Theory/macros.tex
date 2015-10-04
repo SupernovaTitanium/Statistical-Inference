@@ -1,5 +1,6 @@
 \usepackage{tcolorbox}
 \usepackage{extarrows}
+\usepackage{mathtools}
 \newtheorem{theorem}{Theorem}
 \newtheorem{conjecture}{Conjecture}
 \newtheorem{definition}{Definition}
@@ -23,6 +24,9 @@
 \newtheorem{sublemma}[theorem]{Sublemma}
 
 \newenvironment{intuition}[1][]{\begin{tcolorbox}[title=Intuition ~(#1),fonttitle=\sffamily\large\bfseries]}{\end{tcolorbox}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 
 %%%%%%%%%%%%%%%%%%%% proof environments

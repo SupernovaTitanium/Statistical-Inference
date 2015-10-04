@@ -1,37 +1,37 @@
 \BOOKMARK [0][-]{chapter.1}{}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Probabilities,\040Random\040variables,\040Distribution}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Set\040Theory}{section.1.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Small\040talk}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.1}{Probabilities, Random variables, Distribution}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Set Theory}{section.1.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Small talk}{chapter.1}% 4
 \BOOKMARK [0][-]{chapter.2}{}{}% 5
 \BOOKMARK [1][-]{section.2.1}{Recall}{chapter.2}% 6
-\BOOKMARK [2][-]{subsection.2.1.1}{limsup\040and\040liminf}{section.2.1}% 7
-\BOOKMARK [2][-]{subsection.2.1.2}{Distributive\040law\040&\040Partition}{section.2.1}% 8
-\BOOKMARK [2][-]{subsection.2.1.3}{General\040De\040Morgan's\040Law}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{limsup and liminf}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Distributive law \046 Partition}{section.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.1.3}{General De Morgan's Law}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{-Algebra}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{Intuitions\040and\040basic\040axioms}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{Intuitions and basic axioms}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{Properties}{section.2.2}% 12
-\BOOKMARK [1][-]{section.2.3}{Probability\040Function}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.4}{Some\040random\040notes}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.4.1}{Categorical\040classification/regression}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Boole's\040inequality}{section.2.4}% 16
+\BOOKMARK [1][-]{section.2.3}{Probability Function}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.4}{Some random notes}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.4.1}{Categorical classification/regression}{section.2.4}% 15
+\BOOKMARK [2][-]{subsection.2.4.2}{Boole's inequality}{section.2.4}% 16
 \BOOKMARK [0][-]{chapter.3}{}{}% 17
-\BOOKMARK [1][-]{section.3.1}{Basic\040Properties\040of\040Probability\040Function\040and\040Their\040Intuitions}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.2}{Useful\040Inequalities,\040and\040the\040First\040Borel-Cantelli\040Lemma}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.2.1}{Bonferroni's\040inequality}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.2}{The\040first\040Borel-Cantelli\040lemma}{section.3.2}% 21
-\BOOKMARK [1][-]{section.3.3}{Intuitions\040About\040Counting\040Theory}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.1}{Basic Properties of Probability Function and Their Intuitions}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{Useful Inequalities, and the First Borel-Cantelli Lemma}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Bonferroni's inequality}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{The first Borel-Cantelli lemma}{section.3.2}% 21
+\BOOKMARK [1][-]{section.3.3}{Intuitions About Counting Theory}{chapter.3}% 22
 \BOOKMARK [2][-]{subsection.3.3.1}{Sampling}{section.3.3}% 23
 \BOOKMARK [2][-]{subsection.3.3.2}{Bootstrap}{section.3.3}% 24
 \BOOKMARK [0][-]{chapter.4}{}{}% 25
-\BOOKMARK [1][-]{section.4.1}{Counting\040Methods}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.2}{Conditional\040probability}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.3}{Bayes\040Rule}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.3.1}{Bayes\040rule}{section.4.3}% 29
-\BOOKMARK [2][-]{subsection.4.3.2}{Relative\040risk\040and\040Odd\040ratio}{section.4.3}% 30
+\BOOKMARK [1][-]{section.4.1}{Counting Methods}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Conditional probability}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.3}{Bayes Rule}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.3.1}{Bayes rule}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.2}{Relative risk and Odd ratio}{section.4.3}% 30
 \BOOKMARK [1][-]{section.4.4}{Independence}{chapter.4}% 31
 \BOOKMARK [0][-]{chapter.5}{}{}% 32
-\BOOKMARK [1][-]{section.5.1}{The\040Second\040Borel-Cantelli\040Lemma}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{Random\040Variables}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.3}{From\040Set\040Function\040to\040Value\040Function}{chapter.5}% 35
-\BOOKMARK [1][-]{section.Alph0.1}{Proof\040of\040the\040necessary\040and\040sufficient\040condition\040of\040random\040variable}{chapter.5}% 36
-\BOOKMARK [1][-]{section.Alph0.2}{Proof\040of\040the\040necessary\040and\040sufficient\040condition\040of\040cumulative\040function}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.1}{The Second Borel-Cantelli Lemma}{chapter.5}% 33
+\BOOKMARK [1][-]{section.5.2}{Random Variables}{chapter.5}% 34
+\BOOKMARK [1][-]{section.5.3}{From Set Function to Value Function}{chapter.5}% 35
+\BOOKMARK [1][-]{section.Alph0.1}{Proof of the necessary and sufficient condition of random variable}{chapter.5}% 36
+\BOOKMARK [1][-]{section.Alph0.2}{Proof of the necessary and sufficient condition of cumulative function}{chapter.5}% 37
