@@ -20,8 +20,9 @@
 $P(X=x)=F(x)-F(x^-)$, where $F(x^-)=\lim_{y\uparrow x}F(y).$
 \end{theorem}
 \begin{proof}
-$P(X=x)=F(X\leq x)-F(X<x)$
+Since $P(X=x)=F(X\leq x)-F(X<x)$ and notice that  $y\downarrow x$ then $\{X\leq y\}\downarrow\{X\leq x\}$ and $y\uparrow x$ then $\{X\leq y\}\uparrow\{X<x \}$,we have $$P(X=x)=F(x)-F(x^-)$$
 \end{proof}
+When X is a discrete random variable, $F(x)$ is a step function which jumps at possible outcome.
 \begin{theorem}
 If F(x) is differentiable, there exists a unique probability density function f(x) such that $F(c)=\int_{-\infty}^c f(x)dx\ \forall c\in \mathcal{R}.$  
 \end{theorem}
