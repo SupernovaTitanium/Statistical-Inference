@@ -1,0 +1,38 @@
+\documentclass[../Probability_Theory.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 6} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+
+\section{Density function}
+\begin{theorem}
+$P(X=x)=F(x)-F(x^-)$, where $F(x^-)=\lim_{y\uparrow x}F(y).$
+\end{theorem}
+\begin{proof}
+$P(X=x)=F(X\leq x)-F(X<x)$
+\end{proof}
+\begin{theorem}
+If F(x) is differentiable, there exists a unique probability density function f(x) such that $F(c)=\int_{-\infty}^c f(x)dx\ \forall c\in \mathcal{R}.$  
+\end{theorem}
+\begin{proof}
+The result is quite trivial, just apply the Fundamental Theorem of Calculus, we get $$F'(x)=f(x)$$ 
+\end{proof}
+The question arises when considering the physical meaning of $f(x)$, is $f(x)$ a probability measure? Go back to the definition of differentiation, we have
+$$F'(x)=\lim_{\bigtriangleup\rightarrow 0}\frac{F(x+\frac{\bigtriangleup}{2})-F(x-\frac{\bigtriangleup}{2})}{\bigtriangleup}=\frac{P((x-\frac{\bigtriangleup}{2},x+\frac{\bigtriangleup}{2}))}{\bigtriangleup}=\frac{Probability}{Interval}$$ 
+$f(x)$ is not usually probability measure, it is of intensity/density sense.
+\end{document}
+
+
+
+

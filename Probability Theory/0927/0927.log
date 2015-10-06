@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  2 OCT 2015 23:04
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  6 OCT 2015 10:11
 entering extended mode
 **0927.tex
 (0927.tex
@@ -12,9 +12,9 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
-Preamble taken from file `Probability_Theory.tex'
-(Probability_Theory.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls
-"
+Preamble taken from file `../Probability_Theory.tex'
+(../Probability_Theory.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
@@ -576,10 +576,50 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
-\c@theorem=\count135
-\c@remk=\count136
-\c@exmp=\count137
-\c@apdxlemma=\count138
+("C:\Program Files\MiKTeX 2.9\tex\latex\extarrows\extarrows.sty"
+Package: extarrows 2008/05/15 v1.0b Some extensible arrows
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+Package: mathtools 2015/06/17 v1.17 mathematical typesetting tools
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count135
+\calc@Bcount=\count136
+\calc@Adimen=\dimen172
+\calc@Bdimen=\dimen173
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count137
+\calc@Cskip=\skip53
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count138
+\l_MT_multwidth_dim=\dimen174
+\origjot=\skip54
+\l_MT_shortvdotswithinadjustabove_dim=\dimen175
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen176
+\l_MT_above_intertext_sep=\dimen177
+\l_MT_below_intertext_sep=\dimen178
+\l_MT_above_shortintertext_sep=\dimen179
+\l_MT_below_shortintertext_sep=\dimen180
+)
+\c@theorem=\count139
+\c@conjecture=\count140
+\c@definition=\count141
+\c@lemma=\count142
+\c@property=\count143
+\c@remk=\count144
+\c@exmp=\count145
+\c@apdxlemma=\count146
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\subfiles\subfiles.sty"
 Package: subfiles 2012/05/23 Federico Garcia
@@ -609,7 +649,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count139
+\c@section@level=\count147
 )
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
@@ -717,12 +757,12 @@ Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 238.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 18899 strings out of 428755
- 324860 string characters out of 3164220
- 393104 words of memory out of 3000000
- 21989 multiletter control sequences out of 15000+200000
+ 19490 strings out of 428755
+ 335030 string characters out of 3164220
+ 399711 words of memory out of 3000000
+ 22567 multiletter control sequences out of 15000+200000
  11418 words of font info for 42 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 65i,12n,75p,983b,487s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,12n,75p,983b,494s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on 0927.pdf (7 pages).
