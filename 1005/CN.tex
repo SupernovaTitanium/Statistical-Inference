@@ -1,0 +1,47 @@
+\def\draft{0}
+\documentclass[11pt]{article}
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color,amsmath}
+\usepackage{IEEEtrantools}
+\input{macros}
+\pagestyle{plain}
+
+\newcommand{\scribe}{Chi-Ning Chou}
+\newcommand{\lecnum}{7}
+\newcommand{\lecdate}{October 5, 2015}
+
+%\parskip=1.5mm
+%\parindent=0mm
+
+\begin{document}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+
+\section{Quantative Description of Poisson Random Variable}
+Q: Please {\bf quantitatively} describe the Poisson random variable.
+\begin{itemize}
+	\item It's a {\bf counting process}. That is, $N(t)$ that counts the number of appearances before time $t$.
+	\item ({\bf Boundary condition}) $N(0)=0$
+	\item ({\bf Stationary}) $\forall t_1<t_2$, $N(t_2)-N(t_1)\sim N(t_2-t_1)$
+	\item ({\bf Independence}) $\forall t_1<t_2<t_3<t_4$, $N(t_4)-N(t_3)\sim N(t_2)-N(t_1)$
+	\item ({\bf Fixed frequency}) $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) = 1]}{\Delta}=\lambda$, and $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) > 1]}{\Delta}=0$
+	\item ({\bf Density function}) $f_{\lambda}(t,k) = \frac{(\lambda t)^{k}e^{-\lambda t}}{k!}\mathbf{1}_{\{k=0,1,2,...\}}$
+\end{itemize}
+
+
+
+
+\end{document}
