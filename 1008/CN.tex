@@ -88,8 +88,8 @@ But this is not the end of the world, soon we can see that as $g$ is monotone, t
 \begin{property}
 	Suppose $g(y)$ is {\bf strictly monotone} on $\mathcal{X}$, then
 	\begin{align*}
-	&F_Y(y) = F_X(g(y))&&,\ g\mbox{ is increasing}\\
-	&F_Y(y) = 1- F_X(g(y))&&,\ g\mbox{ is decreasing}
+	&F_Y(y) = F_X(g^{-1}(y))&&,\ g\mbox{ is increasing}\\
+	&F_Y(y) = 1- F_X(g^{-1}(y))&&,\ g\mbox{ is decreasing}
 	\end{align*}
 \end{property}
 \begin{proof}
@@ -103,7 +103,7 @@ But this is not the end of the world, soon we can see that as $g$ is monotone, t
 
 \begin{property}
 	Suppose $g(y)$ is monotone, then
-	$$f_Y(y) = f_X(g^{-1}(y)) |\frac{df_X(g^{-1}(y))}{dy}| \mathbf{1}_Y(y)$$
+	$$f_Y(y) = f_X(g^{-1}(y)) |\frac{dg^{-1}(y)}{dy}| \mathbf{1}_Y(y)$$
 \end{property}
 Intuitively, monotonicity also gives us a sense of {\bf scaling} from $X$ to $Y$. We can regard the term $|\frac{df_X(g^{-1}(y))}{dy}|$ simply as a scaling factor which is the relative exchange in the domain of $\mathcal{X}$ w.r.t. the domain  of $\mathcal{Y}$.
 
