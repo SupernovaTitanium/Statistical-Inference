@@ -50,7 +50,7 @@ f_Y(y) = \frac{\lambda}{\gamma}y^{\frac{1}{\gamma}-1}e^{-\lambda y^{\frac{1}{\ga
 Box and Cox introduced the power transformation:
 $$\frac{X^{\gamma}-1}{\gamma}$$
 
-Moreover, we can see that as $\gamma\rightarrow\infty$, the power transformation becomes natural logarithm transformation:
+Moreover, we can see that as $\gamma\rightarrow0$, the power transformation becomes natural logarithm transformation:
 $$\ln X$$
 
 These two transformations are similar but with different properties. In practice, we sometimes need to perform test to fit one of them to our model.
@@ -70,12 +70,12 @@ Mean and median are two different statistics to describe the central location of
 
 \begin{remark}{Box-Muller transformation: Generating normal distribution}
 	
-Since the inverse of normal distribution cannot be written down in a close form, we cannot simply plugging uniformly distributed random variable to generate normal random variable. Instead, there's a method based on the intuition to calculate $\int e^{-x^2/2}dx$ called Box-Muller transformation. Intuitively, we consider the polar coordinate ($R,\theta$), and let
+Since the inverse of normal distribution cannot be written down in a close form, we cannot simply plugging uniformly distributed random variable to generate normal random variable. Instead, there's a method based on the intuition to calculate $\int_{-\infty}^{\infty} e^{-x^2/2}dx$ called Box-Muller transformation. Intuitively, we consider the polar coordinate ($R,\theta$), and let
 \begin{itemize}
 	\item $R^2 = X^2+Y^2$, where $X$ and $Y$ are independent normal distribution.
 	\item $\theta = 2\pi U_1$, where $U_1$ is a uniform distribution on [0,1].
 \end{itemize}
-As $R^2$ is actually a chu-square distribution with degree of freedom 2, we can write it as $R^2=-2\ln U_2$. As a result, we can generate a normal distributed random variable as
+As $R^2$ is actually a chi-square distribution with degree of freedom 2, we can write it as $R^2=-2\ln U_2$. As a result, we can generate a normal distributed random variable as
 $$Z = R\cos\theta = \sqrt{-2\ln U_2}\cos(2\pi U_1)$$
 \end{remark}
 
