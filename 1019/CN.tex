@@ -1,0 +1,120 @@
+\def\draft{0}
+\documentclass[11pt]{article}
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color,amsmath}
+\usepackage{IEEEtrantools}
+\input{macros}
+\pagestyle{plain}
+
+\newcommand{\scribe}{Chi-Ning Chou}
+\newcommand{\lecnum}{11}
+\newcommand{\lecdate}{October 19, 2015}
+
+%\parskip=1.5mm
+%\parindent=0mm
+
+\begin{document}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+\begin{lemma}[inversion theorem]
+	Let $X$ be a random variable with characteristic function $\phi_X(t)$ and $a,b\in\R$ with $a<b$, then
+	\begin{enumerate}
+		\item For any random variable $X$,
+		$$P(a<X<b) + \frac{1}{2}P(X=a) + \frac{1}{2}P(X=b) = \limT\frac{1}{2\pi}\int_{-T}^{T}\frac{e^{-ita}-e^{-itb}}{it}\phi_X(t)dt$$
+		\item If $X$ is a continuous random variable, then
+		$$f_X(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-itx}\phi_X(t)dt\ \ a.e.$$
+	\end{enumerate}
+\end{lemma}
+
+\begin{intuition}[inversion theorem]
+	Inversion theorem provides a {\it isomorphism} between {\bf distribution} and {\bf characteristic function}.
+\end{intuition}
+
+\begin{proof}
+	The proof is divided into three steps. The first step introduce a integration tool for latter usage. The second step provides a clean form of the original term. The last step uses dominant theorem to show the convergence.
+	\begin{enumerate}
+		\item {\bf claim}: $\int_0^{\infty}\frac{\sin\alpha x}{x}dx = \frac{\pi}{2}\mbox{sign}(\alpha)$\\
+		\begin{align*}
+		\int_0^{\infty}\frac{\sin\alpha x}{x}dx &= \int_0^{\infty}\int_0^{\infty}\sin\alpha x\ e^{-ux}dudx\\
+		(\mbox{by Fubini's thm})&=\int_0^{\infty}\int_0^{\infty}\sin\alpha x\ e^{-ux}dxdu\\
+		&= ...\mbox{ some change of integrals }...\\
+		&=\frac{\pi}{2}\mbox{sign}(\alpha)
+		\end{align*}
+		\item Consider
+		\begin{align*}
+		\frac{1}{2\pi}\int_{-T}^{T}\frac{e^{-ita}-e^{-itb}}{it}\phi_X(t)dt &= \frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{e^{-ita}-e^{-itb}}{it}e^{itx}dF_X(x)dt\\
+		&=\frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{\cos t(x-a)+i\sin t(x-a)}{it}e^{itx}dF_X(x)dt\\
+		&-\frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{\cos t(x-b)+i\sin t(x-b)}{it}e^{itx}dF_X(x)dt\\
+		(\because\mbox{symmetry})&=\frac{1}{\pi}\int_0^{T}\int_{-\infty}^{\infty}\frac{\sin t(x-a) - \sin t(x-b)}{t}dF_X(x)dt\\
+		(\mbox{by Fubini's thm})&=\frac{1}{\pi}\int_{-\infty}^{\infty}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)
+		\end{align*}
+		\item By dominant convergence theorem,
+		\begin{align*}
+		\frac{1}{2\pi}\int_{-T}^{T}\frac{e^{-ita}-e^{-itb}}{it}\phi_X(t)dt &\xrightarrow{T\rightarrow\infty}\frac{1}{\pi}\int_{-\infty}^{\infty}\int_0^{\infty}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		&=\frac{1}{\pi}\int_{x\in(-\infty,a)}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		&+\frac{1}{\pi}\int_{x=a}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		&+\frac{1}{\pi}\int_{x\in(a,b)}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		&+\frac{1}{\pi}\int_{x=b}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		&+\frac{1}{\pi}\int_{x\in(b,\infty)}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)\\
+		(\mbox{by the tool in 1.})&=0+\frac{1}{2}P(X=a) + P(a<X<b) + \frac{1}{2}P(X=b) + 0
+		\end{align*}
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}\label{thm:convergenceincharfunc}
+	Let $\{X_n \}$ be a sequence of random  variables with characteristic functions $\phi_{X_n}(t)$. Suppose that
+	\begin{itemize}
+		\item $\limn\phi_{X_n}(t) = \phi_X(t)$ for $t$ in a neighborhood of 0.
+		\item $\phi_X(t)$ is a characteristic function of some random variable $X$.
+	\end{itemize}
+	Then,
+	$$\limn F_{X_n}(x) = F_X(x),\ \forall x\mbox{ such that $F_X(x)\mbox{ is continuous}$}$$
+\end{theorem}
+{\bf Remark}: We don't have to worry about the discrete points since they must converge to the right value.\\
+
+\begin{intuition}[convergence of characteristic function]
+	Theorem~\ref{thm:convergenceincharfunc} tells us that if r.v.s converge in characteristic functions, then r.v.s also converge in distribution.
+\end{intuition}
+
+\noindent{\bf Remark}: Tips for calculating MGF: consider the MGF of binomial distributed random variable $X$ such that $f_X(x)=\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)p^{x}(1-p)^{n-x}\mathbf{1}_{0,1,...,n}$. We have
+\begin{align*}
+M_{X_n}(t) &= \sum_{x=0}^n\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)p^{x}(1-p)^{n-x}e^{tx}\\
+&=\sum_{x=0}^n\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)(pe^t)^x(1-p)^{n-x}\\
+&=\sum_{x=0}^n\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)\frac{(pe^t)^x(1-p)^{n-x}}{[(pe^t)+(1-p)]^n}[(pe^t)+(1-p)]^n\\
+(\mbox{set }p'=\frac{pe^t}{pe^t+(1-p)})&=\sum_{x=0}^n\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)p'^x(1-p')^{n-x}[(pe^t)+(1-p)]^n\\
+&=[(pe^t)+(1-p)]^n\sum_{x=0}^n\left(\begin{array}{c}
+n\\
+x
+\end{array}\right)p'^x(1-p')^{n-x}\\
+&=[(pe^t)+(1-p)]^n
+\end{align*}
+
+\end{document}
