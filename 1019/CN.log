@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  21 OCT 2015 13:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  21 OCT 2015 17:19
 entering extended mode
 **CN.tex
 (CN.tex
@@ -434,7 +434,9 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \tcb@record@out=\write5
 )
 \c@theorem=\count122
-\c@apdxlemma=\count123
+\c@definition=\count123
+\c@property=\count124
+\c@apdxlemma=\count125
 )
 (CN.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -513,10 +515,10 @@ Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
  [4] (CN.aux) ) 
 Here is how much of TeX's memory you used:
- 11466 strings out of 428755
- 220661 string characters out of 3164220
+ 11472 strings out of 428755
+ 220729 string characters out of 3164220
  278836 words of memory out of 3000000
- 14618 multiletter control sequences out of 15000+200000
+ 14624 multiletter control sequences out of 15000+200000
  10776 words of font info for 40 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
  56i,18n,73p,820b,442s stack positions out of 5000i,500n,10000p,200000b,50000s

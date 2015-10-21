@@ -1,0 +1,17 @@
+\contentsline {chapter}{\numberline {1}}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Transformation}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Measurable function}{2}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}p.m.f., p.d.f., and cumulative distribution}{3}{subsection.1.1.2}
+\contentsline {chapter}{\numberline {2}}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Examples of transformation}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Binomial distribution}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Exponential}{5}{subsection.2.1.2}
+\contentsline {paragraph}{Poisson approximation}{6}{section*.2}
+\contentsline {paragraph}{Normal approximation}{6}{section*.3}
+\contentsline {chapter}{\numberline {3}}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Expectation}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Moment}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Moment generating and characteristic function}{10}{section.3.3}
+\contentsline {chapter}{\numberline {4}}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Characteristic function}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Convergence}{13}{section.4.2}

@@ -14,7 +14,7 @@
 		\end{bfseries}
 	\end{center}
 
-
+T.B.D
 \section{Density function}
 \begin{theorem}
 $P(X=x)=F(x)-F(x^-)$, where $F(x^-)=\lim_{y\uparrow x}F(y).$
@@ -32,6 +32,18 @@ The result is quite trivial, just apply the Fundamental Theorem of Calculus, we 
 The question arises when considering the physical meaning of $f(x)$, is $f(x)$ a probability measure? Go back to the definition of differentiation, we have
 $$F'(x)=\lim_{\bigtriangleup\rightarrow 0}\frac{F(x+\frac{\bigtriangleup}{2})-F(x-\frac{\bigtriangleup}{2})}{\bigtriangleup}=\frac{P((x-\frac{\bigtriangleup}{2},x+\frac{\bigtriangleup}{2}))}{\bigtriangleup}=\frac{Probability}{Interval}$$ 
 $f(x)$ is not usually probability measure, it is of intensity/density sense.
+
+\section{Quantative Description of Poisson Random Variable}
+Q: Please {\bf quantitatively} describe the Poisson random variable.
+\begin{itemize}
+	\item It's a {\bf counting process}. That is, $N(t)$ that counts the number of appearances before time $t$.
+	\item ({\bf Boundary condition}) $N(0)=0$
+	\item ({\bf Stationary}) $\forall t_1<t_2$, $N(t_2)-N(t_1)\sim N(t_2-t_1)$
+	\item ({\bf Independence}) $\forall t_1<t_2<t_3<t_4$, $N(t_4)-N(t_3)\sim N(t_2)-N(t_1)$
+	\item ({\bf Fixed frequency}) $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) = 1]}{\Delta}=\lambda$, and $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) > 1]}{\Delta}=0$
+	\item ({\bf Density function}) $f_{\lambda}(t,k) = \frac{(\lambda t)^{k}e^{-\lambda t}}{k!}\mathbf{1}_{\{k=0,1,2,...\}}$
+\end{itemize}
+
 \end{document}
 
 

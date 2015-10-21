@@ -1,0 +1,95 @@
+\documentclass[../Transformation.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 7} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+In the second chapter, we're going to talk about {\bf transformation} and {\bf expectation}. In short, transformation induces new random variable with a known random variable and expectation is the functional a random variable and somehow provides a weighted average sense.
+
+\section{Transformation}
+Recall that random variable maps a specific probability space to a universal probability space: $(\mathcal{R},\mathcal{B},\mathcal{L})$ while preserving the measurablility. Now, we want to extend the idea and map $(\mathcal{R},\mathcal{B})$ to itself!
+
+\subsection{Measurable function}
+\begin{definition}[Borel measurable function]
+	Let $\mathcal{X},\mathcal{Y}\subseteq\R$, then $g$ is a Borel measurable function from $(\mathcal{X},\mathcal{B})$ to $(\mathcal{Y},\mathcal{B})$ if $\forall B\in\mathcal{B}$ $g^{-1}(B)\in\mathcal{B}$.
+\end{definition}
+
+\begin{property}
+	If $X:\Omega\rightarrow\mathcal{X}$ is a random variable and $g$ is a Borel measurable function from $(\mathcal{X},\mathcal{B})$ to $(\mathcal{Y},\mathcal{B})$. Then, $g(X)$ is a random variable from $\Omega$ to $(\mathcal{Y},\mathcal{B})$.
+\end{property}
+\begin{proof}
+	Simply check the sufficient condition of random variable. $\forall B\in\mathcal{B}$ consider 
+	\begin{align*}
+	\{w:g(X(w))\in B \}&=\{w:X(w)\in g^{-1}(B) \}\\
+	&= \{w:w\in X^{-1}[g^{-1}(B)] \}\\
+	&\in\mathcal{B}
+	\end{align*}
+	Since $g$ is Borel measurable, $g^{-1}(B)\in\mathcal{B}$. Moreover, $X$ is a random variable, thus $X^{-1}[g^{-1}(B)]\in\mathcal{B}$.
+\end{proof}
+
+If we go back to the construction of random variable $X$, we can see that what $X$ really does is inducing a probability space from $(\Omega,\mathcal{A},P)$ to $(\mathcal{X},\mathcal{B},\mu_X)$, where $\mu_X$ is the induced measure defined as $\mu_X(B) = P(X\in B),\ \forall B\in\mathcal{B}$.
+
+Now, let's turn to a transformation of random variable, $Y = g(X)$, it's clearly that $Y$ also induces a new probability space $(\mathcal{Y},\mathcal{B},\mu_Y)$. Moreover, here we can have two ways to define the measure $\mu_Y$:
+\begin{align*}
+\mu_Y(B) &= P(g(X)\in B) && (\mbox{from P})\\
+&=\mu_X(X\in g^{-1}(B)) && (\mbox{from $\mu_X$})
+\end{align*}
+
+\begin{intuition}[transformation]
+	$$(\Omega,\mathcal{A},P)\xrightarrow{X}(\mathcal{X},\mathcal{B},\mu_X)\xrightarrow{g}(\mathcal{Y},\mathcal{B},\mu_Y)$$
+\end{intuition}
+
+\subsection{p.m.f., p.d.f., and cumulative distribution}
+In the very beginning, let's define some notations here. For convenience, from now on $X$ denotes a random variable from $(\Omega,\mathcal{A},P)$ to $(\mathcal{X},\mathcal{B},\mu_X)$. And $g$ is a Borel measurable function from $(\mathcal{X},\mathcal{B})$ to $(\mathcal{Y},\mathcal{B})$ that induces a random variable $Y=g(X)$ with measure $\mu_Y$.\\
+
+As long as we have the definition of induced probability measure, we can further define the density function and cumulative distribution.
+\begin{property}
+	The cumulative distribution of $Y=g(X)$ is
+	\begin{align*}
+	F_Y(y) &= P(g(X)\leq y),\ \forall y\in\R\\
+	&=P(\{x\in\mathcal{X}: g(x)\leq y \})\\
+	&=\int_{\{x\in\mathcal{X}: g(x)\leq y \}} f_X(x)dx
+	\end{align*}
+\end{property}
+
+{\bf Remark}: Note that the integration form might not be directly for a discrete random variable. Here, we use the expectation of $g(X)$ to present a way to represent discrete random variable in an integration form:
+$$E[g(X)] = \int_{x\in\mathcal{X}} g(x)dF_X(x)$$
+Note that here we define $dF_X(x) = F_X(x^-+dx)-F_X(x^-)$. For continuous r.v., this is the density at point $x$. As to discrete r.v., when there's some mass on point $x$, then the value will have a jump (step) at that point. One can see that this representation is equivalent to sum over the point that have mass.\\
+
+Now, we might want to have a more convenient way to calculate the cumulative distribution and density function. However, we have to find the preimage of each region and compute the probability of that region over the measure of $X$. And for most of the cases this is not quite easy. Consider the case that $g(x) = x^2$, $\forall y\geq 0$, $\{x\in\mathcal{X}:g(x)\leq y \} = [-y,y]$. We cannot find a similar form ($\leq y$) in the context of $X$.
+
+But this is not the end of the world, soon we can see that as $g$ is monotone, the relation can be easily build up. Intuitively, the monotonicity preserves the direction and result in the convenience of calculation.
+
+\begin{property}
+	Suppose $g(y)$ is {\bf strictly monotone} on $\mathcal{X}$, then
+	\begin{align*}
+	&F_Y(y) = F_X(g^{-1}(y))&&,\ g\mbox{ is increasing}\\
+	&F_Y(y) = 1- F_X(g^{-1}(y))&&,\ g\mbox{ is decreasing}
+	\end{align*}
+\end{property}
+\begin{proof}
+	Since we have the monotonicity, $\forall y\in\mathcal{Y}$
+	\begin{align*}
+	\{x\in\mathcal{X}: g(x)\leq y \} &= \{x\in\mathcal{X}: x\leq g^{-1}(y) \}&&,\ g\mbox{ is increasing}\\
+	&= \{x\in\mathcal{X}: x\geq g^{-1}(y) \}&&,\ g\mbox{ is decreasing}
+	\end{align*}
+	Intuitively, monotonicity preserves the relative position of points in $\mathcal{X}$ and $\mathcal{Y}$.
+\end{proof}
+
+\begin{property}
+	Suppose $g(y)$ is monotone, then
+	$$f_Y(y) = f_X(g^{-1}(y)) |\frac{dg^{-1}(y)}{dy}| \mathbf{1}_Y(y)$$
+\end{property}
+Intuitively, monotonicity also gives us a sense of {\bf scaling} from $X$ to $Y$. We can regard the term $|\frac{df_X(g^{-1}(y))}{dy}|$ simply as a scaling factor which is the relative exchange in the domain of $\mathcal{X}$ w.r.t. the domain  of $\mathcal{Y}$.
+
+\end{document}

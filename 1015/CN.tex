@@ -85,6 +85,76 @@ P(\cup A_i) &= 1-\mathbb{E}[\prod_i(1-\mathbf{1}_{A_i})]\\
 &= 1 - \mathbb{E}[1-\sum_i\mathbf{1}_{A_i} + \sum_{i,j}\mathbf{1}_{A_i}\mathbf{1}_{A_j}-...+(-1)^k\sum_{i_1,...,i_k}\mathbf{1}_{A_{i_1}}\cdots\mathbf{1}_{A_{i_k}}\pm...\pm\mathbf{1}_{\cap A_i}]\\
 &=\sum_i P(A_i) - \sum_{i,j}P(A_i\cap A_j) +...+(-1)^{k-1}\sum_{i_1,...,i_k}P(A_{i_1}\cap\cdots\cap A_{i_k})\pm...\pm P(\cup_i A_i)
 \end{align*}
-
-
+\section{Moment}
+\begin{definition}[Moment and Central moment]
+For each integer n, the $n^{th}$ moment of X is $\mu_n'=E[X^n]$, and the $n^{th}$ central moment of X is $\mu_n=E[(X-\mu)^n]$ where $\mu=\mu_1'$.
+\end{definition}
+\begin{definition}[Variance and Standard deviation]
+The variance of a r.v. denoted by Var(x), is $\mu_2$. The positive square root of Var(x), denoted by $\sigma_x$, is called the standard deviation/error of X.  
+\end{definition}
+Moment carries some information of the distribution, some useful moments are as below. 
+\begin{enumerate}
+\item mean: $E[X]=\mu$
+\item variance: $E[(X-\mu)^2]=\sigma^2$
+\item skewness: $E[(\frac{X-\mu}{\sigma})^3]=\frac{E[X^3]-3\mu\sigma^2-\mu^3}{\sigma^3}=\gamma_1$
+\item kurtosis: $E[(\frac{X-\mu}{\sigma})^4]=\gamma_2$     \hspace{3pt} (Kurt[N(0,1)]=3)
+\end{enumerate}
+\begin{property} Minimum variance 
+\begin{enumerate}
+		\item(a) $argmin(E[(X-a)^2])=\mu$ and minimum $E[(X-a)^2]=Var(x).$
+		\item(b) $Var(X)=0\Leftrightarrow P(|X-E[X]|<\epsilon)=1\ \forall\epsilon>0$. 
+\end{enumerate}
+	\begin{proof}
+	($\Leftarrow$)
+	\begin{align*}
+	Var(X)&=\int_{x\in\mathcal{R}}(x-E[X])^2P(X=x)dF_X(x)\\
+	&=\int_{x-E[X]<\epsilon}(x-E[X])^2P(X=x)dF(x)+\int_{x-E[X]\geq\epsilon}(x-E[X])^2P(X=x)dF_X(x)\\
+	&\leq \epsilon^2 +0 \mbox{       (pick $\epsilon\downarrow 0)$}\\
+	&=0
+	\end{align*}
+	($\Rightarrow$) $\forall\epsilon>0$
+		\begin{align*}
+	0=Var(X)&=\int_{x\in\mathcal{R}}(x-E[X])^2P(X=x)dF_X(x)\\
+	&\geq\int_{x-E[X]\geq\epsilon}(x-E[X])^2P(X=x)dF_X(x)\\
+	&\geq \epsilon^2\times P(|x-E[X]|\geq\epsilon)\\
+	\end{align*}
+	It implies that
+	$$P(|x-E[X]|\geq\epsilon)=0\rightarrow P(|x-E[X]|< \epsilon)=1$$
+	\end{proof}
+\end{property}
+\begin{property}If X has finite variance, $Var(aX\pm b)=a^2Var(x)\ \forall a,b\in\mathcal{R}.$
+\end{property}
+\begin{proof}
+Simply expands it and use linearity of expectation to rearrange it.
+\end{proof}
+\section{Moment generating and characteristic function}
+\begin{definition}[Moment generating function]
+The moment generating function of X is defined to be $M_X(t)=E[e^{tX}]$ provided that the expectation exists for t in some $\mathcal{B}_r(0)$.
+\end{definition}
+\begin{definition}[Characteristic function]
+The characteristic function of X is defined to be $\phi_X(t)=E[e^{itX}]=E[cos(tx)]+iE[sin(tx)]$. 
+\end{definition}
+{\bf Remark}:
+\begin{enumerate}
+\item $\int|cos(tx)|dF_X(x)\leq\int dF_X(x)=1$ and $\int|sin(tx)|dF_X(x)\leq\int dF_X(x)=1$
+\item The characteristic function does much more than the moment generating function does. The characteristic function always exists and completely determines the distribution.
+\end{enumerate}
+{\bf Example}:
+Consider the lognormal distribution: $$f_1(x)=\frac{1}{\sqrt{2\pi}x}e^{\frac{-(\ln x)^2}{2}}\mathbbm{1}_{(0,\infty)}(x)$$
+$$f_2(x)=f_1(x)(1+sin(2\pi\ln x))\mathbbm{1}_{(0,\infty)}(x)$$
+let $u=\ln x$ and $v=u-r$, one derives that
+\begin{align*}
+E[X_1^r]&=\int_0^\infty\frac{x^{r-1}}{\sqrt{2\pi}}e^{\frac{-(\ln x)^2}{2}}dx
+=\int_{-\infty}^\infty\frac{x^r}{\sqrt{2\pi}}e^{\frac{-(\ln x)^2}{2}}du\\
+&=\int_{-\infty}^\infty\frac{e^{ru}}{\sqrt{2\pi}}e^{\frac{-u^2}{2}}du=\int_{-\infty}^\infty\frac{e^{r(v+r)}}{\sqrt{2\pi}}e^{\frac{-(v+r)^2}{2}}dv\\
+&=e^{\frac{r^2}{2}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-v^2}{2}}dv=e^{\frac{r^2}{2}}\\
+E[X_2^r]&=\int_0^\infty\frac{x^{r-1}}{\sqrt{2\pi}}e^{\frac{-(\ln x)^2}{2}}(1+sin(2\pi\ln x))dx
+\\
+&=e^{\frac{r^2}{2}}+e^{\frac{r^2}{2}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-v^2}{2}}sin(2\pi (v+r))dv\\
+&=e^{\frac{r^2}{2}}+e^{\frac{r^2}{2}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-v^2}{2}}(sin(2\pi v)cos(2\pi r)+sin(2\pi r)cos(2\pi v))dv\\
+&=e^{\frac{r^2}{2}} \mbox{ (sin is a odd function and taks on zero value when $r\in\mathcal{Z}$)}
+\end{align*}
+\begin{intuition}[Determine distribution]
+If Moment generating function exists, it determines the distribution. But two distributions which admit moments of all orders are not necessary the same. Characteristic function always exists and completely determines the distribution.
+\end{intuition}
 \end{document}

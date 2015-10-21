@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  20 OCT 2015 18:12
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  21 OCT 2015 18:48
 entering extended mode
 **CN.tex
 (CN.tex
@@ -433,10 +433,16 @@ Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\bbm.sty"
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
 \c@theorem=\count122
 \c@apdxlemma=\count123
-)
-(CN.aux)
+) (CN.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
@@ -449,7 +455,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 Requested font "cmbx10" at 10.95pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -503,14 +510,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 ]
 Requested font "cmbx8" at 8.0pt
 Requested font "cmbx6" at 6.0pt
- [2] (CN.aux) ) 
-Here is how much of TeX's memory you used:
- 11432 strings out of 428755
- 219834 string characters out of 3164220
- 273836 words of memory out of 3000000
- 14586 multiletter control sequences out of 15000+200000
- 10475 words of font info for 39 fonts, out of 3000000 for 9000
- 1096 hyphenation exceptions out of 8191
- 56i,9n,73p,820b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
+ [2]
+Overfull \hbox (3.83466pt too wide) in paragraph at lines 135--136
+[]\OT1/cmr/m/it/10.95 The char-ac-ter-is-tic func-tion of X is de-fined to be $
+\OML/cmm/m/it/10.95 ^^^[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/
+10.95 ) =
+ []
 
-Output written on CN.pdf (2 pages).
+[3]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 143.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Requested font "bbm10" at 10.95pt
+Requested font "bbm8" at 8.0pt
+Requested font "bbm6" at 6.0pt
+Requested font "cmss10" at 10.95pt
+Requested font "cmss12" at 12.0pt
+Requested font "cmssbx10" at 12.0pt
+ [4] (CN.aux) ) 
+Here is how much of TeX's memory you used:
+ 11506 strings out of 428755
+ 221450 string characters out of 3164220
+ 275836 words of memory out of 3000000
+ 14648 multiletter control sequences out of 15000+200000
+ 11777 words of font info for 45 fonts, out of 3000000 for 9000
+ 1096 hyphenation exceptions out of 8191
+ 56i,10n,73p,836b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on CN.pdf (4 pages).
