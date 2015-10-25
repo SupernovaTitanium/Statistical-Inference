@@ -14,20 +14,52 @@
 		\end{bfseries}
 	\end{center}
 
-T.B.D
-\section{Density function}
+\section{Identical distribution}
+\begin{definition}[i.d.d.]
+Let X and Y be random variables defined on the probability space $(\Omega_1,\mathcal{A}_1,P_1)$ and $(\Omega_2,\mathcal{A}_2,P_2)$ respectively. Then X and Y are said to be identically distributed if and only if $$P_1(X\in B)=P_2(Y\in B)\ \forall B\in\mathcal{B}$$ 
+\end{definition}
+\begin{remark}
+X and Y are said to be identically distributed with notation $X\overset{d}{=}Y$ noticed that it does not mean X=Y.
+\end{remark}
+\begin{property}X and Y are identically distributed $\Leftrightarrow$ $F_X(t)=F_Y(t)\ \forall t$ where $F_1(t)$ and $F_2(t)$ are the corresponding distribution functions of X and Y.
+\end{property}
+\begin{proof}\\
+{\bf $\Rightarrow$} The equality follows straightly from i.d.d. and is true for all t since $(-\infty,t]\in\mathcal{B}$. $$F_X(t)=P(\{\omega:X(\omega)\leq t\})=P_1(X^{-1}((-\infty,t]))=P_2(Y^{-1}((-\infty,t]))=F_Y(t)$$ 
+{\bf $\Leftarrow$} Let $S=\{(a,b]:P(X\in(a,b])=P_2(Y\in(a,b])\}\ \forall a,b\in\mathcal{R}$ and $\xi=\{B:P_1(X\in B)=P_2(Y\in B)\ \forall B\in\mathcal{B}\}$. We want to show $s=\xi$ to extend agreed on intervals to agreed on all sets. This is true because $B=\sigma(S)$.
+\end{proof}
+\section{Density and mass function}
+\begin{definition}[Continuous random variable]
+A random variable X is continuous if $F_X(x)$ is a continuous function and discrete if $F_X(x)$ is a step function of X.
+\end{definition}
+\begin{definition}[p.m.f]
+The probability mass function of a discrete random variable X is defined as $$f_X(x)=P(\{w:X(w)=x\})=P(X=x)\ \forall X$$
+\end{definition}
+\begin{definition}[p.d.f]
+The probability density function of a continuous random variable X is a function $f_X(x)$ satisfying $$F_X(x)=\int_{-\infty}^xf_X(u)du$$
+And $f_X(x)=\frac{dF_X(x)}{dx}$ almost everywhere.
+\end{definition}
+\begin{property}A function $f_X(x)$ is a p.d.f(p.m.f) of a random variable X iff
+\begin{enumerate}
+\item[(a)]$f_X(x)\geq 0$ for all x.
+\item[(b)]$\int_{-\infty}^\infty f(x)dx=1$ or $\sum_X f(x)dx=1$ .
+\end{enumerate}
+\end{property}
+\begin{proof}\\
+{\bf $\Rightarrow$:} $F_X(x)$ is a non-decreasing function so $f_X(x)\geq0\ \forall x$ and $\lim_{x\rightarrow\infty}F_X(x)=1=\int_{-\infty}^\infty f_X(t)dt$.
+{\bf $\Leftarrow$:} Define $F_X(x)=\int_{-\infty}^x f_X(u)du$ and the property of distribution can be verified with (a)(b).
+\end{proof}
+\begin{intuition}[Changed to p.d.f]
+In fact, every non-negative function with a finite positive integral(sum) can be turned into a p.d.f/p.m.f. If h(x) is an non-negative function that is positive on a set A and $$\int_{x\in A}h(x)dx=K<\infty$$ with positive integral then the function $f_X(x)=h(x)/K$ is a p.d.f of a random variable X taking values in A.
+\end{intuition}
+Density functions are not always exist for continuous random variable. But if the distribution function is absolutely continuous, density function exists. 
+\begin{remark}[Absolutely Continuous]
+A real-valued function f(x) is absolutely continuous on [a,b] if $\forall\epsilon>0\ \exists\ \delta$ s.t. non-overlapping intervals $(Y_i,X_i)\in[a,b]$ for all $$\sum_i|Y_i-X_i|<\delta$$ implies $$\sum_i|f(Y_i)-f(X_i)|<\epsilon$$
+\end{remark}
 \begin{theorem}
 $P(X=x)=F(x)-F(x^-)$, where $F(x^-)=\lim_{y\uparrow x}F(y).$
 \end{theorem}
 \begin{proof}
 Since $P(X=x)=F(X\leq x)-F(X<x)$ and notice that  $y\downarrow x$ then $\{X\leq y\}\downarrow\{X\leq x\}$ and $y\uparrow x$ then $\{X\leq y\}\uparrow\{X<x \}$,we have $$P(X=x)=F(x)-F(x^-)$$
-\end{proof}
-When X is a discrete random variable, $F(x)$ is a step function which jumps at possible outcome.
-\begin{theorem}
-If F(x) is differentiable, there exists a unique probability density function f(x) such that $F(c)=\int_{-\infty}^c f(x)dx\ \forall c\in \mathcal{R}.$  
-\end{theorem}
-\begin{proof}
-The result is quite trivial, just apply the Fundamental Theorem of Calculus, we get $$F'(x)=f(x)$$ 
 \end{proof}
 The question arises when considering the physical meaning of $f(x)$, is $f(x)$ a probability measure? Go back to the definition of differentiation, we have
 $$F'(x)=\lim_{\bigtriangleup\rightarrow 0}\frac{F(x+\frac{\bigtriangleup}{2})-F(x-\frac{\bigtriangleup}{2})}{\bigtriangleup}=\frac{P((x-\frac{\bigtriangleup}{2},x+\frac{\bigtriangleup}{2}))}{\bigtriangleup}=\frac{Probability}{Interval}$$ 

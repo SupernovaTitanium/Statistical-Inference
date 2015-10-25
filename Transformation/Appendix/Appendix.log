@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  25 OCT 2015 02:14
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  25 OCT 2015 18:45
 entering extended mode
 **Appendix.tex
 (Appendix.tex
@@ -693,7 +693,7 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 79.
 Here is how much of TeX's memory you used:
  18899 strings out of 428755
  324362 string characters out of 3164220
- 384298 words of memory out of 3000000
+ 384299 words of memory out of 3000000
  21989 multiletter control sequences out of 15000+200000
  11157 words of font info for 42 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
