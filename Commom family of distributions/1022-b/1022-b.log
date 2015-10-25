@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  25 OCT 2015 13:39
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  25 OCT 2015 15:42
 entering extended mode
 **1022-b.tex
 (1022-b.tex
@@ -673,24 +673,41 @@ Requested font "cmbx12" at 14.4pt
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 )
-Requested font "cmr12" at 12.0pt
+Requested font "cmti10" at 10.95pt
+LaTeX Font Info:    Try loading font information for U+bbm on input line 19.
 
-[1
+("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Requested font "bbm10" at 10.95pt
+Requested font "bbm8" at 8.0pt
+Requested font "bbm6" at 6.0pt
+Requested font "cmss10" at 10.95pt
+Requested font "cmss12" at 12.0pt
+Requested font "cmssbx10" at 12.0pt
+ [1
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 21.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
+Overfull \hbox (1.9611pt too wide) in paragraph at lines 52--52
+[]$\OML/cmm/m/it/10.95 X[]; X[]:::X[]$ \OT1/cmr/m/it/10.95 i.i.d fol-lows Berno
+ulli(p), let $\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.
+95 X[]$\OT1/cmr/m/it/10.95 ,
+ []
+
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
  (1022-b.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 21.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 21.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 64.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 64.
  ) 
 Here is how much of TeX's memory you used:
- 18890 strings out of 428755
- 324232 string characters out of 3164220
- 379285 words of memory out of 3000000
- 21983 multiletter control sequences out of 15000+200000
- 10166 words of font info for 38 fonts, out of 3000000 for 9000
+ 18946 strings out of 428755
+ 325620 string characters out of 3164220
+ 383285 words of memory out of 3000000
+ 22029 multiletter control sequences out of 15000+200000
+ 11516 words of font info for 44 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 65i,7n,75p,501b,329s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 65i,7n,75p,501b,444s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on 1022-b.pdf (1 page).
+Output written on 1022-b.pdf (2 pages).

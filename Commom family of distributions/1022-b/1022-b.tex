@@ -15,7 +15,50 @@
 	\end{center}
 	
 \section{Discrete Distributions}
-\subsection{Discrete Uniform Distribution}
-\subsection{Bernoulli Distribution}
-\subsection{Binomial Distribution}
+
+\begin{definition}[Discrete Uniform Distribution]Suppose X follows discrete uniform distribution then it has density $$f_X(|N)=\frac{1}{N}\mathbbm{1}_{\{1,2,3...N\}}(x)$$
+where N is an integer, with notation X$\sim$Discrete Uniform(N).
+\end{definition}
+
+\begin{property}Given N, X follows discrete uniform distribution then,
+\begin{enumerate}
+\item $E[X|N]=\sum_{i=1}^NP(X=i)i=\frac{N+1}{2}$
+\item $Var(X|N)=E[X^2|N]-E[X|N]^2=\frac{N^2-1}{12}$
+\end{enumerate}
+\end{property}
+\begin{intuition}[Usage in statistics]
+How can we test the two given data group X,Y follows the same distribution? \\
+$X_1,X_2...X_n \overset{iid}{\sim}F_1(x)$ and $Y_1,Y_2...Y_m  \overset{iid}{\sim}F_1(x)$ want to test $H_0:F_1(x)=F_2(x)\ \forall x$\\
+{\bf Kolmogrov statistics}:
+Using empirical distribution of $F_1(x),F_2(x)$
+$$\hat{F_1}(x)=\frac{1}{n}\sum_{i=1}^n\mathbbm{1}(X_i\leq x)$$
+$$\hat{F_2}(x)=\frac{1}{m}\sum_{i=1}^m\mathbbm{1}(Y_i\leq x)$$
+We have Kolmogrov statistics:$$\sup_x|\hat{F_1}(x)-\hat{F_2}(x)|$$ which can not be too big if X and Y following same distributions.\\
+{\bf Rank statistics(Wilcoxon test)}: Instead of using true value as the predictor. We use the order i.e. rank of the data in the group. We combine X and Y and sort them to give rank $$W=\frac{1}{n}\sum_{i=1}^{n}Rank(X_i)$$
+To prevent the issue that extreme values dominated the statistics. And $X\sim Y$ if W is not too big or too small. 
+
+\end{intuition}
+\begin{definition}[Bernoulli Distribution]X follows Bernoulli distribution then it has density
+$$f_X(x|p)=p^x(1-p)^{1-x}\mathbbm{1}_{\{0,1\}}(x)$$
+where $0\leq p\leq 1$ denoting as X$\sim$Bernoulli(p).
+\end{definition}
+\begin{property}Given p, X follows binomial distribution then,
+\begin{enumerate}
+\item $E[X^m|p]=E[X|p]=p$
+\item $Var(X|p)=p-p^2=p(1-p)$
+\item $F_X(x)=P(X\leq x)=E[I(X\leq x)]=E[N(x)]$
+\end{enumerate}
+\end{property}
+\begin{definition}[Binomial Distribution]$X_1,X_2...X_n$ i.i.d follows Bernoulli(p), let $X=\sum_{i=1}^nX_n$, X follows binomial distribution having density $$f_X(x)=\binom{n}{x}p^x(1-p)^x\mathbbm{1}_{\{0,1,2,3...n\}}(x)$$
+\end{definition}
+\begin{intuition}[Independent]
+$X_1,X_2...X_n$ are independent iff $$P(X_1=x_1,X_2=x_2...X_n=x_n)=\prod_{i=1}^nf(x_i|p)$$
+The mutually independent property automatically satisfied since we can think of $\Omega=\Omega_1\times\Omega_2...\times\Omega_n$ where $\Omega_i=\{0,1\}$ for the $i$th Bernoulli trial. And $\bigcup(A_i\in\Omega_1)(\Omega_2...\times\Omega_n)$ augmented $\Omega$.
+\end{intuition}
+\begin{remark}In reality, $X_1,X_2...X_n$ are not i.i.d.. Since we sometimes sample population with common factors. They may affect each other, within positive or negative relation.
+\begin{enumerate}
+\item $\rho>0$ : over-dispersion binomial distribution.
+\item $\rho<0$ : under-dispersion binomial distribution.
+\end{enumerate}
+\end{remark}
 \end{document}
