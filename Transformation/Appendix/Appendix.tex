@@ -1,0 +1,79 @@
+\documentclass[../Transformation.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Tex book studies} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+
+
+In calculating expectation in generating function or characteristic function we sometimes face problems of exchanging summation/integration/differentiation/limits. We give some theory as the guide for us to exchange the operator and give some example applying the technique of interchanging operator for Casella 2.4. We neglect the proof since it is beyond our scope and may relies on measure theory from real analysis.
+\section{Interchanging Integration and Differentiation}
+\begin{theorem}[Leibnitz's Rule]If $f(x,\theta),a(\theta),\ and\ b(\theta)$ are differentiable with respect to $\theta$, then
+$$\frac{d}{d\theta}\int_{a(\theta)}^{b(\theta)}f(x,\theta)dx=f(b(\theta),\theta)\frac{d}{d\theta}b(\theta)-f(a(\theta),\theta)\frac{d}{d\theta}a(\theta)+\int_{a(\theta)}^{b(\theta)}\frac{\partial}{\partial\theta}f(x,\theta)dx$$
+where $a(\theta)$ and $b(\theta)$ are constant,
+$$\frac{d}{d\theta}\int_a^bf(x,\theta)dx=\int_a^b\frac{\partial}{\partial\theta}f(x,\theta)dx$$
+\end{theorem}
+We get the desired interchanging order of integration and differentiation on a finite range. If the range is unbounded, problem can arise. The question of whether interchanging the order of differentiation and integration relies on whether limits and integration can be interchanged since derivation comes from limits:
+$$\frac{\partial}{\partial\theta}f(x,\theta)=\lim_{\delta\rightarrow0}\frac{f(x,\theta+\delta)-f(x,\theta)}{\delta}$$ We have
+$$\frac{d}{d\theta}\int_{-\infty}^{\infty}f(x,\theta)dx=\lim_{\delta\rightarrow0}\int_{-\infty}^{\infty}\frac{f(x,\theta+\delta)-f(x,\theta)}{\delta}dx$$
+and $$\int_{-\infty}^{\infty}\frac{\partial}{\partial\theta}f(x,\theta)dx=\int_{-\infty}^{\infty}\lim_{\delta\rightarrow0}\frac{f(x,\theta+\delta)-f(x,\theta)}{\delta}dx$$
+\subsection{Interchanging Limits}
+\begin{theorem}[Dominated Convergence]Suppose the function h(x,y) is continuous at $y_0$ for each x, and there exists a function g(x) satisfying
+\begin{enumerate}
+\item $|h(x,y)|\leq g(x)$ for all x and y,
+\item $\int_{-\infty}^\infty g(x)dx<\infty$.
+\end{enumerate}
+Then $$\lim_{y\rightarrow y_0}\int_{-\infty}^\infty h(x,y)dx=\int_{-\infty}^\infty \lim_{y\rightarrow y_0}h(x,y)dx$$.
+\end{theorem}
+Existence of a dominating function g(x) with a finite integral ensures that the integrals cannot be too badly behaved. We can use dominated convergence theorem to state the interchange of differentiation and integration.
+\begin{theorem}Suppose f(x,$\theta$) is differentiable at $\theta=\theta_0$, that is, 
+$$\lim_{\delta\rightarrow0}\frac{f(x,\theta+\delta)-f(x,\theta)}{\delta}=\frac{\partial}{\partial\theta}f(x,\theta)|_{\theta=\theta_0}$$ exists for every x and there exists a function g(x,$\theta_0$) and a constant $\delta_0>0$ such that
+\begin{enumerate}
+\item $|\frac{f(x,\theta_0+\delta)-f(x,\theta_0)}{\delta}|\leq g(x,\theta_0)$, for all x and $|\delta|\leq\delta_0$,
+\item $\int_{-\infty}^\infty g(x,\theta_0)dx<\infty$.
+\end{enumerate}
+Then $$\frac{d}{d\theta}\int_{-\infty}^{\infty}f(x,\theta)dx|_{\theta=\theta_0}=\int_{-\infty}^{\infty}[\frac{\partial}{•\partial\theta}f(x,\theta)|_{\theta=\theta_0}]dx$$
+\end{theorem}
+Typically $f(x,\theta)$ is differentiable at all $\theta$. The condition 1 can be replaced by easier verifying version by mean value theorem:
+$$|\frac{f(x,\theta_0+\delta)-f(x,\theta_0)}{\theta}|=|\frac{\partial}{\partial\theta}f(x,\theta)|_{\theta=\theta'}\leq g(x,\theta)\ \forall\ \theta' \text{ such that $|\theta '-\theta |\leq\delta_0$}$$ 
+\begin{corollary}
+Suppose $f(x,\theta)$ is differentiable in $\theta$ and there exists a dominated function g(x,$\theta$) integrable.
+Then $$\frac{d}{d\theta}\int_{-\infty}^{\infty}f(x,\theta)dx|_{\theta=\theta_0}=\int_{-\infty}^{\infty}[\frac{\partial}{•\partial\theta}f(x,\theta)|_{\theta=\theta_0}]dx$$
+\end{corollary} 
+{\bf Example} The derivation of m.g.f at 0 is the moment is justified.
+$$\frac{d}{dt}M_X(t)=\frac{d}{dt}E[e^{tX}]=E[\frac{\partial}{\partial t}e^{tX}]=E[Xe^{tX}]$$ 
+{\bf Example} The moment of exponential distribution E($\lambda$) and N($\mu$,1) can be quickly constructed from lower moment since:
+$$E[X^{n+1}]=\lambda E[X^n]+\lambda^2\frac{d}{d\lambda}E[X^n]$$ and $$E[X^{n+1}]=\mu E[X^n]-\frac{d}{d\mu}E[X^n]$$
+
+\begin{remark}
+One have to find the dominated function and verify it is integrable. We omit the details.
+\end{remark}
+\section{Interchanging Summation and Differentiation/Integration}
+\begin{theorem}Suppose that the series $sum_{x=0}^\infty h(\theta,x)$ converges for all $\theta$ in a real interval (a,b) and
+\begin{enumerate}
+\item $\frac{\partial}{\partial\theta}h(\theta,x)$ is continuous in $\theta$ for each x,
+\item $\sum_{x=0}^{\infty}\frac{\partial}{\partial\theta}h(\theta,x)$ converges uniformly on every closed bounded subinterval of (a,b).
+\end{enumerate}
+Then $$\frac{d}{d\theta}\sum_{x=0}^{\infty}h(\theta,x)=\sum_{x=0}^{\infty}\frac{\partial}{\partial\theta}h(\theta,x).$$
+And the convergence will be uniform on [a,b], if given $\epsilon >0$, we can find an N such that $$n>N\Rightarrow |\sum_{x=0}^n\frac{\partial}{\partial\theta}h(\theta,x)-\sum_{x=0}^{\infty}\frac{\partial}{\partial\theta}h(\theta,x)|<\epsilon\ \forall\theta\in[a,b].$$
+\end{theorem}
+\begin{theorem}
+Suppose the series $\sum_{x=0}^{\infty}h(\theta,x)$ converges uniformly on [a,b] and that, for each x, $h(\theta,x)$ is a continuous function of $\theta$. Then
+$$\int_a^b\sum_{x=0}^\infty h(\theta,x)d\theta=\sum_{x=0}^\infty\int_a^b h(\theta,x)d\theta$$
+\end{theorem}
+A stronger result can be given by Tonelli Theorem.
+\begin{theorem}[Tonelli Theorem]
+If $f_n(x)\geq 0$ for all n,x then,
+$$\sum\int f_n(x)dx=\int\sum f_n(x)dx$$.
+\end{theorem}
+\end{document}

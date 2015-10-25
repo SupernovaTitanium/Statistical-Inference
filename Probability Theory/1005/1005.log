@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  21 OCT 2015 21:48
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  24 OCT 2015 20:36
 entering extended mode
 **1005.tex
 (1005.tex
@@ -666,10 +666,6 @@ LaTeX Info: Redefining \nameref on input line 2.
 
 (1005.out) (1005.out)
 \@outlinefile=\write6
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Requested font "cmbx10" at 10.95pt
 Requested font "cmr8" at 8.0pt
 Requested font "cmr6" at 6.0pt
@@ -683,15 +679,14 @@ Requested font "cmex10" at 10.95pt
 Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
 LaTeX Font Info:    Try loading font information for U+msa on input line 6.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 Requested font "msam10" at 10.95pt
 Requested font "msam10" at 8.0pt
 Requested font "msam7" at 6.0pt
 LaTeX Font Info:    Try loading font information for U+msb on input line 6.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Requested font "msbm10" at 10.95pt

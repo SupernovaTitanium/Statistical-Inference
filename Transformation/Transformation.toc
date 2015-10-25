@@ -12,6 +12,13 @@
 \contentsline {section}{\numberline {3.1}Expectation}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Moment}{9}{section.3.2}
 \contentsline {section}{\numberline {3.3}Moment generating and characteristic function}{10}{section.3.3}
-\contentsline {chapter}{\numberline {4}}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}Characteristic function}{11}{section.4.1}
-\contentsline {section}{\numberline {4.2}Convergence}{13}{section.4.2}
+\contentsline {chapter}{\numberline {4}}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Characteristic function}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Convergence}{14}{section.4.2}
+\contentsline {chapter}{\numberline {5}}{16}{chapter.5}
+\contentsline {section}{\numberline {5.1}Convergence of m.g.f}{16}{section.5.1}
+\contentsline {section}{\numberline {5.2}Basic property of characteristic function}{17}{section.5.2}
+\contentsline {chapter}{\numberline {A}}{18}{appendix.A}
+\contentsline {section}{\numberline {A.1}Interchanging Integration and Differentiation}{18}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Interchanging Limits}{19}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Interchanging Summation and Differentiation/Integration}{20}{section.A.2}

@@ -1,0 +1,52 @@
+\documentclass[../Transformation.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 11} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+
+\section{Convergence of m.g.f}
+{\bf Example}: Consider $f_{X_n}(x)=\binom{n}{x}P_n^x(1-P_n)^{n-x}\mathbbm{1}_{\{0,1,2...n\}}(x)$, the corresponding m.g.f $M_{X_n}(t)=(P_ne^t+(1-P_n))^n$. As $n\rightarrow\infty$, $nP_n\rightarrow\lambda$, we have $P_n=\frac{\lambda}{n}(1+O(1))$ and $$M_{X_n}(t)\rightarrow M_X(t)=e^{\lambda(e^t-1)}$$ which is the m.g.f of Poisson distribution.
+\begin{proof}
+Let $y=(P_ne^t+(1-P_n))^n$ we have $\ln y=\frac{\ln(P_ne^t+(1-P_n))}{\frac{1}{n}}=\frac{\ln(\frac{\lambda}{n}e^t(1+O(1))+(1-\frac{\lambda}{n}(1+O(1)))}{\frac{1}{n}}$ applying $L'h\hat{o}pital's$ rule we get $$\limn\ln y=\lambda(e^t-1)$$ so $$M_{X_n}(t)\rightarrow M_X(t)=e^{\lambda(e^t-1)}\ as \ n\rightarrow\infty\ nP_n\rightarrow\lambda$$
+\end{proof}
+\begin{intuition}[From the basic view]
+The example construct a relationship between Poisson distribution and Binomial distribution. And it is quite reasonable from the definition of Poisson distribution.\\
+{\bf Recall the definition of Poisson}:
+\begin{itemize}
+	\item It's a {\bf counting process}. That is, $N(t)$ that counts the number of appearances before time $t$.
+	\item ({\bf Boundary condition}) $N(0)=0$
+	\item ({\bf Stationary}) $\forall t_1<t_2$, $N(t_2)-N(t_1)\sim N(t_2-t_1)$
+	\item ({\bf Independence}) $\forall t_1<t_2<t_3<t_4$, $N(t_4)-N(t_3)\sim N(t_2)-N(t_1)$
+	\item ({\bf Fixed frequency}) $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) = 1]}{\Delta}=\lambda$, and $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)-N(0) > 1]}{\Delta}=0$
+	\item ({\bf Density function}) $f_{\lambda}(t,k) = \frac{(\lambda t)^{k}e^{-\lambda t}}{k!}\mathbf{1}_{\{k=0,1,2,...\}}$
+\end{itemize}
+Since $\lim_{\Delta\rightarrow0^+} \frac{Pr[N(\Delta)=1}{\Delta}=\lambda$ simply let $\Delta\lambda$ be the success probability of $P_n$.
+\end{intuition}
+\section{Basic property of characteristic function}
+\begin{property}[relation to moment]
+Let X be a random variable. If $E[|X^n|]<\infty$, then $\frac{d^n}{(dt)^n}\phi_X(t)$ exists for all t and 
+$$\frac{d^n}{(dt)^n}\phi_X(t)=E[e^{itX}(iX)^n]$$
+so the lower moments are
+$$E[X^n]=(-i)^n\frac{d^n}{(dt)^n}\phi_X(0)$$
+\end{property}
+\begin{property}[Basic]Let X and Y be random variables.
+\begin{enumerate}
+\item $\phi_X(0)=1$ and $|\phi_X(t)|\leq 1\ \forall t$.
+\item $\phi_{-X}(t)=\overline{\phi_X(t)}$ where bar denotes complex conjugation.
+\item $\phi_{aX+b}(t)=e^{itb}\phi_X(at)$.
+\item If X and Y are independent, $\phi_{X+Y}(t)=\phi_X(t)\times\phi_Y(t)$.
+\end{enumerate}
+\end{property}
+
+\end{document}

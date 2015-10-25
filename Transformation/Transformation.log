@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  21 OCT 2015 21:52
+This is XeTeX, Version 3.14159265-2.6-0.99992 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2015.8.26)  25 OCT 2015 02:38
 entering extended mode
 **Transformation.tex
 (Transformation.tex
@@ -764,7 +764,7 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 Requested font "bbm10" at 10.95pt
 Requested font "bbm8" at 8.0pt
 Requested font "bbm6" at 6.0pt
-) [10]
+) [10] [11]
 Chapter 4.
 (1019/CN.tex
 Overfull \hbox (29.64732pt too wide) in paragraph at lines 6--15
@@ -776,30 +776,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-[11
+[12
 
-] [12]
+] [13]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
- [13]
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
 
  []
 
-) [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
+[14]) [15]
+Chapter 5.
+(1022-a/1022-a.tex
+Overfull \hbox (29.64732pt too wide) in paragraph at lines 6--15
+ [] 
+ []
+
+[16
+
+]
+Overfull \hbox (0.2101pt too wide) in paragraph at lines 38--39
+[]\OT1/cmr/m/it/10.95 Let X be a ran-dom vari-able. If $\OML/cmm/m/it/10.95 E\O
+T1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n/10.
+95 j\OT1/cmr/m/n/10.95 ] \OML/cmm/m/it/10.95 < \OMS/cmsy/m/n/10.95 1$\OT1/cmr/m
+/it/10.95 , then $[]\OML/cmm/m/it/10.95 ^^^[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/
+10.95 t\OT1/cmr/m/n/10.95 )$
+ []
+
+) [17]
+Appendix A.
+(Appendix/Appendix.tex
+Overfull \hbox (28.6459pt too wide) in paragraph at lines 6--15
+ [] 
+ []
+
+[18
+
+]
+Missing character: There is no • in font cmr10!
+Requested font "cmex7" at 5.0pt
+Requested font "cmbx5" at 5.0pt
+Requested font "msam5" at 5.0pt
+Requested font "msbm5" at 5.0pt
+Requested font "bbm5" at 5.0pt
+Missing character: There is no • in font cmr10!
+ [19]) [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (Transformation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 25.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 25.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 31.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 31.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 19000 strings out of 428755
- 326319 string characters out of 3164220
- 388366 words of memory out of 3000000
- 22066 multiletter control sequences out of 15000+200000
- 15500 words of font info for 58 fonts, out of 3000000 for 9000
+ 19015 strings out of 428755
+ 326410 string characters out of 3164220
+ 388932 words of memory out of 3000000
+ 22069 multiletter control sequences out of 15000+200000
+ 16585 words of font info for 63 fonts, out of 3000000 for 9000
  1096 hyphenation exceptions out of 8191
- 56i,18n,73p,848b,537s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,18n,73p,848b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Transformation.pdf (15 pages).
+Output written on Transformation.pdf (21 pages).
