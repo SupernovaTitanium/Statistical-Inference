@@ -57,8 +57,11 @@ The mutually independent property automatically satisfied since we can think of 
 \end{intuition}
 \begin{remark}In reality, $X_1,X_2...X_n$ are not i.i.d.. Since we sometimes sample population with common factors. They may affect each other, within positive or negative relation.
 \begin{enumerate}
-\item $\rho>0$ : over-dispersion binomial distribution.
-\item $\rho<0$ : under-dispersion binomial distribution.
+\item Over-dispersion binomial distribution: There are positive correlation among populations. That is, if the event happens on one member, then other members will have higher tendency to success.
+\item Under-dispersion binomial distribution: There are negative correlation among populations.
 \end{enumerate}
+Formally, if the variance of a random variable look like: $var[X]=\phi p(1-p)$. If $\phi > 1$, we say $X$ is a over-dispersion binomial and on the contrary if $\phi<1$, then we say $X$ is an under-dispersion binomial. Note that, although we call them "binomial", they are definitely not a binomial random variable!
+
 \end{remark}
+
 \end{document}

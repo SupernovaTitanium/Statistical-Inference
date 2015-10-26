@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.27)  26 OCT 2015 12:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.27)  26 OCT 2015 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**1022-b.tex
-(./1022-b.tex
+**1026.tex
+(./1026.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/subfiles/subfiles.cls
@@ -594,8 +594,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (/usr/local/texlive/2015/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2012/05/23 Federico Garcia
 )))
-(./1022-b.aux)
-\openout1 = `1022-b.aux'.
+(./1026.aux)
+\openout1 = `1026.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
@@ -611,8 +611,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 2.
 LaTeX Font Info:    ... okay on input line 2.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count144
 \scratchdimen=\dimen172
@@ -656,9 +655,9 @@ LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
 LaTeX Info: Redefining \nameref on input line 2.
 
-(./1022-b.out) (./1022-b.out)
+(./1026.out) (./1026.out)
 \@outlinefile=\write6
-\openout6 = `1022-b.out'.
+\openout6 = `1026.out'.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
@@ -674,36 +673,33 @@ Overfull \hbox (29.64732pt too wide) in paragraph at lines 6--15
  [] 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 19.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [1
+[1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.9611pt too wide) in paragraph at lines 52--52
-[]$\OML/cmm/m/it/10.95 X[]; X[]:::X[]$ \OT1/cmr/m/it/10.95 i.i.d fol-lows Berno
-ulli(p), let $\OML/cmm/m/it/10.95 X \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.
-95 X[]$\OT1/cmr/m/it/10.95 ,
- []
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 20.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 20.
 
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
- (./1022-b.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
-Package rerunfilecheck Info: File `1022-b.out' has not changed.
+(./1026.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 20.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 20.
+Package rerunfilecheck Info: File `1026.out' has not changed.
 (rerunfilecheck)             Checksum: E3B6225417F814F5DB4D8BF8D3C64F8D;59.
  ) 
 Here is how much of TeX's memory you used:
- 15894 strings out of 493089
- 294049 string characters out of 6134842
- 363284 words of memory out of 5000000
- 19075 multiletter control sequences out of 15000+600000
- 11156 words of font info for 43 fonts, out of 8000000 for 9000
+ 15823 strings out of 493089
+ 292477 string characters out of 6134842
+ 358284 words of memory out of 5000000
+ 19028 multiletter control sequences out of 15000+600000
+ 9508 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,7n,75p,490b,440s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,7n,75p,488b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on 1026.pdf (1 page, 33304 bytes).
+PDF statistics:
+ 33 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-!pdfTeX error: /usr/local/texlive/2015/bin/x86_64-darwin/pdflatex (file bbm10):
- Font bbm10 at 657 not found
- ==> Fatal error occurred, no output PDF file produced!
