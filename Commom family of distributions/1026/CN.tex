@@ -29,5 +29,97 @@
 		\end{bfseries}
 	\end{center}
 	
+	
+Today we talk about the discrete distributions related to Bernoulli distribution.
+\section{Big picture}
+Bernoulli distribution is a single event with two possible outcome: yes/no. The probability is $p$ for the yes result and $(1-p)$ for the no. Intuitively, we can view a Bernoulli distribution as an indicator to identify whether an event has happened.
+
+$$\mbox{\it What if we want to consider more than one event?}$$
+
+Imagine the following scenario, there is a large population containing $N$ elements and $M$ of them are label as {\it type-I} and the rest $N-M$ are labeled as {\it type-II}. Now, as a statistician, we want to draw some inference about the population, but we have only limited access to the population, say $k$ samples. What can we know from the experiment?
+
+Basically, we can categorize the above scenario with two different properties: 
+\begin{itemize}
+	\item Draw {\it with replacement} ot {\it without replacement}.
+	\item Draw {\it fix number of samples}, or keep drawing {\it until a certain event happens}?
+\end{itemize}
+
+With these two factors, we can extend Bernoulli distribution into the following three discrete distribution:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline
+		& \multicolumn{1}{l|}{Replacement} & \multicolumn{1}{l|}{Draw} & \multicolumn{1}{l|}{Goal} \\ \hline
+		Hypergeometric    & Without                          & $k$ times                 & Number of yes             \\ \hline
+		Binomial          & With                             & $k$ times                 & Number of yes             \\ \hline
+		Negative Binomial & With                             & Wait until $r$ yes        & Number of no              \\ \hline
+	\end{tabular}
+\end{table}
+
+\section{Hypergeometric distribution}
+\subsection{Definition}
+Hypergeometric distribution describes the probability of the number of {\it yes} result under $k$ samples {\bf without replacement}. The density function consists of three parameters: ($N,M,k$) and the pdf is
+$$f(x|N,M,k) = \frac{{M\choose x}{N-M \choose k-x}}{{N\choose k}}\mathbf{1}_{(\max(0,k-(N-M)),min(M,k))}(x)$$
+Here, we discuss the meaning of each term:
+\begin{itemize}
+	\item ${N\choose k}$ in the denominator is the number of possible $k$ samples outcome.
+	\item ${M\choose x}$ in the numerator is the number of possible combinations of $k$ yes instances.
+	\item ${N-M\choose M-x}$ in the numerator is the number of possible combinations of $x-k$ no instances.
+\end{itemize}
+
+\subsection{Basic properties}
+Here, we list the mean and variance of hypergeometric distribution and discuss the idea of reparametrize techniques.
+\begin{itemize}
+	\item $\mathbb{E}[X|N,M,k] = k\frac{M}{N}$
+	\item $var[X|N,M,k]=k\frac{M}{N}\frac{N-M}{N}\frac{N-k}{N-1}$
+\end{itemize}
+In the following, we are going to prove the above results via reparametrize techniques and factorial moment.
+{\bf Proof}:
+\begin{itemize}
+	\item The mean of $X\sim\textit{Hypergeometric}(N,M,k)$
+	\begin{align*}
+	\mathbb{E}[X|N,M,k] &= \sum_{x=\max(0,k-(N-M))}^{\min(M,k)} x \frac{{M\choose x}{N-M \choose k-x}}{{N\choose k}}= \sum_{x=\max(0,k-(N-M))}^{\min(M,k)} M \frac{{M-1\choose x-1}{N-M \choose k-x}}{{N\choose k}}\\
+	&= \sum_{x=\max(0,k-(N-M))}^{\min(M,k)} M \frac{{M-1\choose x-1}{N-(M-1) \choose (k-1)-(x-1)}}{{N-1\choose k-1}\times\frac{N}{k}}\\
+	&=k\frac{M}{N}\sum_{x}\frac{{M-1\choose x-1}{N-(M-1) \choose (k-1)-(x-1)}}{{N-1\choose k-1}}=k\frac{M}{N}
+	\end{align*}
+	\item The variance of $X\sim\textit{Hypergeometric}(N,M,k)$
+	\begin{align*}
+	var[X|N,M,k] = \mathbb{E}[X^2]-\mathbb{E}[X]^2 = \mathbb{E}[X(X-1)] + \mathbb{E}[X] - \mathbb{E}[X]^2
+	\end{align*}
+	As we know $\mathbb{E}[X]$, it suffices to find $\mathbb{E}[X(X-1)]$. The trick that computing the expectation of $X(X-1)$ instead of that of $X^2$ is called {\it factorial moment}, which is computation-friendly when having lots of binomial terms. As a result,
+	\begin{align*}
+	\mathbb{E}[X(X-1)] &= 
+	\end{align*}
+\end{itemize}
+
+\section{Binomial distribution}
+\subsection{Definition}
+The binomial distribution describe the probability of the number of {\it yes} results with a fixed number of i.i.d. drawing {\bf with replacement}. The density function consists of two parameters: ($N,p$) and the pdf is
+$$f(x|N,p) = {N\choose x}p^x(1-p)^{N-x}\mathbf{1}_{0,1,...,N}(x)$$
+
+Note that, the difference between the definitions of hypergeometric distribution and binomial distribution is not only with/without replacement, the underlying mechanism of binomial distribution is not a fix finite sample space as hypergeometric. For example, the number of drawing can be unbounded, or the {\it yes} probability should not be necessarily a rational number.
+
+\subsection{Basic properties}
+Suppose $X\sim\textit{Binomial}(N,p)$, the following is the mean and variance of $X$:
+\begin{itemize}
+	\item $\mathbb{E}[X|N,p] = Np$
+	\item $var[X|N,p] = Np(1-p)$
+\end{itemize}
+
+\section{Negative binomial distribution}
+\subsection{Definition}
+The negative binomial distribution describes the probability of the number of {\it no} instances before certain number of {\it yes} results in a sequence of i.i.d. drawing. Formally speaking, for a negative binomial distribution with parameters: ($p,r$) where $p$ is the probability of {\it yes} and $r$ is the number of {\it yes} instances we are waiting for, the pdf is
+$$f(x|p,r) = {n-1\choose r-1}p^r(1-p)^x\mathbf{1}_{0,1,...}(x)$$
+
+\subsection{Basic properties}
+Suppose $X\sim\textit{Negative Binomial}(p,r)$
+\begin{itemize}
+	\item $\mathbb{E}[X|p,r] = \frac{pr}{1-p}$
+	\item $var[X|p,r]=\frac{pr}{(1-p)^2}$
+	\item When $r=1$, it is called {\it geometric} distribution.
+	\item The drawing process is memoryless. For example, the distribution of number of {\it no} will remain the same as we conditioned on the number of {\it no} instances before.
+	\item As we let $p\rightarrow1$, the {\it yes} result will tend to happen and some how the distribution will converge to Poisson distribution similarly to binomial distribution. (Detail discussion next time)
+\end{itemize}
 
 \end{document}
