@@ -1,0 +1,104 @@
+\def\draft{0}
+\documentclass[11pt]{article}
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color,amsmath}
+\usepackage{IEEEtrantools}
+\input{macros}
+\pagestyle{plain}
+
+\newcommand{\scribe}{Chi-Ning Chou}
+\newcommand{\lecnum}{13}
+\newcommand{\lecdate}{October 29, 2015}
+
+%\parskip=1.5mm
+%\parindent=0mm
+
+\begin{document}
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+	
+\section{Poisson distribution}
+Poisson random variable is defined with a parameter $\lambda$ denoting the rate or intensity of a counting process. As Poisson distribution is {\bf memoryless}, these two notions don't conflict. We define the probability density function of Poisson($\lambda$) as follow:
+$$f_X(x|\lambda) = \frac{\lambda^x e^{-\lambda}}{x!}\mathbf{1}_{\{0,1,...\}}(x)$$
+
+\noindent The following is the basic properties of Poisson distribution:
+\begin{itemize}
+	\item $\mathbb{E}[x|\lambda] = \lambda$
+	\item $var[x|\lambda]=\lambda$
+	\item $M_X(t) = e^{-\lambda(1-e^t)}$
+\end{itemize}
+
+\noindent Now, let's consider a theorem that connects the intuition of Poisson process with Poisson distribution.
+\begin{theorem}[Poisson process]
+	Let $N_t$ be a nondecreasing integer-valued random variable satisfying
+	\begin{enumerate}
+		\item $N_0=0$
+		\item $\forall0<t_1<t_2<t_3<t_4$, $N_{t_2}-N{t_1}\sim N_{t_2-t_1}$ ({\bf identical}). $N_{t_2} - N_{t_1} \mbox{ is independent to } N_{t_4} - N_{t_3}$
+		\item $\lim_{n\rightarrow\infty}\frac{Pr[N_0=1]}{h} = \lambda$ and $\lim_{n\rightarrow\infty}\frac{Pr[N_0\geq2]}{h}=0$
+	\end{enumerate}
+	Then, $Pr[N_t=k] = \frac{(\lambda t)^ke^{-\lambda t}}{k!}$
+\end{theorem}
+\begin{proof}
+	First, we consider the case where $k=0$. Then we use induction to prove the result for all $k$. In the following proof, denote $P_n(t) = Pr[N_t=n]$
+	\begin{enumerate}
+		\item Suppose $n=0$, we have $\forall t>0$
+		\begin{align*}
+		P_0(t+h) &= Pr[N_t=0\mbox{ and }N_{t+h}-N_t=0]\\
+		(\because\mbox{independent and stationary})&= P_0(t)P_0(h)\\
+		&=P_0(t)(1-\lambda h+o(h))\\
+	\end{align*}
+	Subtract $P_(t)$ on both side and divide by $h$, let $h\rightarrow0$ we have 
+	\begin{align*}
+		P_0'(t) &= \lim_{h\rightarrow0}\frac{P_0(t+h)-P_0(t)}{h}\\
+		&=\lim_{h\rightarrow0}-\lambda P_0(h) + \frac{o(h)}{h}\\
+		&=-\lambda P_0(t)
+	\end{align*}
+	This is equivalent as solving $\frac{d}{dt}\ln P_0(t) = -\lambda$. With the boundary condition $P_0(0)=0$, we have
+	$$P_0(t) = e^{-\lambda t}$$
+	\item Now, consider $n\geq1$. We have
+	\begin{align*}
+	P_n(t+h)&=Pr[N_t = n-1\mbox{ and }N_{t+h}-N_t=1] + Pr[N_t=n\mbox{ and }N_{t+h}-N_t=0]\\
+	& + Pr[N_{t+h}-N_t\geq2]\\
+	&=P_{n-1}(t)(\lambda h+o(h)) + P_n(t)(1-\lambda h+o(h)) + o(h)
+	\end{align*}
+	Subtract $P_n(t)$ on both side and divide by $h$, let $h\rightarrow0$ we have,
+	\begin{align*}
+	P_n'(t) &= \lim_{h\rightarrow0}\frac{P_n(t+h)-P_n(t)}{h}\\
+	&=\lim_{h\rightarrow0}\lambda P_{n-1}(t)-\lambda P_n(t) + \frac{o(h)}{h}\\
+	&=\lambda P_{n-1}(t)-\lambda P_n(t)
+	\end{align*}
+	Consider $n=1$, we have $P_1'(t) = \lambda e^{-\lambda t} - \lambda P_1(t)$, which is equivalent as solving $\frac{d}{dt}(e^{\lambda t}P_1(t)) = \lambda$. With boundary condition $P_1(0)=0$, we have
+	$$P_1(t) = \lambda te^{-\lambda t}$$
+	With induction hypothesis $P_{n-1}(t) = \frac{(\lambda t)^{n-1}e^{-\lambda t}}{(n-1)!}$, the problem is  equivalent as solving $\frac{d}{dt}e^{\lambda t}P_n(t) = \lambda\frac{(\lambda t)^{n-1}}{(n-1)!}$. With boundary condition $P_n(0)=0$, we have
+	$$P_n(t) = \frac{(\lambda t)^ne^{\lambda t}}{n!}$$
+	\end{enumerate}
+\end{proof}
+
+\subsection{Counting process and Stopping time}
+In fact, counting process and stopping time are the two side of a coin. The following shows how to interchange from one to another.\\
+
+\noindent{\bf Stopping time $T$ $\rightarrow$ Counting process $\{N(t),t\geq0\}$}\\
+For a given stopping $T$, we can define a corresponding zero-one counting process: $N_T(t) := \mathbf{1}_{\{T<t \}}$\\
+
+\noindent{\bf Counting process $\{N(t),t\geq0\}$ $\rightarrow$ Stopping time $T$}\\
+For a counting process $\{N(t),t\geq0\}$, we can define a stopping time $T$as $Pr[T>t] = Pr[N(t)=0]$ such that
+\begin{align*}
+1-F_{T}(t) &= e^{-\lambda t}\\
+f_T(t)&=\lambda e^{-\lambda t}\mathbf{1}_{\{0,1,2,...\}}(t)
+\end{align*}
+
+
+
+\end{document}
