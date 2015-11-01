@@ -48,5 +48,6 @@
 \contentsline {section}{\numberline {5.5}Proof of the necessary and sufficient condition of cumulative function}{29}{section.5.5}
 \contentsline {paragraph}{\color {red} Chi-Ning's version}{30}{section*.13}
 \contentsline {chapter}{\numberline {6}}{32}{chapter.6}
-\contentsline {section}{\numberline {6.1}Density function}{32}{section.6.1}
-\contentsline {section}{\numberline {6.2}Quantative Description of Poisson Random Variable}{33}{section.6.2}
+\contentsline {section}{\numberline {6.1}Identical distribution}{32}{section.6.1}
+\contentsline {section}{\numberline {6.2}Density and mass function}{32}{section.6.2}
+\contentsline {section}{\numberline {6.3}Quantative Description of Poisson Random Variable}{34}{section.6.3}

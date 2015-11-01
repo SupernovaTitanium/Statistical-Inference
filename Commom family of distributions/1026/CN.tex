@@ -110,7 +110,7 @@ Suppose $X\sim\textit{Binomial}(N,p)$, the following is the mean and variance of
 \section{Negative binomial distribution}
 \subsection{Definition}
 The negative binomial distribution describes the probability of the number of {\it no} instances before certain number of {\it yes} results in a sequence of i.i.d. drawing. Formally speaking, for a negative binomial distribution with parameters: ($p,r$) where $p$ is the probability of {\it yes} and $r$ is the number of {\it yes} instances we are waiting for, the pdf is
-$$f(x|p,r) = {n-1\choose r-1}p^r(1-p)^x\mathbf{1}_{0,1,...}(x)$$
+$$f(x|p,r) = {x+r-1\choose r-1}p^r(1-p)^x\mathbf{1}_{0,1,...}(x)$$
 
 \subsection{Basic properties}
 Suppose $X\sim\textit{Negative Binomial}(p,r)$
