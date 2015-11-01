@@ -89,9 +89,17 @@ In the following, we are going to prove the above results via reparametrize tech
 	\end{align*}
 	As we know $\mathbb{E}[X]$, it suffices to find $\mathbb{E}[X(X-1)]$. The trick that computing the expectation of $X(X-1)$ instead of that of $X^2$ is called {\it factorial moment}, which is computation-friendly when having lots of binomial terms. As a result,
 	\begin{align*}
-	\mathbb{E}[X(X-1)] &= 
+	\mathbb{E}[X(X-1)] 
 	\end{align*}
 \end{itemize}
+
+\subsection{Approximation}
+Hypergeometric distribution can be approximated by binomial distribution as $N,M\rightarrow\infty$ and $\frac{M}{N}\rightarrow p$. Intuitively, the population size grows to infinite and thus each draw has negligible influence to the population, which makes the whole process to be identical. As the drawing process is uniform, the process becomes independent. Thus, we can view it as a binomial. The derivation is simple:
+\begin{align*}
+P(x|N,M,k) &= \frac{{M\choose x}{N-M \choose k-x}}{{N\choose k}} \approx \frac{\frac{M^x}{x!}\frac{(N-M)^{k-x}}{(k-x)!}}{\frac{N^k}{k!}}\\
+&=\frac{k!}{x!(k-x)!}\frac{M^x(N-M)^{k-x}}{N^k}\\
+(\frac{M}{N}=p)&={k\choose x}p^x(1-p)^{k-x}
+\end{align*}
 
 \section{Binomial distribution}
 \subsection{Definition}

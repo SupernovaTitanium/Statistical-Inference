@@ -98,31 +98,13 @@ From inversion theorem, we have $\mu_X((a,b))=\mu_Y((a,b))$ $\forall a,b\in C$, 
 \begin{intuition}[convergence of characteristic function]
 	Theorem~\ref{thm:convergenceincharfunc} tells us that if r.v.s converge in characteristic functions, then r.v.s also converge in distribution.
 \end{intuition}
-\noindent{\bf Remark}: Tips for calculating MGF: consider the MGF of binomial distributed random variable $X$ such that $f_X(x)=\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)p^{x}(1-p)^{n-x}\mathbf{1}_{0,1,...,n}$. We have
+\noindent{\bf Remark}: Tips for calculating MGF: consider the MGF of binomial distributed random variable $X$ such that $f_X(x)={n\choose x}p^{x}(1-p)^{n-x}\mathbf{1}_{0,1,...,n}$. We have
 \begin{align*}
-M_{X_n}(t) &= \sum_{x=0}^n\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)p^{x}(1-p)^{n-x}e^{tx}\\
-&=\sum_{x=0}^n\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)(pe^t)^x(1-p)^{n-x}\\
-&=\sum_{x=0}^n\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)\frac{(pe^t)^x(1-p)^{n-x}}{[(pe^t)+(1-p)]^n}[(pe^t)+(1-p)]^n\\
-(\mbox{set }p'=\frac{pe^t}{pe^t+(1-p)})&=\sum_{x=0}^n\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)p'^x(1-p')^{n-x}[(pe^t)+(1-p)]^n\\
-&=[(pe^t)+(1-p)]^n\sum_{x=0}^n\left(\begin{array}{c}
-n\\
-x
-\end{array}\right)p'^x(1-p')^{n-x}\\
+M_{X_n}(t) &= \sum_{x=0}^n{n\choose x}p^{x}(1-p)^{n-x}e^{tx}\\
+&=\sum_{x=0}^n{n\choose x}(pe^t)^x(1-p)^{n-x}\\
+&=\sum_{x=0}^n{n\choose x}\frac{(pe^t)^x(1-p)^{n-x}}{[(pe^t)+(1-p)]^n}[(pe^t)+(1-p)]^n\\
+(\mbox{set }p'=\frac{pe^t}{pe^t+(1-p)})&=\sum_{x=0}^n{n\choose x}p'^x(1-p')^{n-x}[(pe^t)+(1-p)]^n\\
+&=[(pe^t)+(1-p)]^n\sum_{x=0}^n{n\choose x}p'^x(1-p')^{n-x}\\
 &=[(pe^t)+(1-p)]^n
 \end{align*}
 

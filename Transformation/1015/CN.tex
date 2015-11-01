@@ -139,15 +139,25 @@ E[X_2^r]&=\int_0^\infty\frac{x^{r-1}}{\sqrt{2\pi}}e^{\frac{-(\ln x)^2}{2}}(1+sin
 &=e^{\frac{r^2}{2}}+e^{\frac{r^2}{2}}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{\frac{-v^2}{2}}(sin(2\pi v)cos(2\pi r)+sin(2\pi r)cos(2\pi v))dv\\
 &=e^{\frac{r^2}{2}} \mbox{ (sin is a odd function and taks on zero value when $r\in\mathcal{Z}$)}
 \end{align*}
+
 \begin{remark}
 Also noticed that the moment generating function of log normal distribution does not exist since $E[e^{tX}]=\int_0^\infty\frac{e^{tx}}{\sqrt{2\pi}x}e^{\frac{-(\ln x)^2}{2}}dx$ diverges. $e^{tx}e^{\frac{-(\ln x)^2}{2}}$ diverges as $n\rightarrow\infty$.
 \end{remark}
-\begin{intuition}[Determine distribution]
-\begin{enumerate}
-\item If Moment generating function exists, it determines the distribution. 
-\item Two distributions which admit moments of all orders are not necessary same distribution unless the support is bounded. 
-\item Even all moments exists does not imply m.g.f exists. 
-\item Characteristic function always exists and completely determines the distribution.
-\end{enumerate}
-\end{intuition}
+
+\begin{conclusion}{Determine distribution}
+	Basically, mgf is a {\bf stronger} of a r.v. The following lists the positive results and negative results of mgf:\\
+	{\bf Positive}:
+	\begin{enumerate}
+		\item If the support is {\bf bounded} and two r.v.s share every moment, then they will have the same distribution.
+		\item As the two mgfs are the same in a neighborhood of 0, then they will have the same distribution.
+		\item Convergence in mgf implies the convergence of distribution.
+		\item Characteristic function always exists and completely determines the distribution.
+	\end{enumerate}
+	{\bf Negative}:
+	\begin{enumerate}
+		\item Even all moments exists does not imply m.g.f exists. \eg {\it log-normal} distribution.
+		\item Two distributions might have same moments but have different distribution. \eg {\it log-normal} distribution and $(1+\sin(2\pi\log x))\frac{e^{-(\log x)^2/2}}{\sqrt{2\pi}x}$
+	\end{enumerate}
+\end{conclusion}
+
 \end{document}

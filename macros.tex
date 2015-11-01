@@ -1,3 +1,5 @@
+\usepackage{tcolorbox}
+\tcbuselibrary{xparse}
 \usepackage{amsfonts, fullpage, rotating, amssymb}
 \usepackage{color,amsmath}
 \usepackage{IEEEtrantools}
@@ -28,6 +30,7 @@
 \newtheorem{sublemma}[theorem]{Sublemma}
 
 \newenvironment{intuition}[1][]{\begin{tcolorbox}[title=Intuition ~(#1),fonttitle=\sffamily\large\bfseries]}{\end{tcolorbox}}
+\DeclareTColorBox{conclusion}{}{fonttitle=\bfseries\sffamily\large, title=Conclusion, colframe=red!75!black,colback=red!5!white}
 
 %%%%%%%%%%%%%%%%%%%% proof environments
 

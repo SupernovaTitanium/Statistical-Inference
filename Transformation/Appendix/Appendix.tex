@@ -58,7 +58,10 @@ $$E[X^{n+1}]=\lambda E[X^n]+\lambda^2\frac{d}{d\lambda}E[X^n]$$ and $$E[X^{n+1}]
 \begin{remark}
 One have to find the dominated function and verify it is integrable. We omit the details.
 \end{remark}
+
 \section{Interchanging Summation and Differentiation/Integration}
+Sometimes we find out that it's convenient to change the order or integration for calculation convenience. However, there's not always the case we can do so. The following is some {\bf sufficient} condition for us to interchange the order of summation/integration. Most of the time, these theorem suffices to help us interchange the integral and fulfill the computation.
+
 \begin{theorem}Suppose that the series $sum_{x=0}^\infty h(\theta,x)$ converges for all $\theta$ in a real interval (a,b) and
 \begin{enumerate}
 \item $\frac{\partial}{\partial\theta}h(\theta,x)$ is continuous in $\theta$ for each x,
@@ -71,7 +74,14 @@ And the convergence will be uniform on [a,b], if given $\epsilon >0$, we can fin
 Suppose the series $\sum_{x=0}^{\infty}h(\theta,x)$ converges uniformly on [a,b] and that, for each x, $h(\theta,x)$ is a continuous function of $\theta$. Then
 $$\int_a^b\sum_{x=0}^\infty h(\theta,x)d\theta=\sum_{x=0}^\infty\int_a^b h(\theta,x)d\theta$$
 \end{theorem}
-A stronger result can be given by Tonelli Theorem.
+
+Fubini presented a nice theorem for integrable function:
+\begin{theorem}[Fubini's theorem]
+	Suppose $f(x,y)$ is integrable on $X\times Y$, and $\int_{X\times Y}|f(x,y)|d(x,y)<\infty$, then
+	$$\int_X\int_Yf(x,y)dydx = \int_Y\int_X f(x,y)dxdy=\int_{X\times Y}f(x,y)d(x,y)$$
+\end{theorem}
+
+A stronger result can be achieved by Tonelli Theorem.
 \begin{theorem}[Tonelli Theorem]
 If $f_n(x)\geq 0$ for all n,x then,
 $$\sum\int f_n(x)dx=\int\sum f_n(x)dx$$.
