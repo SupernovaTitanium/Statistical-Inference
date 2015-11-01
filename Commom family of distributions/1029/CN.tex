@@ -1,33 +1,18 @@
-\def\draft{0}
-\documentclass[11pt]{article}
-\usepackage{amsfonts, fullpage, rotating, amssymb}
-\usepackage{color,amsmath}
-\usepackage{IEEEtrantools}
-\input{macros}
-\pagestyle{plain}
-
-\newcommand{\scribe}{Chi-Ning Chou}
-\newcommand{\lecnum}{13}
-\newcommand{\lecdate}{October 29, 2015}
-
-%\parskip=1.5mm
-%\parindent=0mm
-
+\documentclass[../Distributions.tex]{subfiles}
 \begin{document}
-	
 	\begin{center}
 		\renewcommand{\arraystretch}{2}
 		\begin{bfseries}
 			\begin{tabular}{|c|}
 				\hline
 				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
-				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\hspace{15em} {\large Lecture Notes 13} \hspace{15em}\ \\
 				\lecdate \hfill Scribe: \scribe\\
 				\hline
 			\end{tabular}
 			\renewcommand{\arraystretch}{1}
 		\end{bfseries}
-	\end{center}	
+	\end{center}
 \section{Poisson distribution}
 Poisson random variable is defined with a parameter $\lambda$ denoting the rate or intensity of a counting process. As Poisson distribution is {\bf memoryless}, these two notions don't conflict. We define the probability density function of Poisson($\lambda$) as follow:
 $$f_X(x|\lambda) = \frac{\lambda^x e^{-\lambda}}{x!}\mathbf{1}_{\{0,1,...\}}(x)$$
