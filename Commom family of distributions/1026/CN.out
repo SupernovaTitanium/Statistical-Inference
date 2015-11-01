@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \BOOKMARK [1][-]{section.1}{Big picture}{}% 1
 \BOOKMARK [1][-]{section.2}{Hypergeometric distribution}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Definition}{section.2}% 3
@@ -9,3 +10,15 @@
 \BOOKMARK [1][-]{section.4}{Negative binomial distribution}{}% 9
 \BOOKMARK [2][-]{subsection.4.1}{Definition}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.2}{Basic properties}{section.4}% 11
+=======
+\BOOKMARK [1][-]{section.0.1}{Big\040picture}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Hypergeometric\040distribution}{}% 2
+\BOOKMARK [2][-]{subsection.0.2.1}{Definition}{section.0.2}% 3
+\BOOKMARK [2][-]{subsection.0.2.2}{Basic\040properties}{section.0.2}% 4
+\BOOKMARK [1][-]{section.0.3}{Binomial\040distribution}{}% 5
+\BOOKMARK [2][-]{subsection.0.3.1}{Definition}{section.0.3}% 6
+\BOOKMARK [2][-]{subsection.0.3.2}{Basic\040properties}{section.0.3}% 7
+\BOOKMARK [1][-]{section.0.4}{Negative\040binomial\040distribution}{}% 8
+\BOOKMARK [2][-]{subsection.0.4.1}{Definition}{section.0.4}% 9
+\BOOKMARK [2][-]{subsection.0.4.2}{Basic\040properties}{section.0.4}% 10
+>>>>>>> 992906a507801f2f85f5d5782caae15e90daab14

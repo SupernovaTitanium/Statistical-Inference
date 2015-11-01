@@ -1,34 +1,18 @@
-\def\draft{0}
-\documentclass[11pt]{article}
-\usepackage{amsfonts, fullpage, rotating, amssymb}
-\usepackage{color,amsmath}
-\usepackage{IEEEtrantools}
-\input{macros}
-\pagestyle{plain}
-
-\newcommand{\scribe}{Chi-Ning Chou}
-\newcommand{\lecnum}{13}
-\newcommand{\lecdate}{October 29, 2015}
-
-%\parskip=1.5mm
-%\parindent=0mm
-
+\documentclass[../Distributions.tex]{subfiles}
 \begin{document}
-	
 	\begin{center}
 		\renewcommand{\arraystretch}{2}
 		\begin{bfseries}
 			\begin{tabular}{|c|}
 				\hline
 				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
-				\hspace{15em} {\large Lecture Notes \lecnum} \hspace{15em}\ \\
+				\hspace{15em} {\large Lecture Notes 13} \hspace{15em}\ \\
 				\lecdate \hfill Scribe: \scribe\\
 				\hline
 			\end{tabular}
 			\renewcommand{\arraystretch}{1}
 		\end{bfseries}
 	\end{center}
-	
 \section{Poisson distribution}
 Poisson random variable is defined with a parameter $\lambda$ denoting the rate or intensity of a counting process. As Poisson distribution is {\bf memoryless}, these two notions don't conflict. We define the probability density function of Poisson($\lambda$) as follow:
 $$f_X(x|\lambda) = \frac{\lambda^x e^{-\lambda}}{x!}\mathbf{1}_{\{0,1,...\}}(x)$$
@@ -93,12 +77,36 @@ In fact, counting process and stopping time are the two side of a coin. The foll
 For a given stopping $T$, we can define a corresponding zero-one counting process: $N_T(t) := \mathbf{1}_{\{T<t \}}$\\
 
 \noindent{\bf Counting process $\{N(t),t\geq0\}$ $\rightarrow$ Stopping time $T$}\\
-For a counting process $\{N(t),t\geq0\}$, we can define a stopping time $T$as $Pr[T>t] = Pr[N(t)=0]$ such that
+For a counting process $\{N(t),t\geq0\}$, we can define a stopping time $T$ as $Pr[T>t] = Pr[N(t)=0]$ so for a Poisson counting process:
 \begin{align*}
 1-F_{T}(t) &= e^{-\lambda t}\\
 f_T(t)&=\lambda e^{-\lambda t}\mathbf{1}_{\{0,1,2,...\}}(t)
 \end{align*}
-
-
+for Gamma distribution:
+\begin{align*}
+T^*&=\sum_{j=1}^mT_j^*\\
+f_{T^*}(t|m,\lambda)&=\frac{t^{m-1}\lambda^m e^{-\lambda t}}{\tau(m)}\mathbbm{1}_{\{0,\infty\}}(t)
+\end{align*}
+\section{Relationship between distribution}
+\begin{example}
+Let X$\sim$Poisson($\lambda$) and Y$\sim$Binomial(n,p), then $f_X(x)=\frac{e^{-\lambda}\lambda^x}{x!}$ and we can expand $$f_Y(y)=\binom{n}{y}p^y(1-p)^{n-y}=\frac{n-y+1}{y}\frac{p}{1-p}\binom{n}{y-1}p^{y-1}(1-p)^{n-y+1}=\frac{np-yp+p}{y-yp}f_Y(y-1|n,p)$$ so when $p\rightarrow 0,n\rightarrow\infty,np\rightarrow\lambda$, we have $Y\overset{d}{=}X$
+ \begin{align*}
+f_Y&=\frac{\lambda}{y}f_Y(y-1|n,p)\\
+&=\prod_{i=1}^y\frac{\lambda}{i}f_Y(0|n,p)\\
+&=\frac{\lambda^y}{y!}(1-\frac{np}{n})^n\\
+&=\frac{\lambda^ye^{-\lambda}}{y!}
+\end{align*}
+\end{example}
+\begin{example}
+Y$\sim$Negative Binomial(r,p), then $f_Y(y)=\binom{y+r-1}{r-1}p^r(1-p)^y$\\
+when $r\rightarrow\infty,p\rightarrow 1,r(1-p)\rightarrow\lambda$, we have $Y\overset{d}{=} Poisson(\lambda)$
+\begin{align*}
+M_Y(t)&=E[e^{tY}]=\sum_{y=0}^\infty\binom{y+r-1}{r-1}p^r(1-p)^ye^{ty}\\
+&=\sum_{y=0}^\infty\binom{y+r-1}{r-1}p^r((1-p)e^t)^y\\
+&=(\frac{p}{1-(1-p)e^t})^r\\
+&=(1+\frac{1}{r}\frac{r(1-p)(e^t-1)}{1-(1-p)e^t})^r\\
+&=e^{\lambda(e^t-1)}
+\end{align*}
+\end{example}
 
 \end{document}
