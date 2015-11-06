@@ -42,7 +42,7 @@
 		\begin{align*}
 		\frac{1}{2\pi}\int_{-T}^{T}\frac{e^{-ita}-e^{-itb}}{it}\phi_X(t)dt &= \frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{e^{-ita}-e^{-itb}}{it}e^{itx}dF_X(x)dt\\
 		&=\frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{\cos t(x-a)+i\sin t(x-a)}{it}dF_X(x)dt\\
-		&=\frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{\cos t(x-b)+i\sin t(x-b)}{it}dF_X(x)dt\\
+		&+\frac{1}{2\pi}\int_{-T}^{T}\int_{-\infty}^{\infty}\frac{\cos t(x-b)+i\sin t(x-b)}{it}dF_X(x)dt\\
 		(\because\mbox{symmetry})&=\frac{1}{\pi}\int_0^{T}\int_{-\infty}^{\infty}\frac{\sin t(x-a) - \sin t(x-b)}{t}dF_X(x)dt\\
 		(\mbox{by Fubini's thm})&=\frac{1}{\pi}\int_{-\infty}^{\infty}\int_0^{T}\frac{\sin t(x-a) - \sin t(x-b)}{t}dtdF_X(x)
 		\end{align*}
