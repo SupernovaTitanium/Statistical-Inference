@@ -33,13 +33,55 @@ $$f_X(x|\beta) = \frac{1}{\beta}e^{-x/\beta}\mathbf{1}_{(0,\infty)}(x)$$
 $$f_Y(y|\beta,\gamma) = \frac{\gamma}{\beta}y^{\gamma-1}e^{-y^{\gamma}/\beta}\mathbf{1}_{(0,\infty)}(y)$$
 In other words, Weibull random variable is a power transformed version of exponential random variable. And as $\gamma=1$, the Weibull degenerates to exponential.
 
-\noindent{\bf Gamma}: Intuitively, gamma distribution captures the total interleaving time up to more than one appearances. We use two parameters $\alpha,\beta$ to define a gamma random variable and denote it as Gamma($\alpha,\beta$). If $X\sim$Gamma($\alpha,\beta$), then
+\noindent{\bf Gamma}: Intuitively, gamma distribution captures the total interleaving time up to more than $\alpha+1$ appearances. We use two parameters $\alpha,\beta$ to define a gamma random variable and denote it as Gamma($\alpha,\beta$). If $X\sim$Gamma($\alpha,\beta$), then
 $$f_X(x|\alpha,\beta) = \frac{x^{\alpha-1}e^{-x/\beta}}{\Gamma(\alpha)\beta^{\alpha}}\mathbf{1}_{(0,\infty)}$$
 
 As we mentioned earlier, these three distributions are highly related to Poisson distribution in the sense that they describe the waiting time of a counting process given the number of desired observations while Poisson distribution captures the number of appearances given the amount of observing time. The two aspects are just two side of a coin, and we can use the following equation to relate them all together: Let $\{N(t)\}$ be a counting process and $T$ be the corresponding waiting time for a single event to happen. We have 
 $$\{T>t\} = \{N(t)=0\}$$
 If we write down the probability of each side and do some computation, we can derive a relationship between exponential distribution and Poisson distribution.
-
-
-
+\subsection{Exponential family to Poisson}
+\noindent{\bf Exponential}: Let $F_X(x)$ be the distribution function of a random variable X$\sim$exponential($\beta$) and $t_1$ be the interleaving time of next arrival. Exponential distribution captures the probability of interleaving time less than or equal to t. We can interpreted it as at least one arrival happened up to time t. So it follows:
+$$F_X(x)=P(t_1\leq x)=1-P(t_1>x)=1-P(N(t)=0)=\frac{(\lambda x)^0e^{-\lambda x}}{0!}$$
+We have 
+$$f_X(x|\beta) = \frac{1}{\beta}e^{-x/\beta}\mathbf{1}_{(0,\infty)}(x)$$
+\noindent{\bf Gamma}:Let $F_X(x)$ be the distribution function of a random variable X$\sim$gamma($\alpha,\beta$). The distribution captures the probability that there are at least $\alpha$ arrival up to time t. We can interpreted it as the probability a poisson process with intensity $\frac{1}{\beta}$ up to time t with at least $\alpha$ arrivals.\\ If we have $Y\sim Poisson(x/\beta)$ then,
+$$P(X\leq x|\alpha,\beta)=P(Y\geq \alpha|\frac{x}{\beta})$$
+\begin{property}let X$\sim$Gamma($\alpha,\beta$)
+\begin{enumerate}
+\item[1.] E[X$\vert\alpha,\beta$]=$\alpha\beta$
+\item[2.] Var[X$\vert\alpha,\beta$]=$\alpha\beta^2$
+\item[3.] $M_X(t)=(\frac{1}{1-\beta t})^\alpha$, $t<\frac{1}{\beta}$
+\end{enumerate}
+\end{property}
+\noindent{\bf Inverse Gamma}: Let X$\sim$Gamma($\alpha,\beta$) then $Y=\frac{1}{X}$ follows Inverse Gamma distribution($\alpha,\beta$).  Its moments can be expressed as:
+$$E[Y^n]=\frac{T(\alpha-n)\beta^{\alpha-n}}{T(\alpha)\beta^\alpha}$$
+\noindent{\bf Chi-square}: Let X be a random variable follows Chi-square distribution with k degrees of freedom.$$X\overset{d}{=}Gamma(\frac{k}{2},2)$$
+\subsection{Normal distribution}
+\noindent{\bf Normal}: If X$\sim$Normal($\mu,\sigma^2$) then X has density function: $$f_X(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\mathbbm{1}_{x\in\mathcal{R}}(x)$$
+\noindent{\bf Log-normal}: If $\ln X\sim N(\mu,\sigma^2)$ then $X\sim Lognormal(\mu,\sigma)\mathbbm{1}_{x\in\mathcal{R}^+}(x)$
+$$f_X(x)=\frac{1}{\sqrt{2\pi}x\sigma}e^{-\frac{(\ln x-\mu)^2}{2\sigma^2}}$$\\
+\noindent{\bf Cauchy}: Cauchy is a symmetric distribution with more heavy tails than normal distribution, if X$\sim$Cauchy(0,1) then:
+$$f_X(x)=\frac{1}{\pi(1+x^2)}\mathbbm{1}_{x\in\mathcal{R}}(x)$$
+\noindent{\bf Logistic}: Logistic has tails between Cauchy and Normal, if X$\sim$Logistic(0,1) then:
+$$f_X(x)=\frac{e^x}{1+e^x}\mathbbm{1}_{x\in\mathcal{R}}(x)$$
+\begin{property} If X$\sim$N($\mu,\sigma^2$) and $Z=\frac{x-\mu}{\sigma}\sim(0,1)$ then the m.g.f of X is:
+\begin{align*}
+M_X(t)&=E[e^{t(\mu+\sigma Z)}]=e^{\mu t}M_Z(\sigma t)\\
+&=e^{\mu t}\int_{-\infty}^{\infty}e^{\sigma zt}\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}dz\\
+&=e^{\mu t}\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{(z-\sigma t)^2}{2}}e^{\frac{\sigma^2t^2}{2}}dz\\
+&=e^{\mu t+\frac{\sigma^2t^2}{2}}
+\end{align*}
+\begin{theorem}Let X$\sim N(\mu,\sigma^2)$ and g(x) be differentiable function satisfying $E[|g'(x)|]<\infty$ then we have  $$E[g(x)(x-\mu)]=\sigma^2E[g'(x)]$$
+\begin{proof}
+\begin{align*}
+\sigma^2E[g'(x)]&=\sigma^2\int_{-\infty}^{\infty}g'(x)\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx\\
+&=\frac{\sigma^2}{\sqrt{2\pi}\sigma}\int_{-\infty}^{\infty}g'(x)dx\int_{-\infty}^{x}-\frac{z-\mu}{\sigma^2}e^{\frac{-(z-\mu)^2}{2\sigma^2}}dz\\
+&=\int_{-\infty}^{\infty}g'(x)dx\int_{-\infty}^{x}-(z-\mu)\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(z-\mu)^2}{2\sigma^2}}dz\\
+&=\int_{-\infty}^{\infty}-(z-\mu)\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(z-\mu)^2}{2\sigma^2}}dz\int_{z}^{\infty}g'(x)dx\\
+&=\int_{-\infty}^{\infty}(z-\mu)\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(z-\mu)^2}{2\sigma^2}}\lim_{b\rightarrow\infty}(g(z)-g(b))dz\\
+&=E[g(x)(x-\mu)]
+\end{align*}
+\end{proof}
+\end{theorem}
+\end{property}
 \end{document}
