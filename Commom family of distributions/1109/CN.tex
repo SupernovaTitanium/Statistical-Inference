@@ -37,7 +37,7 @@ $$P(Y|Z_1,..,Z_p) = F_0(\beta_0+\beta_1Z_1+...+\beta_p Z_p)$$
 \section{Beta distribution}
 Beta distribution is a distribution that describes the battle between 0 and 1. We can create various of distribution in the interval [0,1] with beta distribution. With this abundance property, beta distribution can be used as a prior function in Bayesian analysis. Formally speaking, the density function of beta distribution is
 $$f_X(x|\alpha,\beta) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{\mbox{Beta}(\alpha,\beta)}\mathbf{1}_{[0,1]}(x)$$
-, where $\alpha,\beta>0$ and $\mbox{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)+\Gamma(\beta)}{\Gamma(\alpha+\beta)}$.\\
+, where $\alpha,\beta>0$ and $\mbox{Beta}(\alpha,\beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}$.\\
 Now, let's see some basic properties of beta distribution:
 \begin{itemize}
 	\item $\mathbb{E}[X|\alpha,\beta] = \frac{\alpha}{\alpha+\beta}$
