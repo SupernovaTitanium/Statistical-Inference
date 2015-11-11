@@ -47,12 +47,12 @@ Now, let's see some basic properties of beta distribution:
 		\item $\alpha>1,\beta=1$, increasing.
 		\item $\alpha=1, \beta > 1$, decreasing.
 		\item $\alpha<1,\beta<1$, U shape.
-		\item $\alpha>1\beta>1$, unimodal.
+		\item $\alpha>1,\beta>1$, unimodal.
 		\item $\alpha=\beta$, symmetric.
 		\item $\alpha=\beta=1$, uniform.
 	\end{itemize}
-	\item The relation between beta and binomial: $X\sim$Beta($\alpha,beta$), $Y\sim$Binomial($n,p$)
-	$$P(X\geq p|x+1,n-x) = P(Y\leq x|n,[])$$
+	\item The relation between beta and binomial: $X\sim$Beta($\alpha,\beta$), $Y\sim$Binomial($n,p$)
+	$$P(X\geq p|x+1,n-x) = P(Y\leq x|n,p)$$
 \end{itemize}
 
 \section{Double exponential distribution (Laplace distribution)}
@@ -63,7 +63,7 @@ The following is some basic properties:
 	\item $\mathbb{E}[X|\mu,\sigma^2] = \mu$
 	\item $Var[X|\mu,\sigma^2] = 2\sigma^2$
 \end{itemize}
-Note that here $\sigma$ is not variance.
+Note that here $\sigma^2$ is not variance.
 
 \section{Log-normal distribution}
 Let $X$ be a log-normal distribution with parameter $(\mu,\sigma^2)$, then
