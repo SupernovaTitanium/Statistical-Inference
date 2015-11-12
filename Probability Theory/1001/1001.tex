@@ -208,7 +208,7 @@ Here, we are going to show that the three conditions in Theorem~\ref{cdnsconditi
 Let $F$ be the cumulative distribution of random variable $X$ defined on $(\Omega,\mathcal{A},P)$. Check the three conditions as follow:
 \begin{enumerate}
 	\item First, let $A_n \ (-\infty,-n]$. As $A_n\rightarrow\emptyset$ when $n\rightarrow\infty$, by the continuity axiom, $\lim_{n\rightarrow\infty}P(A_n) = \lim_{n\rightarrow\infty}F(-n)=0$. Since, $\lim_{x\rightarrow-\infty}F(x)\leq\lim_{x\rightarrow-\infty}F(\floor*{x})=\lim_{n\rightarrow\infty}F(-n)=0$, we obtain the lower bound. The upper bound can be obtained with the same technique.
-	\item If $x\leq y$, then $(-\infty,x]\subseteq(=\infty,y]$. Clearly, $F(x) = P((-\infty,x])\leq P((-\infty,y])=F(y)$.
+	\item If $x\leq y$, then $(-\infty,x]\subseteq(-\infty,y]$. Clearly, $F(x) = P((-\infty,x])\leq P((-\infty,y])=F(y)$.
 	\item Let $\{x_n\}$ be a sequence strictly decreases (approaches) to $x_0$, then $A_n:=(-\infty,x_n]\rightarrow A = (-\infty,x]$. That is, $F(x) = P(A)$ and $F(x_n) = P(A_n),\ \forall n$. Now consider $B_n=\R\backslash A_n,\ \forall n$ and $B=\R\backslash A$. For convenience, let $A_0 = \Omega$ and $B_0 = \emptyset$. Then we have
 	\begin{align*}
 	1-P(A) &= P(B) = P(\lim_{n\rightarrow\infty}B_n) = P(\bigcup_{n=1}^{\infty}B_n\backslash B_{n-1})\\
