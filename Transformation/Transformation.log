@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.27)  30 OCT 2015 12:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.6.27)  12 NOV 2015 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -922,7 +922,7 @@ T1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n/10.
 ) [17]
 Appendix A.
 (./Appendix/Appendix.tex
-Overfull \hbox (28.6459pt too wide) in paragraph at lines 6--15
+Overfull \hbox (33.8959pt too wide) in paragraph at lines 6--15
  [] 
  []
 
@@ -935,7 +935,18 @@ Missing character: There is no ¢ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
- [19]) [20]
+ [19]
+Overfull \hbox (13.8942pt too wide) in paragraph at lines 80--81
+[]\OT1/cmr/m/it/10.95 Suppose $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cm
+m/m/it/10.95 x; y\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 is in-te-grable on $
+\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^B \OML/cmm/m/it/10.95 Y$\OT1/cmr/m/
+it/10.95 , and $[][] \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.
+95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML/cmm/m
+/it/10.95 d\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 ) \OM
+L/cmm/m/it/10.95 <
+ []
+
+[20]) [21]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (./Transformation.aux)
@@ -945,8 +956,8 @@ Package rerunfilecheck Info: File `Transformation.out' has not changed.
 (rerunfilecheck)             Checksum: 69836EF36F30E0DB584507EB55A9DD14;1408.
  ) 
 Here is how much of TeX's memory you used:
- 22056 strings out of 493089
- 420179 string characters out of 6134842
+ 22058 strings out of 493089
+ 420195 string characters out of 6134842
  466277 words of memory out of 5000000
  25098 multiletter control sequences out of 15000+600000
  16519 words of font info for 63 fonts, out of 8000000 for 9000
@@ -970,10 +981,10 @@ local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Transformation.pdf (21 pages, 273420 bytes).
+Output written on Transformation.pdf (22 pages, 276307 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 500000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 114 named destinations out of 1000 (max. 500000)
  189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

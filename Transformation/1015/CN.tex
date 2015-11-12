@@ -40,7 +40,7 @@ With simple integration, we can check that $\mathbb{E}(|X|) = 2\int_0^{\infty}\f
 		\item (Preserve linear combination) $\mathbb{E}[]ag_1(X)+bg_2(X)+c]=a\mathbb{E}[g_1(X)] + b\mathbb{E}[g_2(X)] + c$.
 		\item (Preserve non-negativity) If $f(x)\geq0,\ \forall x$, then $\mathbb{E}[g(X)]$.
 		\item (Preserve dominance) If $g_1(x)\geq g_2(x),\ \forall x$, then $\mathbb{E}[g_1(X)]\geq\mathbb{E}[g_2(X)].$
-		\item (Existence of bounded r.v.) If $a\leq g(x) \leq b,\ \forall x$, then $a\leq \mathbb{E}[g(X)]\leq\mathbb{E}[g(X)] b.$
+		\item (Existence of bounded r.v.) If $a\leq g(x) \leq b,\ \forall x$, then $a\leq \mathbb{E}[g(X)]\leq b.$
 	\end{enumerate}
 \end{property}
 
@@ -144,8 +144,8 @@ E[X_2^r]&=\int_0^\infty\frac{x^{r-1}}{\sqrt{2\pi}}e^{\frac{-(\ln x)^2}{2}}(1+sin
 Also noticed that the moment generating function of log normal distribution does not exist since $E[e^{tX}]=\int_0^\infty\frac{e^{tx}}{\sqrt{2\pi}x}e^{\frac{-(\ln x)^2}{2}}dx$ diverges. $e^{tx}e^{\frac{-(\ln x)^2}{2}}$ diverges as $n\rightarrow\infty$.
 \end{remark}
 
-\begin{conclusion}{Determine distribution}
-	Basically, mgf is a {\bf stronger} of a r.v. The following lists the positive results and negative results of mgf:\\
+\begin{conclusion}[Determine distribution
+	Basically, mgf is {\bf stronger} of the moment sequence. The following lists the positive results and negative results of mgf:\\
 	{\bf Positive}:
 	\begin{enumerate}
 		\item If the support is {\bf bounded} and two r.v.s share every moment, then they will have the same distribution.
@@ -159,5 +159,14 @@ Also noticed that the moment generating function of log normal distribution does
 		\item Two distributions might have same moments but have different distribution. \eg {\it log-normal} distribution and $(1+\sin(2\pi\log x))\frac{e^{-(\log x)^2/2}}{\sqrt{2\pi}x}$
 	\end{enumerate}
 \end{conclusion}
+
+\mbox{}\\
+\noindent{\bf Remark}: The following discuss some interesting historical progress about moment generating function.
+\begin{itemize}
+	\item 1995, {\it Billingsley}: If $\sum_{r=1}^{\infty}\frac{\mu_r' r^k}{k!}$ has a positive radius of convergence, where $\mathbb{E}X^r = \mu_r'$, then the distribution of $X$ is uniquely defined.
+	\item {\it Carleman's condition}: If $\mathbb{E}X^r = \mu_r'$, then the moment sequence is unique if $\sum_{r=1}^{\infty}\frac{1}{(\mu_{2r}'^{1/2r})}=+\infty$
+	\item 1971, {\it Feller}: If $M_X(t) = \sum_{r=0}^{\infty}\frac{(-1)^r\mu_r' t^r}{r!}$ converges on an open interval around zero, then the distribution $F_X$ is uniquely defined.
+\end{itemize}
+
 
 \end{document}
