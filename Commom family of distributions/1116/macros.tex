@@ -1,0 +1,90 @@
+\usepackage{amsfonts, fullpage, rotating, amssymb}
+\usepackage{color,amsmath}
+\usepackage{IEEEtrantools}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{bbm}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{property}{Property}
+\newtheorem{corollary}{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{openprob}[theorem]{Open Problem}
+\newtheorem{remk}{Remark}
+\newtheorem{exmp}{Example}
+\newtheorem{apdxlemma}{Lemma}
+\newenvironment{example}{\begin{exmp}
+\begin{normalfont}}{\end{normalfont}
+\end{exmp}}
+
+\newenvironment{remark}{\begin{remk}
+\begin{normalfont}}{\end{normalfont}
+\end{remk}}
+\newtheorem{sublemma}[theorem]{Sublemma}
+
+\newenvironment{intuition}[1][]{\begin{tcolorbox}[title=Intuition ~(#1),fonttitle=\sffamily\large\bfseries]}{\end{tcolorbox}}
+
+%%%%%%%%%%%%%%%%%%%% proof environments
+
+\def\FullBox{\hbox{\vrule width 8pt height 8pt depth 0pt}}
+
+\def\qed{\ifmmode\qquad\FullBox\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil\FullBox
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\def\qedsketch{\ifmmode\Box\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil$\Box$
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\newenvironment{proof}{\begin{trivlist} \item {\bf Proof:~~}}
+  {\qed\end{trivlist}}
+\newenvironment{solve}{\begin{trivlist} \item {\bf Solve:~~}}
+  {\qed\end{trivlist}}
+\newenvironment{proofsketch}{\begin{trivlist} \item {\bf
+Proof Sketch:~~}}
+  {\qedsketch\end{trivlist}}
+
+\newenvironment{proofof}[1]{\begin{trivlist} \item {\bf Proof
+#1:~~}}
+  {\qed\end{trivlist}}
+
+\newenvironment{claimproof}{\begin{quotation} \noindent
+{\bf Proof of claim:~~}}{\qedsketch\end{quotation}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% text macros
+\newcommand{\etal}{{\it et~al.\ }}
+\newcommand{\ie} {{\it i.e.,\ }}
+\newcommand{\eg} {{\it e.g.,\ }}
+\newcommand{\cf}{{\it cf.,\ }}
+
+%%%%%%%%%%%%%%%%%%%%%%% general useful macros
+\def\textprob#1{\textmd{\textsc{#1}}}  % for use in plain text
+\newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
+\newcommand{\R}{{\mathbb R}} % real numbers
+\newcommand{\N}{{\mathbb{N}}} % natural numbers
+\newcommand{\Z}{{\mathbb Z}} % integers
+\newcommand{\F}{{\mathbb F}} % a field
+\newcommand{\Q}{{\mathbb Q}} % the rationals
+\newcommand{\poly}{{\mathrm{poly}}}
+\newcommand{\polylog}{{\mathrm{polylog}}}
+\newcommand{\loglog}{{\mathop{\mathrm{loglog}}}}
+\newcommand{\zo}{\{0,1\}}
+\newcommand{\suchthat}{{\;\; : \;\;}}
+\newcommand{\pr}[1]{\Pr\left[#1\right]}
+\newcommand{\deffont}{\em}
+\newcommand{\getsr}{\mathbin{\stackrel{\mbox{\tiny R}}{\gets}}}
+\newcommand{\Exp}{\mathop{\mathrm E}\displaylimits} % expectation
+\newcommand{\Var}{\mathop{\mathrm Var}\displaylimits} % variance
+\newcommand{\xor}{\oplus}
+\newcommand{\GF}{\mathrm{GF}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\limT}{\lim_{T\rightarrow\infty}}
+\newcommand{\limn}{\lim_{n\rightarrow\infty}}
+%%%%%%%%%%%%%%%%%%% macros particular to this course
+
