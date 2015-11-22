@@ -1,0 +1,48 @@
+\documentclass[../MultivariateProbabilityAndRelatedProperties.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 17} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+For now, we have learned how to use a single random variable to construct a model. And we have introduced several well-studied distributions and analyze their good properties. But, is that enough? Can we use only one random variable to model everything? The answer is clearly negative. But now we need to ask what are the differences between single random variable and more than one random variables? What can we benefits from that and what are the main assumptions and structures?
+
+We start from defining random vector.
+\begin{definition}[random vector]
+	A $p$-dimensional random vector is a function $X = \left(\begin{array}{c}
+	X_1\\
+	X_2\\
+	\vdots\\
+	X_p
+	\end{array}\right)$ from $\Omega$ to $\R^p$ such that each component is a random variables.
+\end{definition}
+\begin{definition}[joint distribution]
+	We say $F_X$ is a joint distribution of $X$ such that $F_X(\undertilde{x}) = P[X_1\leq x_1,...,X_p\leq x_p]$.
+\end{definition}
+
+Now, we might wonder, what if some components are discrete and some are continuous? How to define the joint distribution?\\
+
+\noindent{\bf Example}: $X_1$ is discrete and $X_2$ is continuous.
+\begin{itemize}
+	\item Only $X_1$: $f_{X_1}(x_1) = P(X_1=x_1)$
+	\item Only $X_2$: $f_{X_2}(x_2) = \frac{\partial}{\partial x_2}F_{X_2}(x_2)$
+	\item Both $X_1$ and $X_2$: $\lim_{\Delta_2\rightarrow0}\frac{P[X_1=x_1,X_2\in[x_2-\frac{\Delta_2}{2},x_2+\frac{\Delta_2}{2}]]}{\Delta_2}$
+\end{itemize}
+
+Finally, we give an example to show the benefit of using random vector instead of using single random variable.\\
+
+\noindent{\bf Example}: Consider the regression problem as follow. We have a dependent variable $y$ and some explanatory variables $X_1,...,X_p$. Now we want to know the distribution of $Y$ conditioned on $X_1,...,X_p$ or the distribution of $X_1,...,X_p$ conditioned on $Y$. To characterize these, we have to look into the correlation between $Y$ and $X_1,...,X_p$ which can be simply modeled by joint distribution.\\
+
+To sum up, random vector and joint distribution provide us a structure that can describe the correlation among different sources. 
+
+
+\end{document}
