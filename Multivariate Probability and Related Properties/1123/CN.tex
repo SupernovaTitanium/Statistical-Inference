@@ -1,0 +1,40 @@
+\documentclass[../MultivariateProbabilityAndRelatedProperties.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 18} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+After defining random vector, how do we characterize its distribution? As a warm up, let's think about what kind of distribution about random vector we would like to know? First of all we can regard the whole random vector as a single random variable. That is, it itself has a distribution, which is called {\it joint probability function} formally. On the other hands, we might want to consider the distribution of certain part of the random vector, and thus the marginal distribution is introduced. Finally, we would like to know how one part of the random vector being affected by another. Hence, the {\it conditional distribution} shows up. In the following lectures, we are going to define the above three important aspects of random vector formally. Now, let's start with an example.
+
+\noindent{\bf Example}: Let $F(x,y)$ be the cdf of a bivariate random vector $(x,y)^T$. Then, $\forall x_l<x_r,y_l<y_r$, we have
+\begin{align*}
+P[x_l\leq x\leq x_r,\ y_l\leq y\leq y_r] &= P[x\leq x_r,\ y_l\leq y\leq y_r] - P[x\leq x_l,\ y_l\leq y\leq y_r]\\
+&= P[x\leq x_r,\ y\leq y_r] - P[x\leq x_r,\ y\leq y_l]\\
+&-P[x\leq x_l,\ y\leq y_r] + P[x\leq x_l,\ y\leq y_l]
+\end{align*}
+With this example, we can have a feeling about how to quantify the probability of a certain interval type event. Now, we can define the joint probability function.
+\begin{definition}[joint probability mass function]
+	The pmf of a discrete random vector $\undertilde{X}$ is a function $f_{\undertilde{X}}(\undertilde{x})$ from $\R^p$ to [0,1] is defined by $f_{\undertilde{X}}(\undertilde{X}=\undertilde{x})$
+\end{definition}
+
+\begin{definition}[joint probability density function]
+	The pdf of a continuous random vector $\undertilde{X}$ is a function $f_{\undertilde{X}}(\undertilde{x})$ that satisfies
+	$$F_{\undertilde{X}}(\undertilde{x}) = \int\cdots\int_{\{u_1\leq x_1,...,u_p\leq x_p \}}f_{\undertilde{X}}(\undertilde{u})d\undertilde{u}$$
+\end{definition}
+
+We can define the marginal distribution as
+\begin{definition}[marginal distribution]
+	The marginal distribution of $\undertilde{X_1}$, which is a part of random vector $\undertilde{X}$, is a function $F_{\undertilde{X_1}}(\undertilde{x_1}) = P[X_{11}\leq x_{11},\ ...,X_{1p_1}\leq x_{1p_1}]$
+\end{definition}
+
+\end{document}

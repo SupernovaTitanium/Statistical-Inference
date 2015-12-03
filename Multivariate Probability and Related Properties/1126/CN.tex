@@ -1,0 +1,107 @@
+\documentclass[../MultivariateProbabilityAndRelatedProperties.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 19} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+\section{Condition and independence}
+
+Here, we formally define the concept of conditional distribution in random vector.
+\begin{definition}[conditional probability density function]
+	Let $\undertilde{X_1},\undertilde{X_2}$ be two random vectors with $f_{\undertilde{X_1}}(\undertilde{x_1})>0$. Then, the conditional pdf of $\undertilde{X_2}$ given $\undertilde{X_1}=\undertilde{x_1}$ is defined as
+	$$f_{\undertilde{X_2}|\undertilde{X_1}}(\undertilde{x_2}|\undertilde{x_1}) = \frac{f_{\undertilde{X}}(\undertilde{x})}{f_{\undertilde{X_1}}(\undertilde{x_1})}$$
+\end{definition}
+Intuitively, we can think of the whole sample space has a partition $\Omega_1\times\Omega_2$ over random vector $\undertilde{X_1}$ and $\undertilde{X_2}$. Then conditional sense it to restrict $\undertilde{X_1}$ occurs in $A_1$. Thus, the sample space becomes $A_1\times\Omega_2$.\\
+
+With the concept of conditional pdf, we can know further characterize the idea of independence. In probability theory, we say two {\bf events} are independent if the probability of an events is not affected by another. Now, what we are consider is {\bf random variables}, whose probability is defined over the whole $\sigma-$algebra. As a results, the formation is much more complicated. However, the idea is quite the same. And actually, the condition is more simple. As $\sigma-$algebra have the good closeness property, here once we define the independence relation for some specific representative events, the independence has been characterized.Formally, we have
+\begin{definition}[independence]
+	Let $\undertilde{X} = (\undertilde{X_1}^T,...,\undertilde{X_p}^T)^T$ be a random vector with joint pdf $F_{\undertilde{X}}(\undertilde{x})$ and we denote the marginal distribution of $\undertilde{X_i}$ as $F_{\undertilde{X_i}}(\undertilde{x_i})$. Now, we say $\undertilde{X_1},...,\undertilde{X_p}$ are mutually independent if 
+	$$F_{\undertilde{X}}(\undertilde{x}) = \prod_{i=1}^p F_{\undertilde{X_i}}(\undertilde{x_i})$$
+\end{definition}
+
+The concept of independence is very important in probability theory and statistics. With help of independence, we can derive lots of great properties for the models. Take a look at the following example.\\
+
+\noindent{\bf Example}: Consider the example of hazard time and missing data.
+\begin{itemize}
+	\item Failure time: $T\sim f_T(t)$, where the cdf is $F_T(t)$ and the hazard function $S_T(t) = 1-F_T(t)$.
+	\item Censure time: $C\sim f_C(t)$, where the cdf is $F_C(t)$ and the hazard function $S_C(t) - 1-F_C(t)$.
+	\item $X = \min\{T,C\}$
+	\item $\delta = \mathbf{1}_{T\neq X}$
+\end{itemize}
+Assume that $T$ and $C$ are independent. Consider
+\begin{align*}
+f_{X,\delta}(x,1) &= \lim_{\Delta\rightarrow0}\frac{P[X\in[x,x+\Delta],\ \delta=1]}{\Delta}= \lim_{\Delta\rightarrow0}\frac{P[X\in[x,x+\Delta],\ T\neq C]}{\Delta}\\
+&= \lim_{\Delta\rightarrow0}\frac{P[X\in[x,x+\Delta],\ C\geq x+\Delta]}{\Delta}\\
+(\because T,C\mbox{ are independent})& = \lim_{\Delta\rightarrow0}P[X\in[x,x+\Delta]]\cdot P[C\geq x+\Delta]\\
+&=f_T(x)\cdot S_C(x)
+\end{align*}
+
+\begin{theorem}[necessary and sufficient condition for mutually independence]
+	Let $X_1,...,X_p$ be random variables, they are mutually independent iff $\exists g$ such that $F_{\undertilde{X}}(\undertilde{x}) = \prod_{i=1}^p g_i(x_i)$.
+\end{theorem}
+\begin{proof}
+	
+	\noindent($\Rightarrow$) Take $g_i$ to be the marginal distribution of $X_i$ is sufficient.
+	
+	\noindent($\Leftarrow$) Consider the marginal distribution $F_{X_i}(x_i) = F_{\undertilde{X}}(\infty,...,x_i,...,\infty) = g_i(x_i)\prod_{j\neq i} g_j(\infty)$. Let $c_i = g_i(\infty)$, then $\prod_{i=1}^p c_i = 1$. Thus, we can further write $F_{X_i}(x_i) = \frac{g_i(x_i)}{c_i}$. Finally, by the assumption, we have
+	\begin{align*}
+	F_{\undertilde{X}}(\undertilde{x}) &= \prod_{i=1}^p g_i(x_i)\\
+	(\because \prod_{i=1}^p\frac{1}{c_i})&= \prod_{i=1}^p \frac{g_i(x_i)}{c_i} = \prod_{i=1}^p F_{X_i}(x_i)
+	\end{align*}
+\end{proof}
+
+\begin{intuition}[necessary and sufficient condition for mutually independence]
+	Mutually independence of random variables is equivalent to the partition of their marginal distribution.
+\end{intuition}
+
+\noindent{\bf Example}: Latent analysis. Suppose there are three random variables $X,Y$, and $Z$. Suppose only $Y$ and $Z$ are mutually independence, how can we analyze the network? A possible solution is to assume there are some underlying latent effect $W_1$ among $X$ and $Y$ and another latent effect $W_2$ among $X$ and $Z$. Now, as we consider $X$ and $Y$ conditioned on $W_1$, they will be independent. That is, $X\indep Y | W_1$ and $X\indep Z | W_2$.\\
+
+So far, we construct the concept of independence. Now, we may want to discover the good properties implied by mutually independence. In the following context, we assume random variables $X_1,...,X_p$ are mutually independence.
+
+\begin{property}[measurable function]\label{prop:measurable}
+	If $g_1,...,g_p$ are measurable, then
+	$$\mathbb{E}[\prod_{i=1}^p g_i(X_i)] = \prod_{i=1}^p\mathbb{E}[g_i(X_i)]$$
+\end{property}
+
+\begin{property}[$\sigma-$algebra]\label{prop:sigmaalgebra}
+	Suppose $dim(X_i) = r_i$, then $\forall A_i\in\mathcal{B}^{r_i}$, we have
+	$$Pr[X_1\in A_1,...,X_p\in A_p] = \prod_{i=1}^p Pr[X_i\in A_i]$$
+\end{property}
+\begin{proof}
+	Take $g_i = \mathbf{1}_{\{x_i\in A_i \}}$ and apply Property~\ref{prop:measurable}.
+\end{proof}
+
+\begin{property}[induced random variables]
+	Suppose $g_i$ are measurable and let $U_i = g_i(X_i)$, then $\{U_i\}$ are mutually independent.
+\end{property}
+\begin{proof}
+	We can see that the induced $\sigma-$algebra is a subset of the original one. By Property~\ref{prop:sigmaalgebra}, we know that $\{U_i\}$ are mutually independent.
+\end{proof}
+
+\begin{intuition}[independence and correlation]
+	Independence talks about the relation of random variables over the whole $\sigma$-algebra. Thus, it is actually very difficult to achieve independence. However, correlation deals with some basic relation such as linearity among random variables.
+\end{intuition}
+
+\section{Characteristic function}
+For univariate random variable, we define the characteristic function as the expectation of $e^itX$. However, now we are in the world of multivariate random variables, how can we define the characteristic function in a similar fashion? The idea is actually quite simple, we also take $t$ as a vector instead of a scaler, which turns the characteristic function into a multivariate function. Then using inner product to create the exponent term. Thus, result in a similar expectation form $e^{i\undertilde{t}^T\undertilde{X}}$. Formally, we define the characteristic function for multivariate random variables as follow:
+
+\begin{definition}[characteristic function]
+	The characteristic function of multivariate random variable $\undertilde{X}$ is
+	$$\phi_{\undertilde{X}}(\undertilde{t}) = \mathbb{E}[e^{i\undertilde{t}^T\undertilde{X}}]$$
+\end{definition}
+
+Similarly, we can define the moment generating function as $M_{\undertilde{X}}(\undertilde{t}) = \mathbb{E}[e^{\undertilde{t}^T\undertilde{X}}]$.
+
+
+
+\end{document}
