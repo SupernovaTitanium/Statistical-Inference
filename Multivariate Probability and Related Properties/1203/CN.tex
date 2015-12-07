@@ -1,0 +1,31 @@
+\documentclass[../MultivariateProbabilityAndRelatedProperties.tex]{subfiles}
+\begin{document}
+	\begin{center}
+		\renewcommand{\arraystretch}{2}
+		\begin{bfseries}
+			\begin{tabular}{|c|}
+				\hline
+				Statistical Inference I \hfill Prof. Chin-Tsang Chiang\\
+				\hspace{15em} {\large Lecture Notes 20} \hspace{15em}\ \\
+				\lecdate \hfill Scribe: \scribe\\
+				\hline
+			\end{tabular}
+			\renewcommand{\arraystretch}{1}
+		\end{bfseries}
+	\end{center}
+
+\section{Multivariate Transformation}
+Let $\undertilde{X} = (X_1,X_2,...,X_p)^T$ be a continuous random vector with pdf $f_{\undertilde{X}}$ on $\mathcal{A}:=\{\undertilde{x}:f_{\undertilde{X}(\undertilde{x})\geq0} \}$. Consider another random vector $\undertilde{U} = (U_1,U_2,...,U_p)^T$ with $U = g_i(\undertilde{X})$ being 1-1 transformation from $\mathcal{A}_1$ to $\mathcal{B}$ where $\mathcal{A}_0,\mathcal{A}_1,...,\mathcal{A}_k$ being a partition of $\mathcal{A}$ and $f_{\undertilde{X}}(\mathcal{A}_0)=0$. Thus, $\exists h_i$ such that $\undertilde{x} = h_i(\undertilde{u})$  on $\mathcal{A}_i$. Moreover, we will have
+$$f_{\undertilde{U}}(\undertilde{u}) = \sum_{i=1}^k f_{\undertilde{X}}(h_i(\undertilde{x}))|J_i|,\ \forall \undertilde{u}\in\mathcal{B}$$
+, where \[
+J_i =
+\begin{vmatrix}
+\frac{\partial h_{i1}}{\partial u_1} & \dots & \frac{\partial h_{i1}}{\partial u_p}\\
+\vdots&\ddots&\vdots\\
+\frac{\partial h_{ip}}{\partial u_1}&\dots&\frac{\partial h_{ip}}{\partial u_p}
+\end{vmatrix}
+\]
+
+
+
+\end{document}

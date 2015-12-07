@@ -30,11 +30,6 @@
 \newenvironment{intuition}[1][]{\begin{tcolorbox}[title=Intuition ~(#1),fonttitle=\sffamily\large\bfseries]}{\end{tcolorbox}}
 \newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
 
-%%%%%%%%%%%%%%%%%%%% self-defined
-\def\undertilde#1{\mathord{\vtop{\ialign{##\crcr
-				$\hfil\displaystyle{#1}\hfil$\crcr\noalign{\kern1.5pt\nointerlineskip}
-				$\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
-
 %%%%%%%%%%%%%%%%%%%% proof environments
 
 \def\FullBox{\hbox{\vrule width 8pt height 8pt depth 0pt}}
@@ -62,6 +57,9 @@ Proof Sketch:~~}}
 \newenvironment{claimproof}{\begin{quotation} \noindent
 {\bf Proof of claim:~~}}{\qedsketch\end{quotation}}
 
+\def\undertilde#1{\mathord{\vtop{\ialign{##\crcr
+				$\hfil\displaystyle{#1}\hfil$\crcr\noalign{\kern1.5pt\nointerlineskip}
+				$\hfil\tilde{}\hfil$\crcr\noalign{\kern1.5pt}}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%% text macros
 \newcommand{\etal}{{\it et~al.\ }}
@@ -70,6 +68,7 @@ Proof Sketch:~~}}
 \newcommand{\cf}{{\it cf.,\ }}
 
 %%%%%%%%%%%%%%%%%%%%%%% general useful macros
+\def\textprob#1{\textmd{\textsc{#1}}}  % for use in plain text
 \newcommand{\eqdef}{\mathbin{\stackrel{\rm def}{=}}}
 \newcommand{\R}{{\mathbb R}} % real numbers
 \newcommand{\N}{{\mathbb{N}}} % natural numbers
